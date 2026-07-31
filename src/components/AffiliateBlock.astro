@@ -1,0 +1,32 @@
+---
+const { products = [] } = Astro.props;
+---
+{products.length > 0 && (
+  <section class="mt-10">
+    <h2 class="mb-1 text-lg font-bold text-navy-900">Recommended for this exam</h2>
+    <p class="mb-4 text-xs text-muted">
+      As an Amazon Associate, FormSetu earns from qualifying purchases.
+      This costs you nothing extra.
+    </p>
+
+    <div class="grid grid-cols-2 gap-3">
+      {products.map((p) => (
+        <a href={p.url} target="_blank" rel="nofollow noopener sponsored"
+           class="group flex flex-col overflow-hidden rounded-lg border border-line bg-white transition hover:border-amber-500 hover:shadow-md">
+          <div class="flex h-36 items-center justify-center bg-surface p-3">
+            <img src={p.image} alt={p.title} loading="lazy"
+                 class="max-h-full w-auto object-contain transition group-hover:scale-105" />
+          </div>
+          <div class="flex flex-1 flex-col p-3">
+            <h3 class="text-sm font-bold leading-snug text-navy-900">{p.title}</h3>
+            <p class="mt-1 flex-1 text-xs leading-snug text-muted">{p.note}</p>
+            <p class="mt-2 text-base font-bold text-navy-900">{p.price}</p>
+            <span class="mt-2 block rounded-md bg-amber-600 px-3 py-2 text-center text-xs font-bold text-white group-hover:bg-amber-500">
+              Buy on Amazon →
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
