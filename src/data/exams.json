@@ -1,0 +1,69 @@
+[
+  {
+    "slug": "ssc-cgl",
+    "name": "SSC CGL",
+    "fullName": "Staff Selection Commission Combined Graduate Level Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-07-31",
+    "photo": {
+      "widthPx": 200,
+      "heightPx": 230,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "background": "white or light coloured",
+      "notes": [
+        "Taken within the last 3 months",
+        "Name and date printed at the bottom",
+        "Face should cover about 70% of the frame"
+      ]
+    },
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signed on white paper",
+        "Running handwriting, not block capitals"
+      ]
+    },
+    "thumb": null,
+    "documents": null
+  },
+  {
+    "slug": "wbpsc-clerkship",
+    "name": "WBPSC Clerkship",
+    "fullName": "West Bengal Public Service Commission Clerkship Examination",
+    "body": "WBPSC",
+    "category": "state",
+    "year": 2026,
+    "officialUrl": "https://wbpsc.gov.in",
+    "lastVerified": "2026-07-31",
+    "photo": {
+      "widthPx": 150,
+      "heightPx": 200,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "background": "white",
+      "notes": ["Recent passport size photograph"]
+    },
+    "signature": {
+      "widthPx": 150,
+      "heightPx": 60,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": ["Signed on white paper"]
+    },
+    "thumb": null,
+    "documents": null
+  }
+]

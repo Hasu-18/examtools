@@ -1,0 +1,52 @@
+---
+const {
+  title,
+  description = "Free tools to resize photos, signatures and documents for Indian government exam forms."
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="logo">FormSetu</a>
+    <nav>
+      <a href="/exams/">Exams</a>
+      <a href="/tools/">Tools</a>
+    </nav>
+  </header>
+
+  <main><slot /></main>
+
+  <footer class="site-footer">
+    <p>FormSetu is an independent website and is not affiliated with any government body or examination authority. Always verify requirements on the official notification.</p>
+    <p><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy/">Privacy</a> · <a href="/disclaimer/">Disclaimer</a></p>
+  </footer>
+
+  <style is:global>
+    :root { --ink:#1a1a1a; --muted:#666; --line:#e5e5e5; --accent:#0b6bcb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); line-height:1.6; }
+    main { max-width:720px; margin:0 auto; padding:1.25rem 1rem 3rem; }
+    a { color: var(--accent); }
+    .site-header { display:flex; align-items:center; justify-content:space-between; max-width:720px; margin:0 auto; padding:1rem; border-bottom:1px solid var(--line); }
+    .logo { font-weight:700; font-size:1.15rem; text-decoration:none; color:var(--ink); }
+    .site-header nav a { margin-left:1rem; font-size:.95rem; }
+    .site-footer { max-width:720px; margin:0 auto; padding:1.5rem 1rem 3rem; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+    h1 { font-size:1.6rem; line-height:1.3; margin:0 0 .5rem; }
+    h2 { font-size:1.2rem; margin:2rem 0 .75rem; }
+    table { width:100%; border-collapse:collapse; margin:.5rem 0 1rem; font-size:.95rem; }
+    th, td { text-align:left; padding:.6rem .5rem; border-bottom:1px solid var(--line); }
+    th { width:45%; font-weight:600; color:var(--muted); }
+    .verified { font-size:.85rem; color:var(--muted); margin:0 0 1.5rem; }
+    .tool-slot { border:2px dashed var(--line); border-radius:8px; padding:1.5rem; text-align:center; color:var(--muted); margin:1rem 0; }
+    ul { padding-left:1.15rem; }
+    @media (min-width:640px){ h1 { font-size:2rem; } }
+  </style>
+</body>
+</html>

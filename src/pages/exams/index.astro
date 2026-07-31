@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import exams from '../../data/exams.json';
+---
+<BaseLayout title="All Exams — Photo & Signature Size Requirements | FormSetu">
+  <h1>Exam photo &amp; signature requirements</h1>
+  <p>Exact photo, signature and document specifications for Indian government exam application forms.</p>
+  <ul>
+    {exams.map((exam) => (
+      <li><a href={`/exams/${exam.slug}/`}>{exam.name} — photo &amp; signature size {exam.year}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

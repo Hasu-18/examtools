@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import exams from '../../data/exams.json';
+
+export function getStaticPaths() {
+  return exams.map((exam) => ({
+    params: { slug: exam.slug },
+    props: { exam },
+  }));
+}
+
+const { exam } = Astro.props;
+const title = `${exam.name} Photo & Signature Size ${exam.year} — Exact Requirements`;
+const description = `${exam.name} ${exam.year} photo size: ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and full document requirements.`;
+const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+---
+<BaseLayout title={title} description={description}>
+  <h1>{exam.name} Photo & Signature Size {exam.year}</h1>
+  <p class="verified">Last verified {verified} · {exam.fullName}</p>
+
+  <h2>Photo requirements</h2>
+  <table>
+    <tr><th>Dimensions</th><td>{exam.photo.widthPx} × {exam.photo.heightPx} pixels</td></tr>
+    <tr><th>File size</th><td>{exam.photo.minKB} KB – {exam.photo.maxKB} KB</td></tr>
+    <tr><th>Format</th><td>{exam.photo.format.toUpperCase()}</td></tr>
+    <tr><th>Background</th><td>{exam.photo.background}</td></tr>
+  </table>
+  <ul>{exam.photo.notes.map((n) => <li>{n}</li>)}</ul>
+
+  <div class="tool-slot">Photo resizer will go here</div>
+
+  <h2>Signature requirements</h2>
+  <table>
+    <tr><th>Dimensions</th><td>{exam.signature.widthPx} × {exam.signature.heightPx} pixels</td></tr>
+    <tr><th>File size</th><td>{exam.signature.minKB} KB – {exam.signature.maxKB} KB</td></tr>
+    <tr><th>Format</th><td>{exam.signature.format.toUpperCase()}</td></tr>
+    <tr><th>Ink colour</th><td>{exam.signature.ink}</td></tr>
+  </table>
+  <ul>{exam.signature.notes.map((n) => <li>{n}</li>)}</ul>
+
+  <div class="tool-slot">Signature resizer will go here</div>
+
+  <h2>Official source</h2>
+  <p>Always confirm against the official notification: <a href={exam.officialUrl} rel="nofollow noopener" target="_blank">{exam.body} official website</a></p>
+</BaseLayout>
