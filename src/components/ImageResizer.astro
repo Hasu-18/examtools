@@ -1,0 +1,120 @@
+---
+const { label = "Photo", widthPx, heightPx, minKB, maxKB } = Astro.props;
+---
+<div class="resizer" data-w={widthPx} data-h={heightPx} data-min={minKB} data-max={maxKB}>
+  <h3>{label} resizer</h3>
+  <p class="target">Target: {widthPx} × {heightPx} px · {minKB}–{maxKB} KB · JPG</p>
+
+  <label class="pick">
+    Choose your {label.toLowerCase()}
+    <input type="file" accept="image/*" class="file" />
+  </label>
+
+  <p class="privacy">Processed on your device. Nothing is uploaded.</p>
+
+  <div class="result" hidden>
+    <canvas class="preview"></canvas>
+    <ul class="checks"></ul>
+    <a class="download" download>Download {label.toLowerCase()}</a>
+  </div>
+
+  <p class="err" hidden></p>
+</div>
+
+<style>
+  .resizer { border:1px solid #e5e5e5; border-radius:10px; padding:1.1rem; margin:1rem 0 2rem; }
+  .resizer h3 { margin:0 0 .25rem; font-size:1.05rem; }
+  .target { margin:0 0 .9rem; font-size:.9rem; color:#666; }
+  .pick { display:block; font-size:.9rem; font-weight:600; }
+  .pick input { display:block; margin-top:.5rem; width:100%; font-size:.9rem; }
+  .privacy { font-size:.8rem; color:#666; margin:.6rem 0 0; }
+  .preview { display:block; max-width:100%; height:auto; border:1px solid #e5e5e5; margin:1rem 0 .75rem; image-rendering:auto; }
+  .checks { list-style:none; padding:0; margin:0 0 1rem; font-size:.9rem; }
+  .checks li { padding:.15rem 0; }
+  .ok::before { content:"✓ "; color:#137a3d; font-weight:700; }
+  .bad::before { content:"✕ "; color:#c02626; font-weight:700; }
+  .download { display:inline-block; background:#0b6bcb; color:#fff; text-decoration:none; padding:.6rem 1.1rem; border-radius:6px; font-size:.95rem; font-weight:600; }
+  .err { color:#c02626; font-size:.9rem; }
+</style>
+
+<script>
+  function initResizer(root) {
+    const W = +root.dataset.w, H = +root.dataset.h;
+    const MIN = +root.dataset.min, MAX = +root.dataset.max;
+
+    const input  = root.querySelector('.file');
+    const result = root.querySelector('.result');
+    const canvas = root.querySelector('.preview');
+    const checks = root.querySelector('.checks');
+    const dl     = root.querySelector('.download');
+    const err    = root.querySelector('.err');
+
+    const toBlob = (q) => new Promise((res) => canvas.toBlob(res, 'image/jpeg', q));
+
+    input.addEventListener('change', async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+
+      err.hidden = true;
+      result.hidden = true;
+
+      try {
+        const bitmap = await createImageBitmap(file);
+
+        canvas.width = W;
+        canvas.height = H;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, W, H);
+
+        // cover-fit and centre, so the face stays centred
+        const scale = Math.max(W / bitmap.width, H / bitmap.height);
+        const dw = bitmap.width * scale;
+        const dh = bitmap.height * scale;
+        ctx.drawImage(bitmap, (W - dw) / 2, (H - dh) / 2, dw, dh);
+
+        // binary search the highest quality that stays under maxKB
+        let lo = 0.05, hi = 1, best = null;
+        for (let i = 0; i < 12; i++) {
+          const q = (lo + hi) / 2;
+          const blob = await toBlob(q);
+          const kb = blob.size / 1024;
+          if (kb > MAX) hi = q; else { best = { blob, kb }; lo = q; }
+        }
+        if (!best) {
+          const blob = await toBlob(0.05);
+          best = { blob, kb: blob.size / 1024 };
+        }
+
+        const kb = best.kb;
+        const sizeOk = kb <= MAX && kb >= MIN;
+
+        checks.innerHTML = '';
+        const add = (ok, text) => {
+          const li = document.createElement('li');
+          li.className = ok ? 'ok' : 'bad';
+          li.textContent = text;
+          checks.appendChild(li);
+        };
+        add(true, `Dimensions: ${W} × ${H} px`);
+        add(sizeOk, `File size: ${kb.toFixed(1)} KB (needs ${MIN}–${MAX} KB)`);
+        add(true, 'Format: JPG');
+
+        if (kb < MIN) {
+          add(false, 'Below the minimum — try a sharper, more detailed original');
+        }
+
+        if (dl.href.startsWith('blob:')) URL.revokeObjectURL(dl.href);
+        dl.href = URL.createObjectURL(best.blob);
+        dl.download = `${root.dataset.w}x${root.dataset.h}-${Math.round(kb)}kb.jpg`;
+
+        result.hidden = false;
+      } catch (ex) {
+        err.textContent = 'Could not read that image. Try a JPG or PNG file.';
+        err.hidden = false;
+      }
+    });
+  }
+
+  document.querySelectorAll('.resizer').forEach(initResizer);
+</script>

@@ -1,4 +1,5 @@
 ---
+import ImageResizer from '../../components/ImageResizer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import exams from '../../data/exams.json';
 
@@ -27,7 +28,13 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', { day:'
   </table>
   <ul>{exam.photo.notes.map((n) => <li>{n}</li>)}</ul>
 
-  <div class="tool-slot">Photo resizer will go here</div>
+ <ImageResizer
+  label="Photo"
+  widthPx={exam.photo.widthPx}
+  heightPx={exam.photo.heightPx}
+  minKB={exam.photo.minKB}
+  maxKB={exam.photo.maxKB}
+/>
 
   <h2>Signature requirements</h2>
   <table>
@@ -38,7 +45,13 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', { day:'
   </table>
   <ul>{exam.signature.notes.map((n) => <li>{n}</li>)}</ul>
 
-  <div class="tool-slot">Signature resizer will go here</div>
+<ImageResizer
+  label="Signature"
+  widthPx={exam.signature.widthPx}
+  heightPx={exam.signature.heightPx}
+  minKB={exam.signature.minKB}
+  maxKB={exam.signature.maxKB}
+/>
 
   <h2>Official source</h2>
   <p>Always confirm against the official notification: <a href={exam.officialUrl} rel="nofollow noopener" target="_blank">{exam.body} official website</a></p>
