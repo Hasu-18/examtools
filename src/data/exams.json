@@ -8,6 +8,7 @@
     "year": 2026,
     "officialUrl": "https://ssc.gov.in",
     "lastVerified": "2026-07-31",
+    "captureMode": "upload",
     "photo": {
       "widthPx": 200,
       "heightPx": 230,
@@ -45,6 +46,7 @@
     "year": 2026,
     "officialUrl": "https://wbpsc.gov.in",
     "lastVerified": "2026-07-31",
+    "captureMode": "upload",
     "photo": {
       "widthPx": 150,
       "heightPx": 200,

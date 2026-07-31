@@ -1,6 +1,6 @@
 ---
-import ImageResizer from '../../components/ImageResizer.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImageResizer from '../../components/ImageResizer.astro';
 import exams from '../../data/exams.json';
 
 export function getStaticPaths() {
@@ -12,47 +12,168 @@ export function getStaticPaths() {
 
 const { exam } = Astro.props;
 const title = `${exam.name} Photo & Signature Size ${exam.year} — Exact Requirements`;
-const description = `${exam.name} ${exam.year} photo size: ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and full document requirements.`;
-const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+const description = `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`;
+
+const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+
+const related = exams.filter((e) => e.slug !== exam.slug).slice(0, 6);
+const pageUrl = Astro.url.href;
 ---
 <BaseLayout title={title} description={description}>
-  <h1>{exam.name} Photo & Signature Size {exam.year}</h1>
-  <p class="verified">Last verified {verified} · {exam.fullName}</p>
 
-  <h2>Photo requirements</h2>
-  <table>
-    <tr><th>Dimensions</th><td>{exam.photo.widthPx} × {exam.photo.heightPx} pixels</td></tr>
-    <tr><th>File size</th><td>{exam.photo.minKB} KB – {exam.photo.maxKB} KB</td></tr>
-    <tr><th>Format</th><td>{exam.photo.format.toUpperCase()}</td></tr>
-    <tr><th>Background</th><td>{exam.photo.background}</td></tr>
-  </table>
-  <ul>{exam.photo.notes.map((n) => <li>{n}</li>)}</ul>
+  <nav class="mb-4 text-xs text-muted">
+    <a href="/" class="hover:text-navy-700">Home</a>
+    <span class="mx-1">/</span>
+    <a href="/exams/" class="hover:text-navy-700">Exams</a>
+    <span class="mx-1">/</span>
+    <span class="text-ink">{exam.name}</span>
+  </nav>
 
- <ImageResizer
-  label="Photo"
-  widthPx={exam.photo.widthPx}
-  heightPx={exam.photo.heightPx}
-  minKB={exam.photo.minKB}
-  maxKB={exam.photo.maxKB}
-/>
+  <h1 class="text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">
+    {exam.name} Photo &amp; Signature Size {exam.year}
+  </h1>
+  <p class="mt-1.5 text-sm text-muted">{exam.fullName}</p>
 
-  <h2>Signature requirements</h2>
-  <table>
-    <tr><th>Dimensions</th><td>{exam.signature.widthPx} × {exam.signature.heightPx} pixels</td></tr>
-    <tr><th>File size</th><td>{exam.signature.minKB} KB – {exam.signature.maxKB} KB</td></tr>
-    <tr><th>Format</th><td>{exam.signature.format.toUpperCase()}</td></tr>
-    <tr><th>Ink colour</th><td>{exam.signature.ink}</td></tr>
-  </table>
-  <ul>{exam.signature.notes.map((n) => <li>{n}</li>)}</ul>
+  <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+    <span class="rounded-full bg-pass-bg px-2.5 py-1 font-semibold text-pass">
+      ✓ Verified {verified}
+    </span>
+    <a href={exam.officialUrl} rel="nofollow noopener" target="_blank"
+       class="rounded-full bg-navy-100 px-2.5 py-1 font-semibold text-navy-700 hover:bg-navy-600 hover:text-white">
+      Official {exam.body} site ↗
+    </a>
+  </div>
 
-<ImageResizer
-  label="Signature"
-  widthPx={exam.signature.widthPx}
-  heightPx={exam.signature.heightPx}
-  minKB={exam.signature.minKB}
-  maxKB={exam.signature.maxKB}
-/>
+  {exam.captureMode === 'live' && (
+    <div class="mt-4 rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
+      <strong class="text-navy-900">Live photo capture required.</strong>
+      <span class="text-ink">
+        This exam does not accept a saved photo file. You must capture your
+        photo live through the official portal or app while applying.
+      </span>
+    </div>
+  )}
 
-  <h2>Official source</h2>
-  <p>Always confirm against the official notification: <a href={exam.officialUrl} rel="nofollow noopener" target="_blank">{exam.body} official website</a></p>
+  <section class="mt-8">
+    <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
+    <table class="w-full border-collapse text-sm">
+      <tbody>
+        <tr class="border-b border-line">
+          <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+          <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">File size</th>
+          <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">Format</th>
+          <td class="py-2 font-semibold">{exam.photo.format.toUpperCase()}</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">Background</th>
+          <td class="py-2 font-semibold">{exam.photo.background}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="mt-3 space-y-1 text-sm text-ink">
+      {exam.photo.notes.map((n) => (
+        <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+      ))}
+    </ul>
+
+    <div class="mt-5">
+      <ImageResizer label="Photo" fileName="photo"
+        widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
+        minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="mb-3 text-lg font-bold text-navy-900">Signature requirements</h2>
+    <table class="w-full border-collapse text-sm">
+      <tbody>
+        <tr class="border-b border-line">
+          <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+          <td class="py-2 font-semibold">{exam.signature.widthPx} × {exam.signature.heightPx} px</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">File size</th>
+          <td class="py-2 font-semibold">{exam.signature.minKB} – {exam.signature.maxKB} KB</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">Ink colour</th>
+          <td class="py-2 font-semibold">{exam.signature.ink}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="mt-3 space-y-1 text-sm text-ink">
+      {exam.signature.notes.map((n) => (
+        <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+      ))}
+    </ul>
+
+    <div class="mt-5">
+      <ImageResizer label="Signature" fileName="signature"
+        widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
+        minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
+    </div>
+  </section>
+
+  <section class="mt-10 rounded-lg bg-surface p-5">
+    <h2 class="mb-2 text-lg font-bold text-navy-900">About {exam.name} {exam.year}</h2>
+    <p class="text-sm text-muted">
+      Full notification details, important dates, vacancy breakdown and application
+      steps for {exam.fullName}.
+    </p>
+    <a href={`/blog/${exam.slug}-${exam.year}-notification/`}
+       class="mt-3 inline-block rounded-md bg-navy-800 px-4 py-2 text-sm font-semibold text-white hover:bg-navy-700">
+      Read the full notification guide →
+    </a>
+  </section>
+
+  <section class="mt-10 border-t border-line pt-6">
+    <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this page</h2>
+    <div class="flex flex-wrap gap-2 text-sm">
+      <a target="_blank" rel="noopener"
+         href={`https://wa.me/?text=${encodeURIComponent(exam.name + ' photo & signature size — ' + pageUrl)}`}
+         class="rounded-md bg-[#25D366] px-4 py-2 font-semibold text-white">WhatsApp</a>
+      <a target="_blank" rel="noopener"
+         href={`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}`}
+         class="rounded-md bg-[#0088cc] px-4 py-2 font-semibold text-white">Telegram</a>
+      <button type="button" data-copy={pageUrl}
+         class="copy-link rounded-md border border-line px-4 py-2 font-semibold text-navy-700 hover:bg-surface">
+        Copy link
+      </button>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="mb-3 text-lg font-bold text-navy-900">Other exams</h2>
+    <div class="grid gap-2 sm:grid-cols-2">
+      {related.map((e) => (
+        <a href={`/exams/${e.slug}/`}
+           class="rounded-md border border-line px-3 py-2.5 text-sm hover:border-navy-600 hover:bg-surface">
+          <span class="font-semibold text-navy-800">{e.name}</span>
+          <span class="block text-xs text-muted">
+            {e.photo.widthPx}×{e.photo.heightPx} px · {e.photo.minKB}–{e.photo.maxKB} KB
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
 </BaseLayout>
+
+<script>
+  document.querySelectorAll('.copy-link').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      const original = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  });
+</script>
