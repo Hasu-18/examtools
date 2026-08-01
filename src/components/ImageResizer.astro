@@ -16,7 +16,7 @@ const {
   <div class="border-b border-line bg-navy-100 px-4 py-3">
     <h3 class="text-base font-bold text-navy-900">{label} resizer</h3>
     <p class="rz-target mt-0.5 text-sm text-muted">
-      {widthPx} × {heightPx} px · {minKB}–{maxKB} KB · JPG
+      {widthPx} × {heightPx} px · {minKB} to {maxKB} KB · JPG
     </p>
   </div>
 
@@ -92,8 +92,13 @@ const {
 
     <div class="rz-edit" hidden>
       <p class="mb-2 text-sm font-semibold text-navy-900">Drag to position, then resize</p>
-      <div class="flex justify-center rounded bg-surface p-3">
+      <div class="relative flex justify-center rounded bg-surface p-3">
         <canvas class="rz-stage touch-none cursor-move rounded border border-line" style="max-width:100%;height:auto;"></canvas>
+        <div class="rz-hint pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2">
+          <div class="rz-hint-arrow flex items-center gap-2 rounded-full bg-navy-900/85 px-4 py-2 text-xs font-bold text-white">
+            <span>←</span><span>Drag to move</span><span>→</span>
+          </div>
+        </div>
       </div>
 
       <div class="mt-4 space-y-3 text-sm">
@@ -178,7 +183,7 @@ const {
     setStage();
 
     function updateTarget() {
-      target.textContent = W + ' × ' + H + ' px · ' + MIN + '–' + MAX + ' KB · JPG';
+      target.textContent = W + ' × ' + H + ' px · ' + MIN + ' to ' + MAX + ' KB · JPG';
     }
 
     if (toggle) {
@@ -279,9 +284,11 @@ const {
     });
 
     let drag = false, lx = 0, ly = 0;
+    const hint = q('.rz-hint');
     stage.addEventListener('pointerdown', (e) => {
       drag = true; stage.setPointerCapture(e.pointerId);
       lx = e.clientX; ly = e.clientY;
+      if (hint) hint.classList.add('gone');
     });
     stage.addEventListener('pointermove', (e) => {
       if (!drag || !bmp) return;
@@ -369,4 +376,15 @@ const {
   }
 
   document.querySelectorAll('.rz').forEach(initRz);
+</script>
+
+<style>
+  @keyframes rzSlide {
+    0%, 100% { transform: translateX(-14px); opacity: .85; }
+    50% { transform: translateX(14px); opacity: 1; }
+  }
+  .rz-hint-arrow { animation: rzSlide 1.6s ease-in-out infinite; }
+  .rz-hint { transition: opacity .4s; }
+  .rz-hint.gone { opacity: 0; }
+</style>
 </script>

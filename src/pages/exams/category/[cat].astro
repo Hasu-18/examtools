@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import exams from '../../../data/exams.json';
+
+const labels = {
+  central: 'SSC & Central',
+  railway: 'Railway',
+  banking: 'Banking',
+  state: 'State PSC',
+  police: 'Police & Defence'
+};
+
+export function getStaticPaths() {
+  const keys = ['central', 'railway', 'banking', 'state', 'police'];
+  return keys.map((cat) => ({ params: { cat } }));
+}
+
+const { cat } = Astro.params;
+const label = labels[cat] || cat;
+const items = exams.filter((e) => e.category === cat);
+---
+<BaseLayout
+  title={`All ${label} Exams, Photo & Signature Size | FormSetu`}
+  description={`Photo and signature requirements for every ${label} exam, with a free resizer tool.`}>
+
+  <nav class="mb-4 text-xs text-muted">
+    <a href="/" class="hover:text-navy-700">Home</a>
+    <span class="mx-1">/</span>
+    <a href="/exams/" class="hover:text-navy-700">Exams</a>
+    <span class="mx-1">/</span>
+    <span class="text-ink">{label}</span>
+  </nav>
+
+  <h1 class="text-2xl font-bold text-navy-900 sm:text-3xl">All {label} exams</h1>
+  <p class="mt-2 text-sm text-muted">
+    {items.length} {items.length === 1 ? 'exam' : 'exams'} with verified photo and
+    signature requirements.
+  </p>
+
+  {items.length > 0 ? (
+    <div class="mt-6 grid grid-cols-2 gap-3">
+      {items.map((e) => (
+        <a href={"/exams/" + e.slug + "/"}
+           class="rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100 active:scale-[0.98]">
+          <span class="block text-base font-bold leading-tight text-navy-900">{e.name}</span>
+          <span class="mt-1.5 block text-xs text-muted">Resize photo &amp; sign</span>
+          <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <p class="mt-6 text-sm text-muted">No exams added in this category yet.</p>
+  )}
+
+  <section class="mt-10 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
+    <p class="text-sm font-bold text-navy-900">Exam not listed?</p>
+    <p class="mt-1 text-sm text-ink">
+      Use the custom resizer and enter the size from your own notification.
+    </p>
+    <a href="/tools/photo-resizer/" class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+      Open custom resizer →
+    </a>
+  </section>
+
+  <a href="/exams/" class="mt-6 inline-block text-sm font-bold text-navy-700 hover:text-amber-600">← All categories</a>
+
+</BaseLayout>
