@@ -22,8 +22,8 @@ const {
 
   {editable && (
     <div class="border-b border-line bg-surface px-4 py-3">
-      <button type="button" class="rz-toggle text-sm font-semibold text-navy-700 underline">
-        Change size
+      <button type="button" class="rz-toggle w-full rounded-md border-2 border-amber-500 bg-white px-4 py-2.5 text-sm font-bold text-amber-600 hover:bg-amber-100">
+        ⚙ Change size or units
       </button>
 
       <div class="rz-size mt-3" hidden={!openByDefault}>
@@ -87,7 +87,7 @@ const {
         <span class="mt-1 block text-xs text-navy-700">JPG, PNG or HEIC from your phone</span>
         <input type="file" accept="image/*" class="rz-file sr-only" />
       </label>
-      <p class="mt-3 text-center text-xs text-muted">Processed on your device — nothing is uploaded</p>
+      <p class="mt-3 text-center text-xs text-muted">Processed on your device, nothing is uploaded</p>
     </div>
 
     <div class="rz-edit" hidden>
@@ -336,7 +336,7 @@ const {
 
       if (ok) {
         verdict.className = 'rz-verdict mt-4 rounded bg-pass-bg px-3 py-3 text-sm font-semibold text-pass';
-        verdict.textContent = '✓ Perfect match — meets the size you set.';
+        verdict.textContent = '✓ Perfect match, meets the size you set.';
       } else if (kb < MIN) {
         verdict.className = 'rz-verdict mt-4 rounded bg-amber-100 px-3 py-3 text-sm';
         verdict.textContent = 'Size is ' + kb.toFixed(0) + ' KB, below the ' + MIN + ' KB minimum. Most portals still accept this, but a sharper original would push it higher.';

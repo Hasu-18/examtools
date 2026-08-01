@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import exams from '../data/exams.json';
 import notifications from '../data/notifications.json';
 
-// Update this from Cloudflare Analytics once you hit a real milestone.
 const RESIZES_DONE = null;
 
 const categories = [
@@ -14,10 +13,7 @@ const categories = [
   { key: 'police', label: 'Police & Defence' }
 ];
 
-const latestVerified = exams
-  .map((e) => e.lastVerified)
-  .sort()
-  .reverse()[0];
+const latestVerified = exams.map((e) => e.lastVerified).sort().reverse()[0];
 
 const verifiedLabel = new Date(latestVerified).toLocaleDateString('en-IN', {
   day: 'numeric', month: 'short', year: 'numeric'
@@ -26,7 +22,7 @@ const verifiedLabel = new Date(latestVerified).toLocaleDateString('en-IN', {
 const reasons = [
   {
     title: 'Nothing leaves your phone',
-    body: 'Your photo is processed entirely in your browser. We never receive it, store it, or see it — unlike tools that upload to a server first.'
+    body: 'Your photo is processed entirely in your browser. We never receive it, store it, or see it, unlike tools that upload to a server first.'
   },
   {
     title: 'Exact pixels and exact KB, together',
@@ -42,15 +38,15 @@ const reasons = [
   }
 ];
 ---
-<BaseLayout title="FormSetu — Photo & Signature Size for Indian Government Exam Forms">
+<BaseLayout title="FormSetu, Photo & Signature Size for Indian Government Exam Forms">
 
   <section class="pb-7">
     <h1 class="text-3xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl">
       Get your form photo right<br />the first time.
     </h1>
     <p class="mt-4 text-base text-muted sm:text-lg">
-      Exact photo and signature requirements for Indian government exams —
-      with a free tool that resizes your file to match. No signup, no upload.
+      Exact photo and signature requirements for Indian government exams, with a
+      free tool that resizes your file to match. No signup, no upload.
     </p>
   </section>
 
@@ -81,7 +77,7 @@ const reasons = [
     <input
       type="search"
       id="examSearch"
-      placeholder="Search your exam — SSC CGL, RRB, IBPS..."
+      placeholder="Search your exam, SSC CGL, RRB, IBPS..."
       class="w-full rounded-md border border-line px-4 py-3 text-base focus:border-navy-600 focus:outline-none"
     />
 
@@ -92,15 +88,18 @@ const reasons = [
       return items.length > 0 && (
         <div class="mb-6 exam-group">
           <h3 class="mb-2 text-xs font-bold uppercase tracking-wide text-navy-700">{c.label}</h3>
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 gap-3">
             {items.map((e) => (
               <a href={"/exams/" + e.slug + "/"}
                  data-name={e.name.toLowerCase()}
-                 class="exam-card rounded-md border border-line px-3 py-3 hover:border-navy-600 hover:bg-surface">
-                <span class="block text-sm font-bold leading-tight text-navy-800">{e.name}</span>
-                <span class="mt-1 block text-xs leading-snug text-muted">
-                  {e.photo ? e.photo.widthPx + '×' + e.photo.heightPx + ' px' : 'Live photo capture'}
+                 class="exam-card rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-navy-600 hover:bg-navy-100 active:scale-[0.98]">
+                <span class="block text-base font-bold leading-tight text-navy-900">{e.name}</span>
+                <span class="mt-1.5 block text-xs leading-snug text-muted">
+                  {e.photo
+                    ? e.photo.widthPx + '×' + e.photo.heightPx + ' px'
+                    : e.combined ? 'Combined image' : 'Live photo capture'}
                 </span>
+                <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
               </a>
             ))}
           </div>
@@ -109,8 +108,19 @@ const reasons = [
     })}
 
     <p id="noResults" class="text-sm text-muted" hidden>
-      No exam matched. We add new exams every week — tell us which one you need.
+      No exam matched. We add new exams every week, tell us which one you need.
     </p>
+
+    <div class="mt-6 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
+      <p class="text-sm font-bold text-navy-900">Exam not listed?</p>
+      <p class="mt-1 text-sm text-ink">
+        Use the custom resizer and enter the size from your own notification. It
+        works for any exam or application.
+      </p>
+      <a href="/tools/photo-resizer/" class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+        Open custom resizer →
+      </a>
+    </div>
   </section>
 
   {notifications.length > 0 && (
@@ -133,7 +143,7 @@ const reasons = [
     <h2 class="mb-4 text-xl font-bold text-navy-900">Why FormSetu</h2>
     <div class="space-y-3">
       {reasons.map((r) => (
-        <div class="rounded-lg border border-line border-l-4 border-l-amber-500 bg-surface px-4 py-4">
+        <div class="rounded-lg border border-line bg-surface px-4 py-4">
           <h3 class="text-base font-bold text-navy-900">{r.title}</h3>
           <p class="mt-1.5 text-sm leading-relaxed text-muted">{r.body}</p>
         </div>

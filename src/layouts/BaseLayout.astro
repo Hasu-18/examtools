@@ -32,8 +32,8 @@ const byCategory = categories.map((c) => ({
 <body class="bg-white text-ink">
 
   <header class="bg-navy-900 text-white">
-  <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-      <a href="/" class="text-lg font-bold text-white">FormSetu</a>
+    <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
+      <a href="/" class="text-lg font-bold text-white">Form<span class="text-amber-500">Setu</span></a>
       <nav class="flex gap-4 text-sm">
         <a href="/exams/" class="text-white">Exams</a>
         <a href="/blog/" class="text-white">Notifications</a>
@@ -56,23 +56,30 @@ const byCategory = categories.map((c) => ({
             <h3 class="mb-2 text-xs font-bold uppercase text-navy-700">{c.label}</h3>
             <ul class="space-y-1 text-sm">
               {c.items.map((e) => (
-                <li><a href={"/exams/" + e.slug + "/"} class="text-muted">{e.name}</a></li>
+                <li><a href={"/exams/" + e.slug + "/"} class="text-muted hover:text-navy-700">{e.name}</a></li>
               ))}
             </ul>
           </div>
         ))}
       </div>
 
-      <div class="mt-8 border-t border-line pt-6 text-sm text-muted">
-        <p class="mb-3">FormSetu is an independent website. We are not affiliated with any government body or examination authority. Always verify requirements against the official notification before applying.</p>
-        <p class="flex flex-wrap gap-4">
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
-          <a href="/disclaimer/">Disclaimer</a>
+      <div class="mt-8 border-t border-line pt-6">
+        <h3 class="mb-3 text-xs font-bold uppercase text-navy-700">Site information</h3>
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-5">
+          <a href="/about/" class="rounded-md border border-line bg-white px-3 py-2.5 text-center text-sm font-semibold text-navy-800 hover:border-navy-600 hover:bg-navy-100">About</a>
+          <a href="/contact/" class="rounded-md border border-line bg-white px-3 py-2.5 text-center text-sm font-semibold text-navy-800 hover:border-navy-600 hover:bg-navy-100">Contact</a>
+          <a href="/privacy/" class="rounded-md border border-line bg-white px-3 py-2.5 text-center text-sm font-semibold text-navy-800 hover:border-navy-600 hover:bg-navy-100">Privacy</a>
+          <a href="/terms/" class="rounded-md border border-line bg-white px-3 py-2.5 text-center text-sm font-semibold text-navy-800 hover:border-navy-600 hover:bg-navy-100">Terms</a>
+          <a href="/disclaimer/" class="rounded-md border border-line bg-white px-3 py-2.5 text-center text-sm font-semibold text-navy-800 hover:border-navy-600 hover:bg-navy-100">Disclaimer</a>
+        </div>
+
+        <p class="mt-6 text-sm text-muted">
+          <strong class="text-ink">FormSetu is an independent website.</strong>
+          We are not affiliated with, endorsed by, or connected to any government
+          body or examination authority. Always verify requirements against the
+          official notification before applying.
         </p>
-        <p class="mt-4 text-xs">© 2026 FormSetu</p>
+        <p class="mt-4 text-xs text-muted">© 2026 FormSetu</p>
       </div>
     </div>
   </footer>

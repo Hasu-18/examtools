@@ -1,0 +1,347 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Exam data builder — FormSetu admin</title>
+  <style>
+    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --pass:#15803d; --surface:#f8fafc; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:#fff; line-height:1.5; }
+    .wrap { max-width: 900px; margin:0 auto; padding:1.5rem 1rem 4rem; }
+    h1 { font-size:1.5rem; margin:0 0 .25rem; color:var(--navy); }
+    h2 { font-size:1.05rem; margin:1.75rem 0 .5rem; color:var(--navy); }
+    p.sub { color:var(--muted); font-size:.9rem; margin:0 0 1.25rem; }
+    fieldset { border:1px solid var(--line); border-radius:8px; padding:1rem; margin:0 0 1rem; }
+    legend { font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:var(--navy); padding:0 .4rem; }
+    label { display:block; font-size:.8rem; color:var(--muted); margin-bottom:.65rem; }
+    label span { display:block; margin-bottom:.2rem; }
+    input, select, textarea { width:100%; border:1px solid var(--line); border-radius:6px; padding:.5rem .6rem; font-size:.9rem; font-family:inherit; }
+    textarea { min-height:70px; resize:vertical; }
+    .row { display:grid; gap:.75rem; }
+    .row-2 { grid-template-columns:1fr 1fr; }
+    .row-3 { grid-template-columns:1fr 1fr 1fr; }
+    .row-4 { grid-template-columns:1fr 1fr 1fr 1fr; }
+    button { border:0; border-radius:6px; padding:.7rem 1.1rem; font-size:.9rem; font-weight:700; cursor:pointer; }
+    .primary { background:var(--amber); color:#fff; }
+    .dark { background:var(--navy); color:#fff; }
+    .ghost { background:#fff; color:var(--navy); border:1px solid var(--line); }
+    .bar { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+    .note { background:#fef3c7; border-left:4px solid var(--amber); padding:.7rem .9rem; border-radius:6px; font-size:.85rem; margin:1rem 0; }
+    .ok { background:#ecfdf5; border-left-color:var(--pass); }
+    #list { list-style:none; padding:0; margin:.5rem 0 0; }
+    #list li { display:flex; justify-content:space-between; align-items:center; border:1px solid var(--line); border-radius:6px; padding:.5rem .7rem; margin-bottom:.4rem; font-size:.85rem; }
+    #list button { background:none; color:#b91c1c; font-size:.8rem; padding:.2rem .4rem; }
+    #out { width:100%; min-height:220px; font-family:ui-monospace, Consolas, monospace; font-size:.75rem; }
+    .hint { font-size:.75rem; color:var(--muted); margin:.25rem 0 0; }
+    @media (max-width:640px){ .row-2,.row-3,.row-4 { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Exam data builder</h1>
+  <p class="sub">Fill the form, add each exam, then download the finished exams.json and replace the file in src/data/.</p>
+
+  <div class="note">
+    Every number here must come from an official notification you have actually opened.
+    Leave a field blank if the notification does not state it — blank becomes null and that section disappears from the page.
+  </div>
+
+  <h2>Step 1 — Load what you already have</h2>
+  <label>
+    <span>Paste your current src/data/exams.json (or leave empty to start fresh)</span>
+    <textarea id="existing" placeholder="[ ... ]"></textarea>
+  </label>
+  <button class="ghost" id="loadBtn">Load existing exams</button>
+  <p class="hint" id="loadMsg"></p>
+
+  <h2>Step 2 — Add an exam</h2>
+
+  <fieldset>
+    <legend>Basics</legend>
+    <div class="row row-2">
+      <label><span>Exam name (shown on the page)</span><input id="f_name" placeholder="SSC CHSL" /></label>
+      <label><span>Slug (URL)</span><input id="f_slug" placeholder="ssc-chsl" /></label>
+    </div>
+    <label><span>Full name</span><input id="f_full" placeholder="Staff Selection Commission Combined Higher Secondary Level" /></label>
+    <div class="row row-4">
+      <label><span>Body</span><input id="f_body" placeholder="SSC" /></label>
+      <label><span>Category</span>
+        <select id="f_cat">
+          <option value="central">central</option>
+          <option value="railway">railway</option>
+          <option value="banking">banking</option>
+          <option value="state">state</option>
+          <option value="police">police</option>
+        </select>
+      </label>
+      <label><span>Year</span><input id="f_year" type="number" value="2026" /></label>
+      <label><span>Verified on</span><input id="f_ver" type="date" /></label>
+    </div>
+    <label><span>Official URL</span><input id="f_url" placeholder="https://ssc.gov.in" /></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Upload pattern</legend>
+    <label><span>What does this exam ask for?</span>
+      <select id="f_pattern">
+        <option value="upload">Upload photo and signature separately</option>
+        <option value="live">Photo captured live in the portal + upload signature</option>
+        <option value="combined">One combined image (photo above, signature below)</option>
+        <option value="combined_sign">Combined image AND a separate signature</option>
+      </select>
+    </label>
+  </fieldset>
+
+  <fieldset id="fs_live" hidden>
+    <legend>Live capture guidance</legend>
+    <label><span>One instruction per line</span><textarea id="f_live">Use a well-lit place with a plain background
+Keep the camera at eye level and look straight ahead
+No cap, mask or spectacles</textarea></label>
+  </fieldset>
+
+  <fieldset id="fs_photo">
+    <legend>Photo</legend>
+    <div class="row row-4">
+      <label><span>Width</span><input id="p_w" type="number" step="any" /></label>
+      <label><span>Height</span><input id="p_h" type="number" step="any" /></label>
+      <label><span>Unit</span>
+        <select id="p_unit"><option>px</option><option>cm</option><option>mm</option><option>in</option></select>
+      </label>
+      <label><span>DPI (for cm/mm/in)</span><input id="p_dpi" type="number" value="300" /></label>
+    </div>
+    <div class="row row-3">
+      <label><span>Min KB</span><input id="p_min" type="number" /></label>
+      <label><span>Max KB</span><input id="p_max" type="number" /></label>
+      <label><span>Format</span><input id="p_fmt" value="jpg" /></label>
+    </div>
+    <label><span>Background</span><input id="p_bg" placeholder="white or light coloured" /></label>
+    <label><span>Notes — one per line</span><textarea id="p_notes"></textarea></label>
+  </fieldset>
+
+  <fieldset id="fs_combined" hidden>
+    <legend>Combined image</legend>
+    <div class="row row-4">
+      <label><span>Width</span><input id="c_w" type="number" step="any" /></label>
+      <label><span>Height</span><input id="c_h" type="number" step="any" /></label>
+      <label><span>Unit</span>
+        <select id="c_unit"><option>px</option><option>cm</option><option>mm</option><option>in</option></select>
+      </label>
+      <label><span>DPI</span><input id="c_dpi" type="number" value="300" /></label>
+    </div>
+    <div class="row row-4">
+      <label><span>Min KB</span><input id="c_min" type="number" /></label>
+      <label><span>Max KB</span><input id="c_max" type="number" /></label>
+      <label><span>Format</span><input id="c_fmt" value="jpg" /></label>
+      <label><span>Photo share (0.72 = 72%)</span><input id="c_ratio" type="number" step="0.01" value="0.72" /></label>
+    </div>
+    <label><span>Notes — one per line</span><textarea id="c_notes">Photograph on top, signature directly below</textarea></label>
+  </fieldset>
+
+  <fieldset id="fs_sign">
+    <legend>Signature</legend>
+    <div class="row row-4">
+      <label><span>Width</span><input id="s_w" type="number" step="any" /></label>
+      <label><span>Height</span><input id="s_h" type="number" step="any" /></label>
+      <label><span>Unit</span>
+        <select id="s_unit"><option>px</option><option>cm</option><option>mm</option><option>in</option></select>
+      </label>
+      <label><span>DPI</span><input id="s_dpi" type="number" value="300" /></label>
+    </div>
+    <div class="row row-3">
+      <label><span>Min KB</span><input id="s_min" type="number" /></label>
+      <label><span>Max KB</span><input id="s_max" type="number" /></label>
+      <label><span>Format</span><input id="s_fmt" value="jpg" /></label>
+    </div>
+    <label><span>Ink colour</span><input id="s_ink" placeholder="black" /></label>
+    <label><span>Notes — one per line</span><textarea id="s_notes"></textarea></label>
+  </fieldset>
+
+  <div class="bar">
+    <button class="primary" id="addBtn">Add this exam</button>
+    <button class="ghost" id="clearFormBtn">Clear form</button>
+  </div>
+  <p class="hint" id="addMsg"></p>
+
+  <h2>Step 3 — Your exams (<span id="count">0</span>)</h2>
+  <ul id="list"></ul>
+
+  <h2>Step 4 — Take the file</h2>
+  <textarea id="out" readonly></textarea>
+  <div class="bar">
+    <button class="dark" id="copyBtn">Copy JSON</button>
+    <button class="dark" id="dlBtn">Download exams.json</button>
+  </div>
+  <p class="hint">Replace src/data/exams.json with this, then commit and push.</p>
+
+</div>
+
+<script>
+  var exams = [];
+  var g = function (id) { return document.getElementById(id); };
+
+  g('f_ver').value = new Date().toISOString().slice(0, 10);
+
+  function toPx(value, unit, dpi) {
+    if (!value) return null;
+    var v = Number(value);
+    var d = Number(dpi) || 300;
+    if (unit === 'cm') return Math.round(v / 2.54 * d);
+    if (unit === 'mm') return Math.round(v / 25.4 * d);
+    if (unit === 'in') return Math.round(v * d);
+    return Math.round(v);
+  }
+
+  function lines(id) {
+    var raw = g(id).value.trim();
+    if (!raw) return [];
+    return raw.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+
+  function num(id) {
+    var v = g(id).value;
+    return v === '' ? null : Number(v);
+  }
+
+  function txt(id) {
+    var v = g(id).value.trim();
+    return v === '' ? null : v;
+  }
+
+  function block(prefix, kind) {
+    var w = toPx(g(prefix + '_w').value, g(prefix + '_unit').value, g(prefix + '_dpi').value);
+    var h = toPx(g(prefix + '_h').value, g(prefix + '_unit').value, g(prefix + '_dpi').value);
+    if (!w || !h) return null;
+
+    var o = {
+      widthPx: w,
+      heightPx: h,
+      minKB: num(prefix + '_min'),
+      maxKB: num(prefix + '_max'),
+      format: txt(prefix + '_fmt') || 'jpg'
+    };
+
+    var unit = g(prefix + '_unit').value;
+    if (unit === 'cm') {
+      o.widthCm = Number(g(prefix + '_w').value);
+      o.heightCm = Number(g(prefix + '_h').value);
+    }
+
+    if (kind === 'photo') o.background = txt(prefix + '_bg') || '';
+    if (kind === 'sign') o.ink = txt(prefix + '_ink') || 'not specified';
+    if (kind === 'combined') o.photoRatio = Number(g('c_ratio').value) || 0.72;
+
+    o.notes = lines(prefix + '_notes');
+    return o;
+  }
+
+  function syncPattern() {
+    var p = g('f_pattern').value;
+    g('fs_live').hidden = p !== 'live';
+    g('fs_photo').hidden = p !== 'upload';
+    g('fs_combined').hidden = p !== 'combined' && p !== 'combined_sign';
+    g('fs_sign').hidden = p === 'combined';
+  }
+  g('f_pattern').addEventListener('change', syncPattern);
+  syncPattern();
+
+  function render() {
+    g('count').textContent = String(exams.length);
+    var ul = g('list');
+    ul.innerHTML = '';
+    exams.forEach(function (e, i) {
+      var li = document.createElement('li');
+      var label = document.createElement('span');
+      label.textContent = e.name + '  ·  /exams/' + e.slug + '/';
+      var del = document.createElement('button');
+      del.textContent = 'Remove';
+      del.addEventListener('click', function () {
+        exams.splice(i, 1);
+        render();
+      });
+      li.appendChild(label);
+      li.appendChild(del);
+      ul.appendChild(li);
+    });
+    g('out').value = JSON.stringify(exams, null, 2);
+  }
+
+  g('loadBtn').addEventListener('click', function () {
+    var raw = g('existing').value.trim();
+    if (!raw) { g('loadMsg').textContent = 'Nothing pasted — starting fresh.'; return; }
+    try {
+      var parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) throw new Error('not an array');
+      exams = parsed;
+      g('loadMsg').textContent = 'Loaded ' + exams.length + ' exams.';
+      render();
+    } catch (err) {
+      g('loadMsg').textContent = 'That is not valid JSON. Check for a missing or extra comma.';
+    }
+  });
+
+  g('addBtn').addEventListener('click', function () {
+    var name = txt('f_name');
+    var slug = txt('f_slug');
+    if (!name || !slug) { g('addMsg').textContent = 'Name and slug are required.'; return; }
+
+    var p = g('f_pattern').value;
+
+    var exam = {
+      slug: slug.toLowerCase().replace(/\s+/g, '-'),
+      name: name,
+      fullName: txt('f_full') || '',
+      body: txt('f_body') || '',
+      category: g('f_cat').value,
+      year: Number(g('f_year').value) || 2026,
+      officialUrl: txt('f_url') || '',
+      lastVerified: g('f_ver').value,
+      captureMode: p === 'live' ? 'live' : 'upload',
+      photo: p === 'upload' ? block('p', 'photo') : null,
+      combined: (p === 'combined' || p === 'combined_sign') ? block('c', 'combined') : null,
+      signature: p === 'combined' ? null : block('s', 'sign'),
+      thumb: null,
+      documents: null
+    };
+
+    if (p === 'live') exam.liveCaptureNotes = lines('f_live');
+
+    exams.push(exam);
+    g('addMsg').textContent = 'Added ' + name + '.';
+    render();
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  });
+
+  g('clearFormBtn').addEventListener('click', function () {
+    ['f_name','f_slug','f_full','f_body','f_url',
+     'p_w','p_h','p_min','p_max','p_bg','p_notes',
+     'c_w','c_h','c_min','c_max','c_notes',
+     's_w','s_h','s_min','s_max','s_ink','s_notes'].forEach(function (id) {
+      g(id).value = '';
+    });
+    g('addMsg').textContent = '';
+  });
+
+  g('copyBtn').addEventListener('click', async function () {
+    await navigator.clipboard.writeText(g('out').value);
+    g('copyBtn').textContent = 'Copied';
+    setTimeout(function () { g('copyBtn').textContent = 'Copy JSON'; }, 1500);
+  });
+
+  g('dlBtn').addEventListener('click', function () {
+    var blob = new Blob([g('out').value], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'exams.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  render();
+</script>
+</body>
+</html>

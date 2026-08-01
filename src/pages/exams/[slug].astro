@@ -16,9 +16,9 @@ export function getStaticPaths() {
 const { exam } = Astro.props;
 const isLive = exam.captureMode === 'live';
 
-const title = `${exam.name} Photo & Signature Size ${exam.year} — Exact Requirements`;
+const title = `${exam.name} Photo & Signature Size ${exam.year}, Exact Requirements`;
 const description = exam.photo
-  ? `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`
+  ? `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB} to ${exam.photo.maxKB} KB. Signature size and free resizer tool.`
   : `${exam.name} ${exam.year} photo and signature upload requirements, with a free tool to match them exactly.`;
 
 const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
@@ -58,8 +58,8 @@ const examProducts = products[exam.slug] || [];
   {isLive && (
     <section class="mt-8">
       <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
-      <div class="rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
-        <strong class="text-navy-900">Your photo is captured live — there is no file to upload.</strong>
+      <div class="rounded-md bg-amber-100 px-4 py-3 text-sm">
+        <strong class="text-navy-900">Your photo is captured live, there is no file to upload.</strong>
         <p class="mt-1 text-ink">
           {exam.name} takes your photograph through your camera during the
           application itself. You cannot upload a saved photo, so there is no
@@ -81,7 +81,12 @@ const examProducts = products[exam.slug] || [];
 
   {exam.photo && (
     <section class="mt-8">
-      <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your photo</h2>
+      <ImageResizer label="Photo" fileName="photo"
+        widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
+        minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
+
+      <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Photo requirements</h3>
       <table class="w-full border-collapse text-sm">
         <tbody>
           <tr class="border-b border-line">
@@ -90,7 +95,7 @@ const examProducts = products[exam.slug] || [];
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
+            <td class="py-2 font-semibold">{exam.photo.minKB} to {exam.photo.maxKB} KB</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -107,25 +112,27 @@ const examProducts = products[exam.slug] || [];
           <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
         ))}
       </ul>
-      <div class="mt-5">
-        <ImageResizer label="Photo" fileName="photo"
-          widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
-          minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
-      </div>
     </section>
   )}
 
   {exam.combined && (
     <section class="mt-10">
       <h2 class="mb-3 text-lg font-bold text-navy-900">Combined photo + signature</h2>
-      <div class="rounded-md border-l-4 border-navy-600 bg-navy-100 px-4 py-3 text-sm">
+      <div class="mb-4 rounded-md bg-navy-100 px-4 py-3 text-sm">
         <strong class="text-navy-900">This exam wants one image containing both.</strong>
         <p class="mt-1 text-ink">
           Your photograph goes on top and your signature underneath, in a single
           file. Upload both below and we will combine them at the right size.
         </p>
       </div>
-      <table class="mt-4 w-full border-collapse text-sm">
+
+      <CombinedResizer
+        widthPx={exam.combined.widthPx} heightPx={exam.combined.heightPx}
+        minKB={exam.combined.minKB} maxKB={exam.combined.maxKB}
+        photoRatio={exam.combined.photoRatio || 0.72} />
+
+      <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Combined image requirements</h3>
+      <table class="w-full border-collapse text-sm">
         <tbody>
           <tr class="border-b border-line">
             <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
@@ -133,7 +140,7 @@ const examProducts = products[exam.slug] || [];
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.combined.minKB} – {exam.combined.maxKB} KB</td>
+            <td class="py-2 font-semibold">{exam.combined.minKB} to {exam.combined.maxKB} KB</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -146,18 +153,17 @@ const examProducts = products[exam.slug] || [];
           <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
         ))}
       </ul>
-      <div class="mt-5">
-        <CombinedResizer
-          widthPx={exam.combined.widthPx} heightPx={exam.combined.heightPx}
-          minKB={exam.combined.minKB} maxKB={exam.combined.maxKB}
-          photoRatio={exam.combined.photoRatio || 0.72} />
-      </div>
     </section>
   )}
 
   {exam.signature && (
     <section class="mt-10">
-      <h2 class="mb-3 text-lg font-bold text-navy-900">Signature requirements</h2>
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your signature</h2>
+      <ImageResizer label="Signature" fileName="signature"
+        widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
+        minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
+
+      <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Signature requirements</h3>
       <table class="w-full border-collapse text-sm">
         <tbody>
           <tr class="border-b border-line">
@@ -170,7 +176,7 @@ const examProducts = products[exam.slug] || [];
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.signature.minKB} – {exam.signature.maxKB} KB</td>
+            <td class="py-2 font-semibold">{exam.signature.minKB} to {exam.signature.maxKB} KB</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -194,11 +200,6 @@ const examProducts = products[exam.slug] || [];
           which is that size at 300 DPI.
         </p>
       )}
-      <div class="mt-5">
-        <ImageResizer label="Signature" fileName="signature"
-          widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
-          minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
-      </div>
     </section>
   )}
 
@@ -220,7 +221,7 @@ const examProducts = products[exam.slug] || [];
     <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this page</h2>
     <div class="flex flex-wrap gap-2 text-sm">
       <a target="_blank" rel="noopener"
-         href={`https://wa.me/?text=${encodeURIComponent(exam.name + ' photo & signature size — ' + pageUrl)}`}
+         href={`https://wa.me/?text=${encodeURIComponent(exam.name + ' photo and signature size, ' + pageUrl)}`}
          class="rounded-md bg-[#25D366] px-4 py-2 font-semibold text-white">WhatsApp</a>
       <a target="_blank" rel="noopener"
          href={`https://t.me/share/url?url=${encodeURIComponent(pageUrl)}`}
@@ -234,12 +235,12 @@ const examProducts = products[exam.slug] || [];
 
   <section class="mt-10">
     <h2 class="mb-3 text-lg font-bold text-navy-900">Other exams</h2>
-    <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-2 gap-3">
       {related.map((e) => (
         <a href={`/exams/${e.slug}/`}
-           class="rounded-md border border-line px-3 py-2.5 text-sm hover:border-navy-600 hover:bg-surface">
-          <span class="font-semibold text-navy-800">{e.name}</span>
-          <span class="block text-xs text-muted">
+           class="rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-navy-600 hover:bg-navy-100">
+          <span class="block text-base font-bold leading-tight text-navy-900">{e.name}</span>
+          <span class="mt-1.5 block text-xs text-muted">
             {e.photo
               ? e.photo.widthPx + '×' + e.photo.heightPx + ' px'
               : e.combined ? 'Combined image' : 'Live photo capture'}

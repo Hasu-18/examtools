@@ -21,8 +21,8 @@
     "signature": {
       "widthPx": 709,
       "heightPx": 236,
-      "widthCm": 6.0,
-      "heightCm": 2.0,
+      "widthCm": 6,
+      "heightCm": 2,
       "minKB": 10,
       "maxKB": 20,
       "format": "jpg",
@@ -36,83 +36,98 @@
     "documents": null
   },
   {
-    "slug": "wbpsc-clerkship",
-    "name": "WBPSC Clerkship",
-    "fullName": "West Bengal Public Service Commission Clerkship Examination",
-    "body": "WBPSC",
-    "category": "state",
+    "slug": "ssc-chsl",
+    "name": "SSC CHSL",
+    "fullName": "Staff Selection Commission Combined Higher Secondary (10+2) Level Examination",
+    "body": "SSC",
+    "category": "central",
     "year": 2026,
-    "officialUrl": "https://wbpsc.gov.in",
-    "lastVerified": "2026-07-31",
-    "captureMode": "upload",
-    "photo": {
-      "widthPx": 150,
-      "heightPx": 200,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "jpg",
-      "background": "white",
-      "notes": ["NOT YET VERIFIED — check the official notification"]
-    },
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-01",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
     "signature": {
-      "widthPx": 150,
-      "heightPx": 60,
+      "widthPx": 472,
+      "heightPx": 236,
       "minKB": 10,
       "maxKB": 20,
       "format": "jpg",
+      "widthCm": 4,
+      "heightCm": 2,
       "ink": "black",
-      "notes": ["NOT YET VERIFIED — check the official notification"]
+      "notes": [
+        "Scanned signature must be uploaded in JPG/JPEG format",
+        "Signature should be clear and legible",
+        "Blurred signatures will be rejected",
+        "Do not upload a miniature signature",
+        "Sign on plain white paper",
+        "For PwD (VH) candidates, thumb impression is permitted in place of signature"
+      ]
     },
     "thumb": null,
-    "documents": null
-  },
-  {
-  "slug": "rrb-group-d",
-  "name": "RRB Group D",
-  "fullName": "Railway Recruitment Board Level 1 Posts",
-  "body": "RRB",
-  "category": "railway",
-  "year": 2026,
-  "officialUrl": "https://rrbapply.gov.in",
-  "lastVerified": "2026-08-01",
-  "captureMode": "live",
-  "photo": null,
-  "combined": null,
-  "liveCaptureNotes": [
-    "Candidates are not required to upload a pre-existing photograph.",
-    "Live photograph is captured by the application portal using a webcam or the front camera of a mobile phone.",
-    "Wear non-white clothing, preferably dark colours, to maintain contrast with the background.",
-    "Position the camera at eye level.",
-    "Look straight ahead with a neutral expression.",
-    "Ensure the entire face is clearly visible and centered within the frame.",
-    "Keep your face neither too close nor too far from the camera.",
-    "Do not wear a cap, mask, or glasses/spectacles.",
-    "Do not capture a printed or digital pre-existing photograph."
-  ],
-  "signature": {
-    "widthPx": null,
-    "heightPx": null,
-    "minKB": 30,
-    "maxKB": 49,
-    "format": "jpg/jpeg",
-    "ink": "black",
-    "notes": [
-      "Minimum image dimensions: 140 × 60 pixels.",
-      "Scan using a minimum resolution of 100 DPI.",
-      "Use white paper.",
-      "Signature must be written by the candidate only.",
-      "Signature must be in running handwriting (cursive/joined letters), not block, capital, or disjointed letters.",
-      "Position the signature within the designated 35 mm × 20 mm scan box.",
-      "Center the signature within the scan box."
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level before taking the photo",
+      "Stand directly in front of the camera and look straight ahead",
+      "Ensure your entire face is within the prescribed capture area",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "If webcam capture is unavailable, use the official SSC mobile app via the QR code provided in the application portal",
+      "Poor-quality, blurred, miniature, side-facing, or partially visible photos are liable to rejection"
     ]
   },
-  "thumb": null,
-  "documents": null
-},
-{
-    "slug": "rrb-ntpc",
-    "name": "RRB NTPC",
-    "fullName": "Railway Recruitment Board Non-Technical Popular Categories",
+  {
+    "slug": "rrb-group-d",
+    "name": "RRB Group D",
+    "fullName": "Railway Recruitment Board Level 1 Posts (Group D)",
+    "body": "RRB",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-01",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 138,
+      "heightPx": 79,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be written by the candidate only",
+        "Sign using a black ink pen on white paper",
+        "Signature must be in running handwriting (cursive/joined letters)",
+        "Do not use BLOCK, CAPITAL, or disjoined letters",
+        "Signature must be clear, legible, and fully visible",
+        "Image file must be in JPG/JPEG format",
+        "Minimum image dimensions: 140 px × 60 px",
+        "Center the signature within the 35 mm × 20 mm scan box"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Candidates are not required to upload a pre-existing photograph",
+      "Capture the live photo using a webcam or the front camera of a mobile phone",
+      "Wear non-white clothing, preferably dark colours, for good contrast",
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level before capturing the photograph",
+      "Stand directly in front of the camera and look straight ahead with a neutral expression",
+      "Ensure the entire face is clearly visible and centered within the frame",
+      "Do not stand too close to or too far from the camera",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Do not capture or upload a photograph of a printed or digital photograph",
+      "Retake the photo if necessary before final submission",
+      "Applications with non-compliant photographs are liable to be rejected"
+    ]
+  },
+  {
+    "slug": "rrb-ntpc-undergraduate",
+    "name": "RRB NTPC Undergraduate",
+    "fullName": "Railway Recruitment Board Non-Technical Popular Categories (Undergraduate Level)",
     "body": "RRB",
     "category": "railway",
     "year": 2026,
@@ -121,29 +136,39 @@
     "captureMode": "live",
     "photo": null,
     "combined": null,
+    "signature": {
+      "widthPx": 138,
+      "heightPx": 79,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be written by the candidate only",
+        "Sign using a black ink pen on white paper",
+        "Signature must be in running handwriting (cursive/joined letters)",
+        "Do not use BLOCK, CAPITAL, or disjoined letters",
+        "Signature must be clear, legible, and fully visible",
+        "Image file must be in JPG/JPEG format",
+        "Minimum image dimensions: 140 px × 60 px",
+        "Center the signature within the 35 mm × 20 mm scan box"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
     "liveCaptureNotes": [
+      "Candidates are not required to upload a pre-existing photograph",
+      "Capture the live photo using a webcam or the front camera of a mobile phone",
+      "Wear non-white clothing, preferably dark colours, for good contrast",
       "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "No cap, mask or spectacles"
-    ],
-    "signature": null,
-    "thumb": null,
-    "documents": null
-  },
-  {
-    "slug": "wbssc-group-c",
-    "name": "WBSSC Group C",
-    "fullName": "",
-    "body": "WBSSC",
-    "category": "state",
-    "year": 2026,
-    "officialUrl": "https://westbengalssc.com",
-    "lastVerified": "2026-08-01",
-    "captureMode": "upload",
-    "photo": null,
-    "signature": null,
-    "combined": null,
-    "thumb": null,
-    "documents": null
+      "Keep the camera at eye level before capturing the photograph",
+      "Stand directly in front of the camera and look straight ahead with a neutral expression",
+      "Ensure the entire face is clearly visible and centered within the frame",
+      "Do not stand too close to or too far from the camera",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Do not capture or upload a photograph of a printed or digital photograph",
+      "Retake the photo if necessary before final submission",
+      "Applications with non-compliant photographs are liable to be rejected"
+    ]
   }
 ]
