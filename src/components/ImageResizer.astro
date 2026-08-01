@@ -1,13 +1,79 @@
 ---
-const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } = Astro.props;
+const {
+  label = "Photo",
+  widthPx = 200,
+  heightPx = 230,
+  minKB = 20,
+  maxKB = 50,
+  fileName = "photo",
+  editable = true,
+  openByDefault = false
+} = Astro.props;
 ---
 <div class="rz rounded-lg border border-line bg-white"
      data-w={widthPx} data-h={heightPx} data-min={minKB} data-max={maxKB} data-name={fileName}>
 
   <div class="border-b border-line bg-navy-100 px-4 py-3">
     <h3 class="text-base font-bold text-navy-900">{label} resizer</h3>
-    <p class="mt-0.5 text-sm text-muted">{widthPx} × {heightPx} px · {minKB}–{maxKB} KB · JPG</p>
+    <p class="rz-target mt-0.5 text-sm text-muted">
+      {widthPx} × {heightPx} px · {minKB}–{maxKB} KB · JPG
+    </p>
   </div>
+
+  {editable && (
+    <div class="border-b border-line bg-surface px-4 py-3">
+      <button type="button" class="rz-toggle text-sm font-semibold text-navy-700 underline">
+        Change size
+      </button>
+
+      <div class="rz-size mt-3" hidden={!openByDefault}>
+        <div class="grid grid-cols-3 gap-2">
+          <label class="block text-xs">
+            <span class="text-muted">Width</span>
+            <input type="number" class="rz-in-w mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={widthPx} min="1" step="any" />
+          </label>
+          <label class="block text-xs">
+            <span class="text-muted">Height</span>
+            <input type="number" class="rz-in-h mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={heightPx} min="1" step="any" />
+          </label>
+          <label class="block text-xs">
+            <span class="text-muted">Unit</span>
+            <select class="rz-unit mt-1 w-full rounded border border-line px-2 py-1.5 text-sm">
+              <option value="px">px</option>
+              <option value="cm">cm</option>
+              <option value="in">inch</option>
+              <option value="mm">mm</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="rz-dpi-wrap mt-2 block text-xs" hidden>
+          <span class="text-muted">DPI (300 is standard for print sizes)</span>
+          <input type="number" class="rz-dpi mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value="300" min="72" step="1" />
+        </label>
+
+        <div class="mt-2 grid grid-cols-2 gap-2">
+          <label class="block text-xs">
+            <span class="text-muted">Min KB</span>
+            <input type="number" class="rz-in-min mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={minKB} min="0" />
+          </label>
+          <label class="block text-xs">
+            <span class="text-muted">Max KB</span>
+            <input type="number" class="rz-in-max mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={maxKB} min="1" />
+          </label>
+        </div>
+
+        <button type="button" class="rz-apply-size mt-3 w-full rounded-md bg-navy-800 px-4 py-2 text-sm font-semibold text-white">
+          Use these sizes
+        </button>
+
+        <p class="mt-2 text-xs text-muted">
+          Always check these against your official notification — requirements differ
+          between exams and change between years.
+        </p>
+      </div>
+    </div>
+  )}
 
   <div class="p-4">
 
@@ -17,7 +83,7 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
           <path d="M12 16V4m0 0L8 8m4-4 4 4" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round"/>
         </svg>
-        <span class="mt-3 block text-base font-bold text-navy-900">Tap to choose your photo</span>
+        <span class="mt-3 block text-base font-bold text-navy-900">Tap to choose your {label.toLowerCase()}</span>
         <span class="mt-1 block text-xs text-navy-700">JPG, PNG or HEIC from your phone</span>
         <input type="file" accept="image/*" class="rz-file sr-only" />
       </label>
@@ -79,10 +145,10 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
 
 <script>
   function initRz(root) {
-    const W = +root.dataset.w;
-    const H = +root.dataset.h;
-    const MIN = +root.dataset.min;
-    const MAX = +root.dataset.max;
+    let W = +root.dataset.w;
+    let H = +root.dataset.h;
+    let MIN = +root.dataset.min;
+    let MAX = +root.dataset.max;
     const NAME = root.dataset.name || 'photo';
 
     const q = (s) => root.querySelector(s);
@@ -94,12 +160,67 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
     const origImg = q('.rz-orig'), outImg = q('.rz-out');
     const origMeta = q('.rz-orig-meta'), outMeta = q('.rz-out-meta');
     const verdict = q('.rz-verdict'), dl = q('.rz-dl');
+    const target = q('.rz-target');
 
-    stage.width = W;
-    stage.height = H;
+    const toggle = q('.rz-toggle'), sizePanel = q('.rz-size');
+    const inW = q('.rz-in-w'), inH = q('.rz-in-h'), unitSel = q('.rz-unit');
+    const dpiWrap = q('.rz-dpi-wrap'), dpiIn = q('.rz-dpi');
+    const inMin = q('.rz-in-min'), inMax = q('.rz-in-max');
+    const applySize = q('.rz-apply-size');
 
     let bmp = null, base = 1, zoom = 1, ox = 0, oy = 0;
-    let origURL = null, outURL = null, origKB = 0;
+    let origURL = null, outURL = null;
+
+    function setStage() {
+      stage.width = W;
+      stage.height = H;
+    }
+    setStage();
+
+    function updateTarget() {
+      target.textContent = W + ' × ' + H + ' px · ' + MIN + '–' + MAX + ' KB · JPG';
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        sizePanel.hidden = !sizePanel.hidden;
+      });
+
+      unitSel.addEventListener('change', () => {
+        dpiWrap.hidden = unitSel.value === 'px';
+      });
+
+      applySize.addEventListener('click', () => {
+        const unit = unitSel.value;
+        const dpi = +dpiIn.value || 300;
+        const rawW = +inW.value, rawH = +inH.value;
+        if (!rawW || !rawH) return;
+
+        let pxW = rawW, pxH = rawH;
+        if (unit === 'cm') { pxW = rawW / 2.54 * dpi; pxH = rawH / 2.54 * dpi; }
+        else if (unit === 'mm') { pxW = rawW / 25.4 * dpi; pxH = rawH / 25.4 * dpi; }
+        else if (unit === 'in') { pxW = rawW * dpi; pxH = rawH * dpi; }
+
+        W = Math.max(1, Math.round(pxW));
+        H = Math.max(1, Math.round(pxH));
+        MIN = Math.max(0, +inMin.value || 0);
+        MAX = Math.max(1, +inMax.value || 1);
+
+        setStage();
+        updateTarget();
+
+        if (bmp) {
+          base = Math.max(W / bmp.width, H / bmp.height);
+          zoom = 1;
+          zoomIn.value = 100;
+          ox = (W - bmp.width * base) / 2;
+          oy = (H - bmp.height * base) / 2;
+          render();
+        }
+
+        sizePanel.hidden = true;
+      });
+    }
 
     function clamp() {
       const dw = bmp.width * base * zoom;
@@ -128,7 +249,7 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
 
       try {
         bmp = await createImageBitmap(file);
-        origKB = file.size / 1024;
+        const origKB = file.size / 1024;
         if (origURL) URL.revokeObjectURL(origURL);
         origURL = URL.createObjectURL(file);
         origImg.src = origURL;
@@ -144,7 +265,7 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
         render();
 
         if (bmp.width < W || bmp.height < H) {
-          warn.textContent = 'This photo is smaller than the required size, so it will look stretched or blurry. Use a sharper original if you have one.';
+          warn.textContent = 'This photo is smaller than the required size, so it may look stretched or blurry. Use a sharper original if you have one.';
           warn.hidden = false;
         }
 
@@ -214,8 +335,8 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
       outMeta.textContent = W + ' × ' + H + ' px · ' + kb.toFixed(0) + ' KB';
 
       if (ok) {
-        verdict.className = 'rz-verdict mt-4 rounded bg-pass-bg px-3 py-3 text-sm text-pass font-semibold';
-        verdict.textContent = '✓ Perfect match — meets all requirements for this exam.';
+        verdict.className = 'rz-verdict mt-4 rounded bg-pass-bg px-3 py-3 text-sm font-semibold text-pass';
+        verdict.textContent = '✓ Perfect match — meets the size you set.';
       } else if (kb < MIN) {
         verdict.className = 'rz-verdict mt-4 rounded bg-amber-100 px-3 py-3 text-sm';
         verdict.textContent = 'Size is ' + kb.toFixed(0) + ' KB, below the ' + MIN + ' KB minimum. Most portals still accept this, but a sharper original would push it higher.';
@@ -243,6 +364,8 @@ const { label = "Photo", widthPx, heightPx, minKB, maxKB, fileName = "photo" } =
     }
     resetBtn.addEventListener('click', reset);
     againBtn.addEventListener('click', reset);
+
+    updateTarget();
   }
 
   document.querySelectorAll('.rz').forEach(initRz);

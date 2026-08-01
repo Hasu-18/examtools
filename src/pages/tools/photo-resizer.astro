@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImageResizer from '../../components/ImageResizer.astro';
+---
+<BaseLayout
+  title="Photo & Signature Resizer — Any Size, Any Exam | FormSetu"
+  description="Resize any photo or signature to exact pixel dimensions and file size. Set your own size in px, cm or inches. Free, no upload, works on mobile.">
+
+  <nav class="mb-4 text-xs text-muted">
+    <a href="/" class="hover:text-navy-700">Home</a>
+    <span class="mx-1">/</span>
+    <a href="/tools/" class="hover:text-navy-700">Tools</a>
+    <span class="mx-1">/</span>
+    <span class="text-ink">Photo resizer</span>
+  </nav>
+
+  <h1 class="text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">
+    Resize your photo to any size
+  </h1>
+  <p class="mt-2 text-sm text-muted">
+    Set the exact dimensions and file size your form asks for — in pixels,
+    centimetres or inches. Works for any exam or application, not just the ones
+    we list.
+  </p>
+
+  <div class="mt-4 rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
+    <strong class="text-navy-900">Take the size from your official notification.</strong>
+    <span class="text-ink">
+      Requirements differ between exams and change between years. Open your
+      notification PDF, find the photograph and signature section, and enter
+      those numbers below.
+    </span>
+  </div>
+
+  <div class="mt-6">
+    <ImageResizer label="Photo" fileName="photo" openByDefault={true} />
+  </div>
+
+  <div class="mt-8">
+    <ImageResizer label="Signature" fileName="signature"
+      widthPx={140} heightPx={60} minKB={10} maxKB={20} openByDefault={true} />
+  </div>
+
+  <section class="mt-10 border-t border-line pt-6">
+    <h2 class="mb-3 text-lg font-bold text-navy-900">Know your exam?</h2>
+    <p class="text-sm text-muted">
+      We publish verified requirements for a growing list of exams, with the
+      sizes already filled in.
+    </p>
+    <a href="/exams/" class="mt-3 inline-block rounded-md bg-navy-800 px-4 py-2 text-sm font-semibold text-white hover:bg-navy-700">
+      Browse exams →
+    </a>
+  </section>
+
+</BaseLayout>
