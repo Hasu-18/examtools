@@ -1,0 +1,347 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Product builder — FormSetu admin</title>
+  <style>
+    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --pass:#15803d; --surface:#f8fafc; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:#fff; line-height:1.5; }
+    .wrap { max-width: 900px; margin:0 auto; padding:1.5rem 1rem 4rem; }
+    h1 { font-size:1.5rem; margin:0 0 .25rem; color:var(--navy); }
+    h2 { font-size:1.05rem; margin:1.75rem 0 .5rem; color:var(--navy); }
+    p.sub { color:var(--muted); font-size:.9rem; margin:0 0 1.25rem; }
+    fieldset { border:1px solid var(--line); border-radius:8px; padding:1rem; margin:0 0 1rem; }
+    legend { font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:var(--navy); padding:0 .4rem; }
+    label { display:block; font-size:.8rem; color:var(--muted); margin-bottom:.65rem; }
+    label span { display:block; margin-bottom:.2rem; }
+    input, select, textarea { width:100%; border:1px solid var(--line); border-radius:6px; padding:.5rem .6rem; font-size:.9rem; font-family:inherit; }
+    textarea { min-height:70px; resize:vertical; }
+    .row { display:grid; gap:.75rem; }
+    .row-2 { grid-template-columns:1fr 1fr; }
+    button { border:0; border-radius:6px; padding:.7rem 1.1rem; font-size:.9rem; font-weight:700; cursor:pointer; }
+    .primary { background:var(--amber); color:#fff; }
+    .dark { background:var(--navy); color:#fff; }
+    .ghost { background:#fff; color:var(--navy); border:1px solid var(--line); }
+    .bar { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+    .note { background:#fef3c7; border-left:4px solid var(--amber); padding:.7rem .9rem; border-radius:6px; font-size:.85rem; margin:1rem 0; }
+    .grp { border:1px solid var(--line); border-radius:8px; padding:.9rem; margin-bottom:.75rem; }
+    .grp h3 { margin:0 0 .1rem; font-size:.95rem; color:var(--navy); }
+    .grp .key { font-size:.75rem; color:var(--muted); font-family:ui-monospace, Consolas, monospace; }
+    .item { display:flex; align-items:center; gap:.6rem; border-top:1px solid var(--line); padding:.5rem 0; font-size:.85rem; }
+    .item img { width:38px; height:38px; object-fit:contain; background:var(--surface); border-radius:4px; flex-shrink:0; }
+    .item .t { flex:1; min-width:0; }
+    .item .t b { display:block; font-weight:600; }
+    .item .t small { color:var(--muted); }
+    .del { background:none; color:#b91c1c; font-size:.8rem; padding:.2rem .4rem; }
+    #out { width:100%; min-height:220px; font-family:ui-monospace, Consolas, monospace; font-size:.75rem; }
+    .hint { font-size:.75rem; color:var(--muted); margin:.25rem 0 0; }
+    .prev { display:flex; gap:.6rem; align-items:center; margin-top:.5rem; padding:.5rem; background:var(--surface); border-radius:6px; }
+    .prev img { width:60px; height:60px; object-fit:contain; }
+    @media (max-width:640px){ .row-2 { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Affiliate product builder</h1>
+  <p class="sub">Build product groups, then download products.json and replace the file in src/data/.</p>
+
+  <div class="note">
+    Get every image URL and link from Amazon <strong>SiteStripe</strong>, the bar at the top of a product page when you are logged into Associates. Use Get Link, then Image. Never right-click and copy an image address, and never type in a price.
+  </div>
+
+  <h2>Step 1 — Load what you already have</h2>
+  <label>
+    <span>Paste your current src/data/products.json (or leave empty to start fresh)</span>
+    <textarea id="existing" placeholder="{ ... }"></textarea>
+  </label>
+  <button class="ghost" id="loadBtn">Load existing products</button>
+  <p class="hint" id="loadMsg"></p>
+
+  <h2>Step 2 — Choose or create a group</h2>
+  <fieldset>
+    <legend>Group</legend>
+    <label>
+      <span>Add to which group?</span>
+      <select id="g_select">
+        <option value="__new">Create a new group</option>
+      </select>
+    </label>
+
+    <div id="newGroupFields">
+      <div class="row row-2">
+        <label>
+          <span>Group key (used in blog frontmatter)</span>
+          <input id="g_key" placeholder="ssc-cgl or study-essentials" />
+        </label>
+        <label>
+          <span>Heading shown on the page</span>
+          <input id="g_label" placeholder="Recommended for SSC CGL" />
+        </label>
+      </div>
+      <label>
+        <span>Short line under the heading (optional)</span>
+        <input id="g_note" placeholder="Things most aspirants end up buying." />
+      </label>
+      <p class="hint">
+        For an exam specific group, the key must match the slug in exams.json exactly, so the exam page picks it up automatically.
+      </p>
+    </div>
+  </fieldset>
+
+  <h2>Step 3 — Add a product</h2>
+  <fieldset>
+    <legend>Product</legend>
+    <label>
+      <span>Product title</span>
+      <input id="p_title" placeholder="PW 33 SSC CGL Tier 1 Previous Year Solved Papers" />
+    </label>
+    <label>
+      <span>Image URL from SiteStripe</span>
+      <input id="p_image" placeholder="https://m.media-amazon.com/images/..." />
+    </label>
+    <div class="prev" id="prevBox" hidden>
+      <img id="prevImg" alt="" />
+      <span class="hint">If this image does not appear, the URL is wrong.</span>
+    </div>
+    <label>
+      <span>Your honest one line reason someone should buy it</span>
+      <input id="p_note" placeholder="33 previous year Tier 1 papers with full solutions" />
+    </label>
+    <label>
+      <span>Your affiliate link from SiteStripe</span>
+      <input id="p_url" placeholder="https://amzn.to/..." />
+    </label>
+    <p class="hint">No price field, on purpose. The card says "Check price on Amazon" instead.</p>
+  </fieldset>
+
+  <div class="bar">
+    <button class="primary" id="addBtn">Add product</button>
+    <button class="ghost" id="clearBtn">Clear form</button>
+  </div>
+  <p class="hint" id="addMsg"></p>
+
+  <h2>Step 4 — Your groups</h2>
+  <div id="list"></div>
+
+  <h2>Step 5 — Take the file</h2>
+  <textarea id="out" readonly></textarea>
+  <div class="bar">
+    <button class="dark" id="copyBtn">Copy JSON</button>
+    <button class="dark" id="dlBtn">Download products.json</button>
+  </div>
+  <p class="hint">Replace src/data/products.json with this, then commit and push.</p>
+
+</div>
+
+<script>
+  var data = {};
+  var g = function (id) { return document.getElementById(id); };
+
+  function txt(id) {
+    var v = g(id).value.trim();
+    return v === '' ? null : v;
+  }
+
+  function syncGroupFields() {
+    g('newGroupFields').hidden = g('g_select').value !== '__new';
+  }
+  g('g_select').addEventListener('change', syncGroupFields);
+  syncGroupFields();
+
+  g('p_image').addEventListener('input', function () {
+    var url = g('p_image').value.trim();
+    if (url) {
+      g('prevImg').src = url;
+      g('prevBox').hidden = false;
+    } else {
+      g('prevBox').hidden = true;
+    }
+  });
+
+  function refreshSelect() {
+    var sel = g('g_select');
+    var current = sel.value;
+    sel.innerHTML = '<option value="__new">Create a new group</option>';
+    Object.keys(data).forEach(function (key) {
+      var o = document.createElement('option');
+      o.value = key;
+      o.textContent = data[key].label + '  (' + key + ')';
+      sel.appendChild(o);
+    });
+    if (data[current]) sel.value = current;
+    syncGroupFields();
+  }
+
+  function render() {
+    var box = g('list');
+    box.innerHTML = '';
+
+    var keys = Object.keys(data);
+    if (keys.length === 0) {
+      box.innerHTML = '<p class="hint">No groups yet.</p>';
+    }
+
+    keys.forEach(function (key) {
+      var grp = data[key];
+      var wrap = document.createElement('div');
+      wrap.className = 'grp';
+
+      var head = document.createElement('div');
+      head.style.display = 'flex';
+      head.style.justifyContent = 'space-between';
+      head.style.alignItems = 'flex-start';
+
+      var titleBox = document.createElement('div');
+      var h3 = document.createElement('h3');
+      h3.textContent = grp.label;
+      var keySpan = document.createElement('span');
+      keySpan.className = 'key';
+      keySpan.textContent = key;
+      titleBox.appendChild(h3);
+      titleBox.appendChild(keySpan);
+
+      var delGrp = document.createElement('button');
+      delGrp.className = 'del';
+      delGrp.textContent = 'Delete group';
+      delGrp.addEventListener('click', function () {
+        delete data[key];
+        refreshSelect();
+        render();
+      });
+
+      head.appendChild(titleBox);
+      head.appendChild(delGrp);
+      wrap.appendChild(head);
+
+      grp.items.forEach(function (item, i) {
+        var row = document.createElement('div');
+        row.className = 'item';
+
+        var img = document.createElement('img');
+        img.src = item.image;
+        img.alt = '';
+
+        var t = document.createElement('div');
+        t.className = 't';
+        var b = document.createElement('b');
+        b.textContent = item.title;
+        var s = document.createElement('small');
+        s.textContent = item.note || '';
+        t.appendChild(b);
+        t.appendChild(s);
+
+        var del = document.createElement('button');
+        del.className = 'del';
+        del.textContent = 'Remove';
+        del.addEventListener('click', function () {
+          data[key].items.splice(i, 1);
+          render();
+        });
+
+        row.appendChild(img);
+        row.appendChild(t);
+        row.appendChild(del);
+        wrap.appendChild(row);
+      });
+
+      box.appendChild(wrap);
+    });
+
+    g('out').value = JSON.stringify(data, null, 2);
+  }
+
+  g('loadBtn').addEventListener('click', function () {
+    var raw = g('existing').value.trim();
+    if (!raw) { g('loadMsg').textContent = 'Nothing pasted, starting fresh.'; return; }
+    try {
+      var parsed = JSON.parse(raw);
+      if (typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('bad shape');
+      data = parsed;
+      Object.keys(data).forEach(function (k) {
+        if (!data[k].items) data[k].items = [];
+        if (!data[k].label) data[k].label = k;
+      });
+      g('loadMsg').textContent = 'Loaded ' + Object.keys(data).length + ' groups.';
+      refreshSelect();
+      render();
+    } catch (err) {
+      g('loadMsg').textContent = 'That is not valid JSON. Check for a missing or extra comma.';
+    }
+  });
+
+  g('addBtn').addEventListener('click', function () {
+    var title = txt('p_title');
+    var image = txt('p_image');
+    var url = txt('p_url');
+
+    if (!title || !image || !url) {
+      g('addMsg').textContent = 'Title, image URL and affiliate link are all required.';
+      return;
+    }
+
+    var key;
+    if (g('g_select').value === '__new') {
+      key = txt('g_key');
+      if (!key) { g('addMsg').textContent = 'Give the new group a key.'; return; }
+      key = key.toLowerCase().replace(/\s+/g, '-');
+      if (!data[key]) {
+        data[key] = {
+          label: txt('g_label') || key,
+          note: txt('g_note') || '',
+          items: []
+        };
+      }
+    } else {
+      key = g('g_select').value;
+    }
+
+    data[key].items.push({
+      title: title,
+      image: image,
+      note: txt('p_note') || '',
+      url: url
+    });
+
+    g('addMsg').textContent = 'Added to ' + data[key].label + '.';
+    ['p_title', 'p_image', 'p_note', 'p_url'].forEach(function (id) { g(id).value = ''; });
+    g('prevBox').hidden = true;
+
+    refreshSelect();
+    g('g_select').value = key;
+    syncGroupFields();
+    render();
+  });
+
+  g('clearBtn').addEventListener('click', function () {
+    ['g_key','g_label','g_note','p_title','p_image','p_note','p_url'].forEach(function (id) {
+      g(id).value = '';
+    });
+    g('prevBox').hidden = true;
+    g('addMsg').textContent = '';
+  });
+
+  g('copyBtn').addEventListener('click', async function () {
+    await navigator.clipboard.writeText(g('out').value);
+    g('copyBtn').textContent = 'Copied';
+    setTimeout(function () { g('copyBtn').textContent = 'Copy JSON'; }, 1500);
+  });
+
+  g('dlBtn').addEventListener('click', function () {
+    var blob = new Blob([g('out').value], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'products.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  render();
+</script>
+</body>
+</html>

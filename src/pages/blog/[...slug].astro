@@ -28,7 +28,7 @@ const labels = {
 };
 
 const exam = d.relatedExam ? exams.find((e) => e.slug === d.relatedExam) : null;
-const postProducts = d.productKey ? (products[d.productKey] || []) : [];
+const productGroups = d.products || [];
 const pageUrl = Astro.url.href;
 
 const all = (await getCollection('blog', ({ data }) => !data.draft))
@@ -188,7 +188,7 @@ const stillOpen = d.closes && d.closes.getTime() >= Date.now();
       </section>
     )}
 
-    <AffiliateBlock products={postProducts} />
+    <AffiliateBlock groups={productGroups} />
 
     <section class="mt-10 border-t border-line pt-6">
       <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this</h2>

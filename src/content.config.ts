@@ -20,7 +20,7 @@ const blog = defineCollection({
     relatedExam: z.string().optional(),
 
     // Key from products.json, shows the affiliate block
-    productKey: z.string().optional(),
+    products: z.array(z.string()).optional(),
 
     importantDates: z.array(z.object({
       label: z.string(),
