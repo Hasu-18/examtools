@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ImageResizer from '../../components/ImageResizer.astro';
-import exams from '../../data/exams.json';
 import AffiliateBlock from '../../components/AffiliateBlock.astro';
+import exams from '../../data/exams.json';
 import products from '../../data/products.json';
+
 export function getStaticPaths() {
   return exams.map((exam) => ({
     params: { slug: exam.slug },
@@ -12,8 +13,12 @@ export function getStaticPaths() {
 }
 
 const { exam } = Astro.props;
+const isLive = exam.captureMode === 'live' || !exam.photo;
+
 const title = `${exam.name} Photo & Signature Size ${exam.year} — Exact Requirements`;
-const description = `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`;
+const description = isLive
+  ? `${exam.name} ${exam.year}: photo is captured live in the portal. Signature ${exam.signature.minKB}–${exam.signature.maxKB} KB. Free signature resizer.`
+  : `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`;
 
 const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
   day: 'numeric', month: 'long', year: 'numeric',
@@ -21,6 +26,7 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
 
 const related = exams.filter((e) => e.slug !== exam.slug).slice(0, 6);
 const pageUrl = Astro.url.href;
+const examProducts = products[exam.slug] || [];
 ---
 <BaseLayout title={title} description={description}>
 
@@ -48,49 +54,61 @@ const pageUrl = Astro.url.href;
     </a>
   </div>
 
-  {exam.captureMode === 'live' && (
-    <div class="mt-4 rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
-      <strong class="text-navy-900">Live photo capture required.</strong>
-      <span class="text-ink">
-        This exam does not accept a saved photo file. You must capture your
-        photo live through the official portal or app while applying.
-      </span>
-    </div>
-  )}
-
   <section class="mt-8">
     <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
-    <table class="w-full border-collapse text-sm">
-      <tbody>
-        <tr class="border-b border-line">
-          <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-          <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">File size</th>
-          <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">Format</th>
-          <td class="py-2 font-semibold">{exam.photo.format.toUpperCase()}</td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">Background</th>
-          <td class="py-2 font-semibold">{exam.photo.background}</td>
-        </tr>
-      </tbody>
-    </table>
-    <ul class="mt-3 space-y-1 text-sm text-ink">
-      {exam.photo.notes.map((n) => (
-        <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
-      ))}
-    </ul>
 
-    <div class="mt-5">
-      <ImageResizer label="Photo" fileName="photo"
-        widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
-        minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
-    </div>
+    {isLive ? (
+      <div>
+        <div class="rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
+          <strong class="text-navy-900">Your photo is captured live — there is no file to upload.</strong>
+          <p class="mt-1 text-ink">
+            {exam.name} takes your photograph through your camera during the
+            application itself. You cannot upload a saved photo, so there is no
+            pixel size or file size to match. Get the capture right instead.
+          </p>
+        </div>
+
+        <h3 class="mt-5 mb-2 text-base font-bold text-navy-900">How to get the capture right</h3>
+        <ul class="space-y-1.5 text-sm text-ink">
+          {exam.liveCaptureNotes && exam.liveCaptureNotes.map((n) => (
+            <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+          ))}
+        </ul>
+      </div>
+    ) : (
+      <div>
+        <table class="w-full border-collapse text-sm">
+          <tbody>
+            <tr class="border-b border-line">
+              <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+              <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
+            </tr>
+            <tr class="border-b border-line">
+              <th class="py-2 text-left font-medium text-muted">File size</th>
+              <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
+            </tr>
+            <tr class="border-b border-line">
+              <th class="py-2 text-left font-medium text-muted">Format</th>
+              <td class="py-2 font-semibold">{exam.photo.format.toUpperCase()}</td>
+            </tr>
+            <tr class="border-b border-line">
+              <th class="py-2 text-left font-medium text-muted">Background</th>
+              <td class="py-2 font-semibold">{exam.photo.background}</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="mt-3 space-y-1 text-sm text-ink">
+          {exam.photo.notes.map((n) => (
+            <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+          ))}
+        </ul>
+        <div class="mt-5">
+          <ImageResizer label="Photo" fileName="photo"
+            widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
+            minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
+        </div>
+      </div>
+    )}
   </section>
 
   <section class="mt-10">
@@ -99,11 +117,19 @@ const pageUrl = Astro.url.href;
       <tbody>
         <tr class="border-b border-line">
           <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-          <td class="py-2 font-semibold">{exam.signature.widthPx} × {exam.signature.heightPx} px</td>
+          <td class="py-2 font-semibold">
+            {exam.signature.widthCm
+              ? exam.signature.widthCm + ' × ' + exam.signature.heightCm + ' cm'
+              : exam.signature.widthPx + ' × ' + exam.signature.heightPx + ' px'}
+          </td>
         </tr>
         <tr class="border-b border-line">
           <th class="py-2 text-left font-medium text-muted">File size</th>
           <td class="py-2 font-semibold">{exam.signature.minKB} – {exam.signature.maxKB} KB</td>
+        </tr>
+        <tr class="border-b border-line">
+          <th class="py-2 text-left font-medium text-muted">Format</th>
+          <td class="py-2 font-semibold">{exam.signature.format.toUpperCase()}</td>
         </tr>
         <tr class="border-b border-line">
           <th class="py-2 text-left font-medium text-muted">Ink colour</th>
@@ -116,6 +142,14 @@ const pageUrl = Astro.url.href;
         <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
       ))}
     </ul>
+
+    {exam.signature.widthCm && (
+      <p class="mt-3 text-xs text-muted">
+        The notification gives {exam.signature.widthCm} × {exam.signature.heightCm} cm.
+        Our tool produces {exam.signature.widthPx} × {exam.signature.heightPx} px,
+        which is that size at 300 DPI.
+      </p>
+    )}
 
     <div class="mt-5">
       <ImageResizer label="Signature" fileName="signature"
@@ -136,6 +170,8 @@ const pageUrl = Astro.url.href;
     </a>
   </section>
 
+  <AffiliateBlock products={examProducts} />
+
   <section class="mt-10 border-t border-line pt-6">
     <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this page</h2>
     <div class="flex flex-wrap gap-2 text-sm">
@@ -151,7 +187,7 @@ const pageUrl = Astro.url.href;
       </button>
     </div>
   </section>
-<AffiliateBlock products={products[exam.slug] || []} />
+
   <section class="mt-10">
     <h2 class="mb-3 text-lg font-bold text-navy-900">Other exams</h2>
     <div class="grid grid-cols-2 gap-2">
@@ -160,7 +196,9 @@ const pageUrl = Astro.url.href;
            class="rounded-md border border-line px-3 py-2.5 text-sm hover:border-navy-600 hover:bg-surface">
           <span class="font-semibold text-navy-800">{e.name}</span>
           <span class="block text-xs text-muted">
-            {e.photo.widthPx}×{e.photo.heightPx} px · {e.photo.minKB}–{e.photo.maxKB} KB
+            {e.photo
+              ? e.photo.widthPx + '×' + e.photo.heightPx + ' px · ' + e.photo.minKB + '–' + e.photo.maxKB + ' KB'
+              : 'Live photo capture'}
           </span>
         </a>
       ))}

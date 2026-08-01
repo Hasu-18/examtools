@@ -7,31 +7,29 @@
     "category": "central",
     "year": 2026,
     "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-07-31",
-    "captureMode": "upload",
-    "photo": {
-      "widthPx": 200,
-      "heightPx": 230,
-      "minKB": 20,
-      "maxKB": 50,
-      "format": "jpg",
-      "background": "white or light coloured",
-      "notes": [
-        "Taken within the last 3 months",
-        "Name and date printed at the bottom",
-        "Face should cover about 70% of the frame"
-      ]
-    },
+    "lastVerified": "2026-08-01",
+    "captureMode": "live",
+    "photo": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Your whole face must sit inside the marked area — not too close, not too far",
+      "No cap, mask or spectacles",
+      "Do not photograph an existing printed or digital photo of yourself",
+      "Your appearance at the exam should match the captured photo"
+    ],
     "signature": {
-      "widthPx": 140,
-      "heightPx": 60,
+      "widthPx": 709,
+      "heightPx": 236,
+      "widthCm": 6.0,
+      "heightCm": 2.0,
       "minKB": 10,
       "maxKB": 20,
       "format": "jpg",
-      "ink": "black",
+      "ink": "not specified — black or blue on white paper",
       "notes": [
-        "Signed on white paper",
-        "Running handwriting, not block capitals"
+        "Signature must be clear",
+        "Blurred or very small signatures may lead to rejection"
       ]
     },
     "thumb": null,
@@ -54,7 +52,7 @@
       "maxKB": 50,
       "format": "jpg",
       "background": "white",
-      "notes": ["Recent passport size photograph"]
+      "notes": ["NOT YET VERIFIED — check the official notification"]
     },
     "signature": {
       "widthPx": 150,
@@ -63,7 +61,7 @@
       "maxKB": 20,
       "format": "jpg",
       "ink": "black",
-      "notes": ["Signed on white paper"]
+      "notes": ["NOT YET VERIFIED — check the official notification"]
     },
     "thumb": null,
     "documents": null

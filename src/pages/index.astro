@@ -99,7 +99,7 @@ const reasons = [
                  class="exam-card rounded-md border border-line px-3 py-3 hover:border-navy-600 hover:bg-surface">
                 <span class="block text-sm font-bold leading-tight text-navy-800">{e.name}</span>
                 <span class="mt-1 block text-xs leading-snug text-muted">
-                  {e.photo.widthPx}×{e.photo.heightPx} px<br />{e.photo.minKB}–{e.photo.maxKB} KB
+                  {e.photo ? e.photo.widthPx + '×' + e.photo.heightPx + ' px' : 'Live photo capture'}
                 </span>
               </a>
             ))}
