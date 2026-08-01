@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ImageResizer from '../../components/ImageResizer.astro';
+import CombinedResizer from '../../components/CombinedResizer.astro';
 import AffiliateBlock from '../../components/AffiliateBlock.astro';
 import exams from '../../data/exams.json';
 import products from '../../data/products.json';
@@ -13,12 +14,12 @@ export function getStaticPaths() {
 }
 
 const { exam } = Astro.props;
-const isLive = exam.captureMode === 'live' || !exam.photo;
+const isLive = exam.captureMode === 'live';
 
 const title = `${exam.name} Photo & Signature Size ${exam.year} — Exact Requirements`;
-const description = isLive
-  ? `${exam.name} ${exam.year}: photo is captured live in the portal. Signature ${exam.signature.minKB}–${exam.signature.maxKB} KB. Free signature resizer.`
-  : `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`;
+const description = exam.photo
+  ? `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB}–${exam.photo.maxKB} KB. Signature size and free resizer tool.`
+  : `${exam.name} ${exam.year} photo and signature upload requirements, with a free tool to match them exactly.`;
 
 const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
   day: 'numeric', month: 'long', year: 'numeric',
@@ -54,109 +55,152 @@ const examProducts = products[exam.slug] || [];
     </a>
   </div>
 
-  <section class="mt-8">
-    <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
-
-    {isLive ? (
-      <div>
-        <div class="rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
-          <strong class="text-navy-900">Your photo is captured live — there is no file to upload.</strong>
-          <p class="mt-1 text-ink">
-            {exam.name} takes your photograph through your camera during the
-            application itself. You cannot upload a saved photo, so there is no
-            pixel size or file size to match. Get the capture right instead.
-          </p>
-        </div>
-
-        <h3 class="mt-5 mb-2 text-base font-bold text-navy-900">How to get the capture right</h3>
-        <ul class="space-y-1.5 text-sm text-ink">
-          {exam.liveCaptureNotes && exam.liveCaptureNotes.map((n) => (
-            <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
-          ))}
-        </ul>
+  {isLive && (
+    <section class="mt-8">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
+      <div class="rounded-md border-l-4 border-amber-500 bg-amber-100 px-4 py-3 text-sm">
+        <strong class="text-navy-900">Your photo is captured live — there is no file to upload.</strong>
+        <p class="mt-1 text-ink">
+          {exam.name} takes your photograph through your camera during the
+          application itself. You cannot upload a saved photo, so there is no
+          pixel size or file size to match. Get the capture right instead.
+        </p>
       </div>
-    ) : (
-      <div>
-        <table class="w-full border-collapse text-sm">
-          <tbody>
-            <tr class="border-b border-line">
-              <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-              <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
-            </tr>
-            <tr class="border-b border-line">
-              <th class="py-2 text-left font-medium text-muted">File size</th>
-              <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
-            </tr>
-            <tr class="border-b border-line">
-              <th class="py-2 text-left font-medium text-muted">Format</th>
-              <td class="py-2 font-semibold">{exam.photo.format.toUpperCase()}</td>
-            </tr>
-            <tr class="border-b border-line">
-              <th class="py-2 text-left font-medium text-muted">Background</th>
-              <td class="py-2 font-semibold">{exam.photo.background}</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul class="mt-3 space-y-1 text-sm text-ink">
-          {exam.photo.notes.map((n) => (
-            <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
-          ))}
-        </ul>
-        <div class="mt-5">
-          <ImageResizer label="Photo" fileName="photo"
-            widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
-            minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
+      {exam.liveCaptureNotes && (
+        <div>
+          <h3 class="mt-5 mb-2 text-base font-bold text-navy-900">How to get the capture right</h3>
+          <ul class="space-y-1.5 text-sm text-ink">
+            {exam.liveCaptureNotes.map((n) => (
+              <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+            ))}
+          </ul>
         </div>
+      )}
+    </section>
+  )}
+
+  {exam.photo && (
+    <section class="mt-8">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Photo requirements</h2>
+      <table class="w-full border-collapse text-sm">
+        <tbody>
+          <tr class="border-b border-line">
+            <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+            <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">File size</th>
+            <td class="py-2 font-semibold">{exam.photo.minKB} – {exam.photo.maxKB} KB</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Format</th>
+            <td class="py-2 font-semibold">{exam.photo.format.toUpperCase()}</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Background</th>
+            <td class="py-2 font-semibold">{exam.photo.background}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="mt-3 space-y-1 text-sm text-ink">
+        {exam.photo.notes.map((n) => (
+          <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+        ))}
+      </ul>
+      <div class="mt-5">
+        <ImageResizer label="Photo" fileName="photo"
+          widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
+          minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
       </div>
-    )}
-  </section>
+    </section>
+  )}
 
-  <section class="mt-10">
-    <h2 class="mb-3 text-lg font-bold text-navy-900">Signature requirements</h2>
-    <table class="w-full border-collapse text-sm">
-      <tbody>
-        <tr class="border-b border-line">
-          <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-          <td class="py-2 font-semibold">
-            {exam.signature.widthCm
-              ? exam.signature.widthCm + ' × ' + exam.signature.heightCm + ' cm'
-              : exam.signature.widthPx + ' × ' + exam.signature.heightPx + ' px'}
-          </td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">File size</th>
-          <td class="py-2 font-semibold">{exam.signature.minKB} – {exam.signature.maxKB} KB</td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">Format</th>
-          <td class="py-2 font-semibold">{exam.signature.format.toUpperCase()}</td>
-        </tr>
-        <tr class="border-b border-line">
-          <th class="py-2 text-left font-medium text-muted">Ink colour</th>
-          <td class="py-2 font-semibold">{exam.signature.ink}</td>
-        </tr>
-      </tbody>
-    </table>
-    <ul class="mt-3 space-y-1 text-sm text-ink">
-      {exam.signature.notes.map((n) => (
-        <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
-      ))}
-    </ul>
+  {exam.combined && (
+    <section class="mt-10">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Combined photo + signature</h2>
+      <div class="rounded-md border-l-4 border-navy-600 bg-navy-100 px-4 py-3 text-sm">
+        <strong class="text-navy-900">This exam wants one image containing both.</strong>
+        <p class="mt-1 text-ink">
+          Your photograph goes on top and your signature underneath, in a single
+          file. Upload both below and we will combine them at the right size.
+        </p>
+      </div>
+      <table class="mt-4 w-full border-collapse text-sm">
+        <tbody>
+          <tr class="border-b border-line">
+            <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+            <td class="py-2 font-semibold">{exam.combined.widthPx} × {exam.combined.heightPx} px</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">File size</th>
+            <td class="py-2 font-semibold">{exam.combined.minKB} – {exam.combined.maxKB} KB</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Format</th>
+            <td class="py-2 font-semibold">{exam.combined.format.toUpperCase()}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="mt-3 space-y-1 text-sm text-ink">
+        {exam.combined.notes.map((n) => (
+          <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+        ))}
+      </ul>
+      <div class="mt-5">
+        <CombinedResizer
+          widthPx={exam.combined.widthPx} heightPx={exam.combined.heightPx}
+          minKB={exam.combined.minKB} maxKB={exam.combined.maxKB}
+          photoRatio={exam.combined.photoRatio || 0.72} />
+      </div>
+    </section>
+  )}
 
-    {exam.signature.widthCm && (
-      <p class="mt-3 text-xs text-muted">
-        The notification gives {exam.signature.widthCm} × {exam.signature.heightCm} cm.
-        Our tool produces {exam.signature.widthPx} × {exam.signature.heightPx} px,
-        which is that size at 300 DPI.
-      </p>
-    )}
-
-    <div class="mt-5">
-      <ImageResizer label="Signature" fileName="signature"
-        widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
-        minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
-    </div>
-  </section>
+  {exam.signature && (
+    <section class="mt-10">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Signature requirements</h2>
+      <table class="w-full border-collapse text-sm">
+        <tbody>
+          <tr class="border-b border-line">
+            <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+            <td class="py-2 font-semibold">
+              {exam.signature.widthCm
+                ? exam.signature.widthCm + ' × ' + exam.signature.heightCm + ' cm'
+                : exam.signature.widthPx + ' × ' + exam.signature.heightPx + ' px'}
+            </td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">File size</th>
+            <td class="py-2 font-semibold">{exam.signature.minKB} – {exam.signature.maxKB} KB</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Format</th>
+            <td class="py-2 font-semibold">{exam.signature.format.toUpperCase()}</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Ink colour</th>
+            <td class="py-2 font-semibold">{exam.signature.ink}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="mt-3 space-y-1 text-sm text-ink">
+        {exam.signature.notes.map((n) => (
+          <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+        ))}
+      </ul>
+      {exam.signature.widthCm && (
+        <p class="mt-3 text-xs text-muted">
+          The notification gives {exam.signature.widthCm} × {exam.signature.heightCm} cm.
+          Our tool produces {exam.signature.widthPx} × {exam.signature.heightPx} px,
+          which is that size at 300 DPI.
+        </p>
+      )}
+      <div class="mt-5">
+        <ImageResizer label="Signature" fileName="signature"
+          widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
+          minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
+      </div>
+    </section>
+  )}
 
   <section class="mt-10 rounded-lg bg-surface p-5">
     <h2 class="mb-2 text-lg font-bold text-navy-900">About {exam.name} {exam.year}</h2>
@@ -197,8 +241,8 @@ const examProducts = products[exam.slug] || [];
           <span class="font-semibold text-navy-800">{e.name}</span>
           <span class="block text-xs text-muted">
             {e.photo
-              ? e.photo.widthPx + '×' + e.photo.heightPx + ' px · ' + e.photo.minKB + '–' + e.photo.maxKB + ' KB'
-              : 'Live photo capture'}
+              ? e.photo.widthPx + '×' + e.photo.heightPx + ' px'
+              : e.combined ? 'Combined image' : 'Live photo capture'}
           </span>
         </a>
       ))}
