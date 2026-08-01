@@ -79,13 +79,32 @@
   "photo": null,
   "combined": null,
   "liveCaptureNotes": [
-    "Use a well-lit place with a plain background",
-    "Keep the camera at eye level and look straight ahead",
-    "No cap, mask or spectacles"
+    "Candidates are not required to upload a pre-existing photograph.",
+    "Live photograph is captured by the application portal using a webcam or the front camera of a mobile phone.",
+    "Wear non-white clothing, preferably dark colours, to maintain contrast with the background.",
+    "Position the camera at eye level.",
+    "Look straight ahead with a neutral expression.",
+    "Ensure the entire face is clearly visible and centered within the frame.",
+    "Keep your face neither too close nor too far from the camera.",
+    "Do not wear a cap, mask, or glasses/spectacles.",
+    "Do not capture a printed or digital pre-existing photograph."
   ],
   "signature": {
-    "widthPx": 0, "heightPx": 0, "minKB": 0, "maxKB": 0,
-    "format": "jpg", "ink": "black", "notes": []
+    "widthPx": null,
+    "heightPx": null,
+    "minKB": 30,
+    "maxKB": 49,
+    "format": "jpg/jpeg",
+    "ink": "black",
+    "notes": [
+      "Minimum image dimensions: 140 × 60 pixels.",
+      "Scan using a minimum resolution of 100 DPI.",
+      "Use white paper.",
+      "Signature must be written by the candidate only.",
+      "Signature must be in running handwriting (cursive/joined letters), not block, capital, or disjointed letters.",
+      "Position the signature within the designated 35 mm × 20 mm scan box.",
+      "Center the signature within the scan box."
+    ]
   },
   "thumb": null,
   "documents": null
