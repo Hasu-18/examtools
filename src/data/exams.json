@@ -13,7 +13,7 @@
     "liveCaptureNotes": [
       "Use a well-lit place with a plain background",
       "Keep the camera at eye level and look straight ahead",
-      "Your whole face must sit inside the marked area — not too close, not too far",
+      "Your whole face must sit inside the marked area, not too close, not too far",
       "No cap, mask or spectacles",
       "Do not photograph an existing printed or digital photo of yourself",
       "Your appearance at the exam should match the captured photo"
@@ -63,6 +63,67 @@
       "ink": "black",
       "notes": ["NOT YET VERIFIED — check the official notification"]
     },
+    "thumb": null,
+    "documents": null
+  },
+  {
+  "slug": "rrb-group-d",
+  "name": "RRB Group D",
+  "fullName": "Railway Recruitment Board Level 1 Posts",
+  "body": "RRB",
+  "category": "railway",
+  "year": 2026,
+  "officialUrl": "https://rrbapply.gov.in",
+  "lastVerified": "2026-08-01",
+  "captureMode": "live",
+  "photo": null,
+  "combined": null,
+  "liveCaptureNotes": [
+    "Use a well-lit place with a plain background",
+    "Keep the camera at eye level and look straight ahead",
+    "No cap, mask or spectacles"
+  ],
+  "signature": {
+    "widthPx": 0, "heightPx": 0, "minKB": 0, "maxKB": 0,
+    "format": "jpg", "ink": "black", "notes": []
+  },
+  "thumb": null,
+  "documents": null
+},
+{
+    "slug": "rrb-ntpc",
+    "name": "RRB NTPC",
+    "fullName": "Railway Recruitment Board Non-Technical Popular Categories",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-01",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "No cap, mask or spectacles"
+    ],
+    "signature": null,
+    "thumb": null,
+    "documents": null
+  },
+  {
+    "slug": "wbssc-group-c",
+    "name": "WBSSC Group C",
+    "fullName": "",
+    "body": "WBSSC",
+    "category": "state",
+    "year": 2026,
+    "officialUrl": "https://westbengalssc.com",
+    "lastVerified": "2026-08-01",
+    "captureMode": "upload",
+    "photo": null,
+    "signature": null,
+    "combined": null,
     "thumb": null,
     "documents": null
   }
