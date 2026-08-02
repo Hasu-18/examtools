@@ -1,39 +1,31 @@
 {
-  "study-essentials": {
-    "label": "Study essentials",
-    "note": "Things most aspirants end up buying at some point.",
-    "items": [
-      {
-        "title": "REPLACE with product name",
-        "image": "REPLACE with SiteStripe image URL",
-        "note": "One honest line on who this is for",
-        "url": "REPLACE with your affiliate link"
-      }
-    ]
-  },
-
-  "form-filling": {
-    "label": "Useful for form filling",
-    "note": "Small things that make the application process easier.",
-    "items": [
-      {
-        "title": "REPLACE with product name",
-        "image": "REPLACE with SiteStripe image URL",
-        "note": "One honest line",
-        "url": "REPLACE with your affiliate link"
-      }
-    ]
-  },
-
   "ssc-cgl": {
-    "label": "Recommended for SSC CGL",
+    "label": "Books for SSC CGL",
     "note": "",
     "items": [
       {
-        "title": "PW 33 SSC CGL Tier 1 Previous Year Solved Papers",
-        "image": "https://m.media-amazon.com/images/I/61PEAXDNEkL._AC_UY327_FMwebp_QL65_.jpg",
-        "note": "33 previous year Tier 1 papers with full solutions",
-        "url": "https://link.amazon/B06oblAXe"
+        "title": "PARMAR SSC Fatman | GK/GS Theory Book",
+        "publisher": "Parmar SSC",
+        "badge": "Bestseller",
+        "note": "Useful For SSC CGL and CHSL (Tier 1 & 2) | CPO | MTS | Steno",
+        "image": "",
+        "url": "https://link.amazon/B0acgkgLa"
+      },
+      {
+        "title": "PW Selection Mantra SSC CGL Tier 1 & 2 Exams 2026–27",
+        "publisher": "PW",
+        "badge": "2026 Edition",
+        "note": "Reasoning, General Awareness, Maths, English & 15 Online CBT Test",
+        "image": "",
+        "url": "https://link.amazon/B00ps54jY"
+      },
+      {
+        "title": "PW 33 SSC CGL Tier 1 Previous Year Solved Papers (2025–2018) with 5 Online Mock",
+        "publisher": "PW",
+        "badge": "Bestseller",
+        "note": "Year-wise PYQs | Fully Solved | English Edition",
+        "image": "",
+        "url": "https://link.amazon/B08gVQNuY"
       }
     ]
   }

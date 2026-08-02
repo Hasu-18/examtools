@@ -6,9 +6,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Product builder — FormSetu admin</title>
+  <title>Book builder — FormSetu admin</title>
   <style>
-    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --pass:#15803d; --surface:#f8fafc; }
+    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --surface:#f8fafc; }
     * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:#fff; line-height:1.5; }
     .wrap { max-width: 900px; margin:0 auto; padding:1.5rem 1rem 4rem; }
@@ -33,7 +33,9 @@
     .grp h3 { margin:0 0 .1rem; font-size:.95rem; color:var(--navy); }
     .grp .key { font-size:.75rem; color:var(--muted); font-family:ui-monospace, Consolas, monospace; }
     .item { display:flex; align-items:center; gap:.6rem; border-top:1px solid var(--line); padding:.5rem 0; font-size:.85rem; }
-    .item img { width:38px; height:38px; object-fit:contain; background:var(--surface); border-radius:4px; flex-shrink:0; }
+    .item .thumb { width:32px; height:46px; border-radius:3px; flex-shrink:0; background:linear-gradient(135deg,#0b1f35,#1e4d80); position:relative; overflow:hidden; }
+    .item .thumb::before { content:""; position:absolute; left:0; top:0; width:4px; height:100%; background:rgba(0,0,0,.3); }
+    .item img.thumb { object-fit:contain; background:var(--surface); }
     .item .t { flex:1; min-width:0; }
     .item .t b { display:block; font-weight:600; }
     .item .t small { color:var(--muted); }
@@ -41,18 +43,21 @@
     #out { width:100%; min-height:220px; font-family:ui-monospace, Consolas, monospace; font-size:.75rem; }
     .hint { font-size:.75rem; color:var(--muted); margin:.25rem 0 0; }
     .prev { display:flex; gap:.6rem; align-items:center; margin-top:.5rem; padding:.5rem; background:var(--surface); border-radius:6px; }
-    .prev img { width:60px; height:60px; object-fit:contain; }
+    .prev img { width:50px; height:70px; object-fit:contain; }
     @media (max-width:640px){ .row-2 { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>Affiliate product builder</h1>
-  <p class="sub">Build product groups, then download products.json and replace the file in src/data/.</p>
+  <h1>Book builder</h1>
+  <p class="sub">Build book groups, then download products.json and replace the file in src/data/.</p>
 
   <div class="note">
-    Get every image URL and link from Amazon <strong>SiteStripe</strong>, the bar at the top of a product page when you are logged into Associates. Use Get Link, then Image. Never right-click and copy an image address, and never type in a price.
+    <strong>Books only.</strong> Leave the image field blank and the site draws a
+    coloured book cover with the title and publisher on it. Only add an image URL
+    if it is your own photograph saved in public/products/.
+    Never copy an image address from Amazon, and never type in a price.
   </div>
 
   <h2>Step 1 — Load what you already have</h2>
@@ -60,7 +65,7 @@
     <span>Paste your current src/data/products.json (or leave empty to start fresh)</span>
     <textarea id="existing" placeholder="{ ... }"></textarea>
   </label>
-  <button class="ghost" id="loadBtn">Load existing products</button>
+  <button class="ghost" id="loadBtn">Load existing books</button>
   <p class="hint" id="loadMsg"></p>
 
   <h2>Step 2 — Choose or create a group</h2>
@@ -77,51 +82,62 @@
       <div class="row row-2">
         <label>
           <span>Group key (used in blog frontmatter)</span>
-          <input id="g_key" placeholder="ssc-cgl or study-essentials" />
+          <input id="g_key" placeholder="ssc-cgl, popular-pyq, motivation" />
         </label>
         <label>
           <span>Heading shown on the page</span>
-          <input id="g_label" placeholder="Recommended for SSC CGL" />
+          <input id="g_label" placeholder="Books for SSC CGL" />
         </label>
       </div>
       <label>
         <span>Short line under the heading (optional)</span>
-        <input id="g_note" placeholder="Things most aspirants end up buying." />
+        <input id="g_note" placeholder="Picked for Tier 1 preparation." />
       </label>
       <p class="hint">
-        For an exam specific group, the key must match the slug in exams.json exactly, so the exam page picks it up automatically.
+        For an exam group, the key must match the slug in exams.json exactly, so the
+        exam page picks it up automatically. General groups can be named anything.
       </p>
     </div>
   </fieldset>
 
-  <h2>Step 3 — Add a product</h2>
+  <h2>Step 3 — Add a book</h2>
   <fieldset>
-    <legend>Product</legend>
+    <legend>Book</legend>
     <label>
-      <span>Product title</span>
-      <input id="p_title" placeholder="PW 33 SSC CGL Tier 1 Previous Year Solved Papers" />
+      <span>Book title</span>
+      <input id="p_title" placeholder="33 Year SSC CGL Tier 1 Previous Year Solved Papers" />
     </label>
-    <label>
-      <span>Image URL from SiteStripe</span>
-      <input id="p_image" placeholder="https://m.media-amazon.com/images/..." />
-    </label>
-    <div class="prev" id="prevBox" hidden>
-      <img id="prevImg" alt="" />
-      <span class="hint">If this image does not appear, the URL is wrong.</span>
+    <div class="row row-2">
+      <label>
+        <span>Publisher (optional, shown on the cover)</span>
+        <input id="p_publisher" placeholder="Arihant, Disha, Physics Wallah" />
+      </label>
+      <label>
+        <span>Badge (optional, small tag on the cover)</span>
+        <input id="p_badge" placeholder="PYQ, Bestseller, 2026 Edition" />
+      </label>
     </div>
     <label>
       <span>Your honest one line reason someone should buy it</span>
       <input id="p_note" placeholder="33 previous year Tier 1 papers with full solutions" />
     </label>
     <label>
-      <span>Your affiliate link from SiteStripe</span>
+      <span>Your affiliate link</span>
       <input id="p_url" placeholder="https://amzn.to/..." />
     </label>
-    <p class="hint">No price field, on purpose. The card says "Check price on Amazon" instead.</p>
+    <label>
+      <span>Image path (optional, leave blank for a generated cover)</span>
+      <input id="p_image" placeholder="/products/my-photo.jpg" />
+    </label>
+    <div class="prev" id="prevBox" hidden>
+      <img id="prevImg" alt="" />
+      <span class="hint">If this image does not appear, the path is wrong.</span>
+    </div>
+    <p class="hint">No price field, on purpose. The card says "Buy from Amazon" instead.</p>
   </fieldset>
 
   <div class="bar">
-    <button class="primary" id="addBtn">Add product</button>
+    <button class="primary" id="addBtn">Add book</button>
     <button class="ghost" id="clearBtn">Clear form</button>
   </div>
   <p class="hint" id="addMsg"></p>
@@ -223,16 +239,23 @@
         var row = document.createElement('div');
         row.className = 'item';
 
-        var img = document.createElement('img');
-        img.src = item.image;
-        img.alt = '';
+        var thumb;
+        if (item.image) {
+          thumb = document.createElement('img');
+          thumb.className = 'thumb';
+          thumb.src = item.image;
+          thumb.alt = '';
+        } else {
+          thumb = document.createElement('div');
+          thumb.className = 'thumb';
+        }
 
         var t = document.createElement('div');
         t.className = 't';
         var b = document.createElement('b');
         b.textContent = item.title;
         var s = document.createElement('small');
-        s.textContent = item.note || '';
+        s.textContent = [item.publisher, item.badge, item.note].filter(Boolean).join(' · ');
         t.appendChild(b);
         t.appendChild(s);
 
@@ -244,7 +267,7 @@
           render();
         });
 
-        row.appendChild(img);
+        row.appendChild(thumb);
         row.appendChild(t);
         row.appendChild(del);
         wrap.appendChild(row);
@@ -277,11 +300,10 @@
 
   g('addBtn').addEventListener('click', function () {
     var title = txt('p_title');
-    var image = txt('p_image');
     var url = txt('p_url');
 
-    if (!title || !image || !url) {
-      g('addMsg').textContent = 'Title, image URL and affiliate link are all required.';
+    if (!title || !url) {
+      g('addMsg').textContent = 'Book title and affiliate link are required.';
       return;
     }
 
@@ -303,13 +325,15 @@
 
     data[key].items.push({
       title: title,
-      image: image,
+      publisher: txt('p_publisher') || '',
+      badge: txt('p_badge') || '',
       note: txt('p_note') || '',
+      image: txt('p_image') || '',
       url: url
     });
 
-    g('addMsg').textContent = 'Added to ' + data[key].label + '.';
-    ['p_title', 'p_image', 'p_note', 'p_url'].forEach(function (id) { g(id).value = ''; });
+    g('addMsg').textContent = 'Added to ' + data[key].label + '. That group now has ' + data[key].items.length + ' books.';
+    ['p_title', 'p_publisher', 'p_badge', 'p_note', 'p_url', 'p_image'].forEach(function (id) { g(id).value = ''; });
     g('prevBox').hidden = true;
 
     refreshSelect();
@@ -319,7 +343,7 @@
   });
 
   g('clearBtn').addEventListener('click', function () {
-    ['g_key','g_label','g_note','p_title','p_image','p_note','p_url'].forEach(function (id) {
+    ['g_key','g_label','g_note','p_title','p_publisher','p_badge','p_note','p_url','p_image'].forEach(function (id) {
       g(id).value = '';
     });
     g('prevBox').hidden = true;
