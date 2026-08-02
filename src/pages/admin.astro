@@ -8,7 +8,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Exam data builder — FormSetu admin</title>
   <style>
-    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --pass:#15803d; --surface:#f8fafc; }
+    :root { --ink:#111827; --muted:#4b5563; --line:#e5e7eb; --navy:#0b1f35; --amber:#d97706; --surface:#f8fafc; }
     * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:#fff; line-height:1.5; }
     .wrap { max-width: 900px; margin:0 auto; padding:1.5rem 1rem 4rem; }
@@ -31,7 +31,6 @@
     .ghost { background:#fff; color:var(--navy); border:1px solid var(--line); }
     .bar { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
     .note { background:#fef3c7; border-left:4px solid var(--amber); padding:.7rem .9rem; border-radius:6px; font-size:.85rem; margin:1rem 0; }
-    .ok { background:#ecfdf5; border-left-color:var(--pass); }
     #list { list-style:none; padding:0; margin:.5rem 0 0; }
     #list li { display:flex; justify-content:space-between; align-items:center; border:1px solid var(--line); border-radius:6px; padding:.5rem .7rem; margin-bottom:.4rem; font-size:.85rem; }
     #list button { background:none; color:#b91c1c; font-size:.8rem; padding:.2rem .4rem; }
@@ -47,8 +46,8 @@
   <p class="sub">Fill the form, add each exam, then download the finished exams.json and replace the file in src/data/.</p>
 
   <div class="note">
-    Every number here must come from an official notification you have actually opened.
-    Leave a field blank if the notification does not state it — blank becomes null and that section disappears from the page.
+    Enter sizes in whatever unit the notification uses. The site will show that same
+    unit to visitors, so the page matches the notification exactly.
   </div>
 
   <h2>Step 1 — Load what you already have</h2>
@@ -64,12 +63,12 @@
   <fieldset>
     <legend>Basics</legend>
     <div class="row row-2">
-      <label><span>Exam name (shown on the page)</span><input id="f_name" placeholder="SSC CHSL" /></label>
-      <label><span>Slug (URL)</span><input id="f_slug" placeholder="ssc-chsl" /></label>
+      <label><span>Exam name (shown on the page)</span><input id="f_name" placeholder="IBPS PO" /></label>
+      <label><span>Slug (URL)</span><input id="f_slug" placeholder="ibps-po" /></label>
     </div>
-    <label><span>Full name</span><input id="f_full" placeholder="Staff Selection Commission Combined Higher Secondary Level" /></label>
+    <label><span>Full name</span><input id="f_full" placeholder="Institute of Banking Personnel Selection Probationary Officer" /></label>
     <div class="row row-4">
-      <label><span>Body</span><input id="f_body" placeholder="SSC" /></label>
+      <label><span>Body</span><input id="f_body" placeholder="IBPS" /></label>
       <label><span>Category</span>
         <select id="f_cat">
           <option value="central">central</option>
@@ -82,19 +81,26 @@
       <label><span>Year</span><input id="f_year" type="number" value="2026" /></label>
       <label><span>Verified on</span><input id="f_ver" type="date" /></label>
     </div>
-    <label><span>Official URL</span><input id="f_url" placeholder="https://ssc.gov.in" /></label>
+    <label><span>Official URL</span><input id="f_url" placeholder="https://ibps.in" /></label>
   </fieldset>
 
   <fieldset>
-    <legend>Upload pattern</legend>
-    <label><span>What does this exam ask for?</span>
+    <legend>What does this exam ask for?</legend>
+    <label>
       <select id="f_pattern">
-        <option value="upload">Upload photo and signature separately</option>
-        <option value="live">Photo captured live in the portal + upload signature</option>
-        <option value="combined">One combined image (photo above, signature below)</option>
-        <option value="combined_sign">Combined image AND a separate signature</option>
+        <option value="ps">Photo + Signature</option>
+        <option value="pst">Photo + Signature + Thumb</option>
+        <option value="pstd">Photo + Signature + Thumb + Declaration (IBPS style)</option>
+        <option value="psd">Photo + Signature + Declaration</option>
+        <option value="live_s">Live photo + Signature</option>
+        <option value="live_st">Live photo + Signature + Thumb</option>
+        <option value="live_std">Live photo + Signature + Thumb + Declaration</option>
+        <option value="live_only">Everything captured live, nothing to upload</option>
+        <option value="comb">Combined image only (photo above, signature below)</option>
+        <option value="comb_s">Combined image + separate Signature</option>
       </select>
     </label>
+    <p class="hint">Only the sections this exam needs will appear below.</p>
   </fieldset>
 
   <fieldset id="fs_live" hidden>
@@ -120,7 +126,7 @@ No cap, mask or spectacles</textarea></label>
       <label><span>Format</span><input id="p_fmt" value="jpg" /></label>
     </div>
     <label><span>Background</span><input id="p_bg" placeholder="white or light coloured" /></label>
-    <label><span>Notes — one per line</span><textarea id="p_notes"></textarea></label>
+    <label><span>Notes, one per line</span><textarea id="p_notes"></textarea></label>
   </fieldset>
 
   <fieldset id="fs_combined" hidden>
@@ -139,7 +145,7 @@ No cap, mask or spectacles</textarea></label>
       <label><span>Format</span><input id="c_fmt" value="jpg" /></label>
       <label><span>Photo share (0.72 = 72%)</span><input id="c_ratio" type="number" step="0.01" value="0.72" /></label>
     </div>
-    <label><span>Notes — one per line</span><textarea id="c_notes">Photograph on top, signature directly below</textarea></label>
+    <label><span>Notes, one per line</span><textarea id="c_notes">Photograph on top, signature directly below</textarea></label>
   </fieldset>
 
   <fieldset id="fs_sign">
@@ -157,8 +163,63 @@ No cap, mask or spectacles</textarea></label>
       <label><span>Max KB</span><input id="s_max" type="number" /></label>
       <label><span>Format</span><input id="s_fmt" value="jpg" /></label>
     </div>
-    <label><span>Ink colour</span><input id="s_ink" placeholder="black" /></label>
-    <label><span>Notes — one per line</span><textarea id="s_notes"></textarea></label>
+    <label><span>Ink colour</span>
+      <select id="s_ink">
+        <option value="">Not specified in the notification</option>
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="black or blue">Black or blue</option>
+      </select>
+    </label>
+    <label><span>Notes, one per line</span><textarea id="s_notes"></textarea></label>
+  </fieldset>
+
+  <fieldset id="fs_thumb" hidden>
+    <legend>Left thumb impression</legend>
+    <div class="row row-4">
+      <label><span>Width</span><input id="t_w" type="number" step="any" /></label>
+      <label><span>Height</span><input id="t_h" type="number" step="any" /></label>
+      <label><span>Unit</span>
+        <select id="t_unit"><option>px</option><option>cm</option><option>mm</option><option>in</option></select>
+      </label>
+      <label><span>DPI</span><input id="t_dpi" type="number" value="300" /></label>
+    </div>
+    <div class="row row-3">
+      <label><span>Min KB</span><input id="t_min" type="number" /></label>
+      <label><span>Max KB</span><input id="t_max" type="number" /></label>
+      <label><span>Format</span><input id="t_fmt" value="jpg" /></label>
+    </div>
+    <label><span>Ink colour</span>
+      <select id="t_ink">
+        <option value="">Not specified in the notification</option>
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="black or blue">Black or blue</option>
+      </select>
+    </label>
+    <label><span>Notes, one per line</span><textarea id="t_notes"></textarea></label>
+  </fieldset>
+
+  <fieldset id="fs_decl" hidden>
+    <legend>Handwritten declaration</legend>
+    <div class="row row-4">
+      <label><span>Width</span><input id="d_w" type="number" step="any" /></label>
+      <label><span>Height</span><input id="d_h" type="number" step="any" /></label>
+      <label><span>Unit</span>
+        <select id="d_unit"><option>px</option><option>cm</option><option>mm</option><option>in</option></select>
+      </label>
+      <label><span>DPI</span><input id="d_dpi" type="number" value="300" /></label>
+    </div>
+    <div class="row row-3">
+      <label><span>Min KB</span><input id="d_min" type="number" /></label>
+      <label><span>Max KB</span><input id="d_max" type="number" /></label>
+      <label><span>Format</span><input id="d_fmt" value="jpg" /></label>
+    </div>
+    <label>
+      <span>The exact text the candidate must write, copied word for word from the notification</span>
+      <textarea id="d_text" placeholder="I, _______ (Name of the candidate), hereby declare that all the information submitted by me in the application form is correct, true and valid..."></textarea>
+    </label>
+    <label><span>Notes, one per line</span><textarea id="d_notes"></textarea></label>
   </fieldset>
 
   <div class="bar">
@@ -183,6 +244,19 @@ No cap, mask or spectacles</textarea></label>
 <script>
   var exams = [];
   var g = function (id) { return document.getElementById(id); };
+
+  var PATTERNS = {
+    ps:        { live:false, photo:true,  combined:false, sign:true,  thumb:false, decl:false },
+    pst:       { live:false, photo:true,  combined:false, sign:true,  thumb:true,  decl:false },
+    pstd:      { live:false, photo:true,  combined:false, sign:true,  thumb:true,  decl:true  },
+    psd:       { live:false, photo:true,  combined:false, sign:true,  thumb:false, decl:true  },
+    live_s:    { live:true,  photo:false, combined:false, sign:true,  thumb:false, decl:false },
+    live_st:   { live:true,  photo:false, combined:false, sign:true,  thumb:true,  decl:false },
+    live_std:  { live:true,  photo:false, combined:false, sign:true,  thumb:true,  decl:true  },
+    live_only: { live:true,  photo:false, combined:false, sign:false, thumb:false, decl:false },
+    comb:      { live:false, photo:false, combined:true,  sign:false, thumb:false, decl:false },
+    comb_s:    { live:false, photo:false, combined:true,  sign:true,  thumb:false, decl:false }
+  };
 
   g('f_ver').value = new Date().toISOString().slice(0, 10);
 
@@ -213,38 +287,44 @@ No cap, mask or spectacles</textarea></label>
   }
 
   function block(prefix, kind) {
-    var w = toPx(g(prefix + '_w').value, g(prefix + '_unit').value, g(prefix + '_dpi').value);
-    var h = toPx(g(prefix + '_h').value, g(prefix + '_unit').value, g(prefix + '_dpi').value);
+    var unit = g(prefix + '_unit').value;
+    var dpi = Number(g(prefix + '_dpi').value) || 300;
+    var rawW = g(prefix + '_w').value;
+    var rawH = g(prefix + '_h').value;
+    var w = toPx(rawW, unit, dpi);
+    var h = toPx(rawH, unit, dpi);
     if (!w || !h) return null;
 
     var o = {
       widthPx: w,
       heightPx: h,
+      unit: unit,
+      displayWidth: Number(rawW),
+      displayHeight: Number(rawH),
+      dpi: unit === 'px' ? null : dpi,
       minKB: num(prefix + '_min'),
       maxKB: num(prefix + '_max'),
       format: txt(prefix + '_fmt') || 'jpg'
     };
 
-    var unit = g(prefix + '_unit').value;
-    if (unit === 'cm') {
-      o.widthCm = Number(g(prefix + '_w').value);
-      o.heightCm = Number(g(prefix + '_h').value);
-    }
-
+    if (unit === 'cm') { o.widthCm = Number(rawW); o.heightCm = Number(rawH); }
     if (kind === 'photo') o.background = txt(prefix + '_bg') || '';
-    if (kind === 'sign') o.ink = txt(prefix + '_ink') || 'not specified';
+    if (kind === 'sign' || kind === 'thumb') o.ink = txt(prefix + '_ink') || 'not specified';
     if (kind === 'combined') o.photoRatio = Number(g('c_ratio').value) || 0.72;
+    if (kind === 'declaration') o.text = txt(prefix + '_text') || '';
 
     o.notes = lines(prefix + '_notes');
     return o;
   }
 
   function syncPattern() {
-    var p = g('f_pattern').value;
-    g('fs_live').hidden = p !== 'live';
-    g('fs_photo').hidden = p !== 'upload';
-    g('fs_combined').hidden = p !== 'combined' && p !== 'combined_sign';
-    g('fs_sign').hidden = p === 'combined';
+    var cfg = PATTERNS[g('f_pattern').value] || PATTERNS.ps;
+    g('fs_live').hidden = !cfg.live;
+    g('fs_photo').hidden = !cfg.photo;
+    g('fs_combined').hidden = !cfg.combined;
+    g('fs_sign').hidden = !cfg.sign;
+    g('fs_thumb').hidden = !cfg.thumb;
+    g('fs_decl').hidden = !cfg.decl;
   }
   g('f_pattern').addEventListener('change', syncPattern);
   syncPattern();
@@ -255,8 +335,15 @@ No cap, mask or spectacles</textarea></label>
     ul.innerHTML = '';
     exams.forEach(function (e, i) {
       var li = document.createElement('li');
+      var parts = [];
+      if (e.photo) parts.push('photo');
+      if (e.captureMode === 'live') parts.push('live photo');
+      if (e.combined) parts.push('combined');
+      if (e.signature) parts.push('signature');
+      if (e.thumb) parts.push('thumb');
+      if (e.declaration) parts.push('declaration');
       var label = document.createElement('span');
-      label.textContent = e.name + '  ·  /exams/' + e.slug + '/';
+      label.textContent = e.name + '  ·  /exams/' + e.slug + '/  ·  ' + parts.join(' + ');
       var del = document.createElement('button');
       del.textContent = 'Remove';
       del.addEventListener('click', function () {
@@ -272,7 +359,7 @@ No cap, mask or spectacles</textarea></label>
 
   g('loadBtn').addEventListener('click', function () {
     var raw = g('existing').value.trim();
-    if (!raw) { g('loadMsg').textContent = 'Nothing pasted — starting fresh.'; return; }
+    if (!raw) { g('loadMsg').textContent = 'Nothing pasted, starting fresh.'; return; }
     try {
       var parsed = JSON.parse(raw);
       if (!Array.isArray(parsed)) throw new Error('not an array');
@@ -289,7 +376,8 @@ No cap, mask or spectacles</textarea></label>
     var slug = txt('f_slug');
     if (!name || !slug) { g('addMsg').textContent = 'Name and slug are required.'; return; }
 
-    var p = g('f_pattern').value;
+    var key = g('f_pattern').value;
+    var cfg = PATTERNS[key] || PATTERNS.ps;
 
     var exam = {
       slug: slug.toLowerCase().replace(/\s+/g, '-'),
@@ -300,18 +388,19 @@ No cap, mask or spectacles</textarea></label>
       year: Number(g('f_year').value) || 2026,
       officialUrl: txt('f_url') || '',
       lastVerified: g('f_ver').value,
-      captureMode: p === 'live' ? 'live' : 'upload',
-      photo: p === 'upload' ? block('p', 'photo') : null,
-      combined: (p === 'combined' || p === 'combined_sign') ? block('c', 'combined') : null,
-      signature: p === 'combined' ? null : block('s', 'sign'),
-      thumb: null,
+      captureMode: cfg.live ? 'live' : 'upload',
+      photo: cfg.photo ? block('p', 'photo') : null,
+      combined: cfg.combined ? block('c', 'combined') : null,
+      signature: cfg.sign ? block('s', 'sign') : null,
+      thumb: cfg.thumb ? block('t', 'thumb') : null,
+      declaration: cfg.decl ? block('d', 'declaration') : null,
       documents: null
     };
 
-    if (p === 'live') exam.liveCaptureNotes = lines('f_live');
+    if (cfg.live) exam.liveCaptureNotes = lines('f_live');
 
     exams.push(exam);
-    g('addMsg').textContent = 'Added ' + name + '.';
+    g('addMsg').textContent = 'Added ' + name + '. You now have ' + exams.length + ' exams.';
     render();
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   });
@@ -320,7 +409,9 @@ No cap, mask or spectacles</textarea></label>
     ['f_name','f_slug','f_full','f_body','f_url',
      'p_w','p_h','p_min','p_max','p_bg','p_notes',
      'c_w','c_h','c_min','c_max','c_notes',
-     's_w','s_h','s_min','s_max','s_ink','s_notes'].forEach(function (id) {
+     's_w','s_h','s_min','s_max','s_notes',
+     't_w','t_h','t_min','t_max','t_notes',
+     'd_w','d_h','d_min','d_max','d_text','d_notes'].forEach(function (id) {
       g(id).value = '';
     });
     g('addMsg').textContent = '';

@@ -7,17 +7,30 @@ const {
   maxKB = 50,
   fileName = "photo",
   editable = true,
-  openByDefault = false
+  openByDefault = false,
+  unit = "px",
+  displayW = null,
+  displayH = null,
+  dpi = 300
 } = Astro.props;
+
+const boxW = (displayW === null || displayW === undefined) ? widthPx : displayW;
+const boxH = (displayH === null || displayH === undefined) ? heightPx : displayH;
+const unitLabel = unit === 'in' ? 'inch' : unit;
+const targetLine = unit === 'px'
+  ? `${widthPx} × ${heightPx} px · ${minKB} to ${maxKB} KB · JPG`
+  : `${boxW} × ${boxH} ${unitLabel} · ${minKB} to ${maxKB} KB · JPG`;
 ---
 <div class="rz rounded-lg border border-line bg-white"
-     data-w={widthPx} data-h={heightPx} data-min={minKB} data-max={maxKB} data-name={fileName}>
+     data-w={widthPx} data-h={heightPx} data-min={minKB} data-max={maxKB}
+     data-name={fileName} data-unit={unit} data-dw={boxW} data-dh={boxH} data-dpi={dpi}>
 
   <div class="border-b border-line bg-navy-100 px-4 py-3">
     <h3 class="text-base font-bold text-navy-900">{label} resizer</h3>
-    <p class="rz-target mt-0.5 text-sm text-muted">
-      {widthPx} × {heightPx} px · {minKB} to {maxKB} KB · JPG
-    </p>
+    <p class="rz-target mt-0.5 text-sm text-muted">{targetLine}</p>
+    {unit !== 'px' && (
+      <p class="mt-0.5 text-xs text-muted">That is {widthPx} × {heightPx} pixels at {dpi} DPI.</p>
+    )}
   </div>
 
   {editable && (
@@ -30,26 +43,26 @@ const {
         <div class="grid grid-cols-3 gap-2">
           <label class="block text-xs">
             <span class="text-muted">Width</span>
-            <input type="number" class="rz-in-w mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={widthPx} min="1" step="any" />
+            <input type="number" class="rz-in-w mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxW} min="0.1" step="any" />
           </label>
           <label class="block text-xs">
             <span class="text-muted">Height</span>
-            <input type="number" class="rz-in-h mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={heightPx} min="1" step="any" />
+            <input type="number" class="rz-in-h mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxH} min="0.1" step="any" />
           </label>
           <label class="block text-xs">
             <span class="text-muted">Unit</span>
             <select class="rz-unit mt-1 w-full rounded border border-line px-2 py-1.5 text-sm">
-              <option value="px">px</option>
-              <option value="cm">cm</option>
-              <option value="in">inch</option>
-              <option value="mm">mm</option>
+              <option value="px" selected={unit === 'px'}>px</option>
+              <option value="cm" selected={unit === 'cm'}>cm</option>
+              <option value="mm" selected={unit === 'mm'}>mm</option>
+              <option value="in" selected={unit === 'in'}>inch</option>
             </select>
           </label>
         </div>
 
-        <label class="rz-dpi-wrap mt-2 block text-xs" hidden>
+        <label class="rz-dpi-wrap mt-2 block text-xs" hidden={unit === 'px'}>
           <span class="text-muted">DPI (300 is standard for print sizes)</span>
-          <input type="number" class="rz-dpi mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value="300" min="72" step="1" />
+          <input type="number" class="rz-dpi mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={dpi} min="72" step="1" />
         </label>
 
         <div class="mt-2 grid grid-cols-2 gap-2">
@@ -68,7 +81,7 @@ const {
         </button>
 
         <p class="mt-2 text-xs text-muted">
-          Always check these against your official notification — requirements differ
+          Always check these against your official notification. Requirements differ
           between exams and change between years.
         </p>
       </div>
@@ -154,6 +167,10 @@ const {
     let H = +root.dataset.h;
     let MIN = +root.dataset.min;
     let MAX = +root.dataset.max;
+    let UNIT = root.dataset.unit || 'px';
+    let DW = +root.dataset.dw;
+    let DH = +root.dataset.dh;
+    let DPI = +root.dataset.dpi || 300;
     const NAME = root.dataset.name || 'photo';
 
     const q = (s) => root.querySelector(s);
@@ -176,38 +193,37 @@ const {
     let bmp = null, base = 1, zoom = 1, ox = 0, oy = 0;
     let origURL = null, outURL = null;
 
-    function setStage() {
-      stage.width = W;
-      stage.height = H;
-    }
+    function setStage() { stage.width = W; stage.height = H; }
     setStage();
 
+    function unitName(u) { return u === 'in' ? 'inch' : u; }
+
     function updateTarget() {
-      target.textContent = W + ' × ' + H + ' px · ' + MIN + ' to ' + MAX + ' KB · JPG';
+      if (UNIT === 'px') {
+        target.textContent = W + ' × ' + H + ' px · ' + MIN + ' to ' + MAX + ' KB · JPG';
+      } else {
+        target.textContent = DW + ' × ' + DH + ' ' + unitName(UNIT) + ' · ' + MIN + ' to ' + MAX + ' KB · JPG';
+      }
     }
 
     if (toggle) {
-      toggle.addEventListener('click', () => {
-        sizePanel.hidden = !sizePanel.hidden;
-      });
-
-      unitSel.addEventListener('change', () => {
-        dpiWrap.hidden = unitSel.value === 'px';
-      });
+      toggle.addEventListener('click', () => { sizePanel.hidden = !sizePanel.hidden; });
+      unitSel.addEventListener('change', () => { dpiWrap.hidden = unitSel.value === 'px'; });
 
       applySize.addEventListener('click', () => {
         const unit = unitSel.value;
-        const dpi = +dpiIn.value || 300;
+        const dpiVal = +dpiIn.value || 300;
         const rawW = +inW.value, rawH = +inH.value;
         if (!rawW || !rawH) return;
 
         let pxW = rawW, pxH = rawH;
-        if (unit === 'cm') { pxW = rawW / 2.54 * dpi; pxH = rawH / 2.54 * dpi; }
-        else if (unit === 'mm') { pxW = rawW / 25.4 * dpi; pxH = rawH / 25.4 * dpi; }
-        else if (unit === 'in') { pxW = rawW * dpi; pxH = rawH * dpi; }
+        if (unit === 'cm') { pxW = rawW / 2.54 * dpiVal; pxH = rawH / 2.54 * dpiVal; }
+        else if (unit === 'mm') { pxW = rawW / 25.4 * dpiVal; pxH = rawH / 25.4 * dpiVal; }
+        else if (unit === 'in') { pxW = rawW * dpiVal; pxH = rawH * dpiVal; }
 
         W = Math.max(1, Math.round(pxW));
         H = Math.max(1, Math.round(pxH));
+        UNIT = unit; DW = rawW; DH = rawH; DPI = dpiVal;
         MIN = Math.max(0, +inMin.value || 0);
         MAX = Math.max(1, +inMax.value || 1);
 
@@ -222,7 +238,6 @@ const {
           oy = (H - bmp.height * base) / 2;
           render();
         }
-
         sizePanel.hidden = true;
       });
     }
@@ -339,7 +354,9 @@ const {
       if (outURL) URL.revokeObjectURL(outURL);
       outURL = URL.createObjectURL(best);
       outImg.src = outURL;
-      outMeta.textContent = W + ' × ' + H + ' px · ' + kb.toFixed(0) + ' KB';
+      outMeta.textContent = (UNIT === 'px')
+        ? W + ' × ' + H + ' px · ' + kb.toFixed(0) + ' KB'
+        : DW + ' × ' + DH + ' ' + unitName(UNIT) + ' · ' + kb.toFixed(0) + ' KB';
 
       if (ok) {
         verdict.className = 'rz-verdict mt-4 rounded bg-pass-bg px-3 py-3 text-sm font-semibold text-pass';
@@ -387,4 +404,3 @@ const {
   .rz-hint { transition: opacity .4s; }
   .rz-hint.gone { opacity: 0; }
 </style>
-</script>

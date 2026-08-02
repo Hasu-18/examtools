@@ -4,7 +4,6 @@ import ImageResizer from '../../components/ImageResizer.astro';
 import CombinedResizer from '../../components/CombinedResizer.astro';
 import AffiliateBlock from '../../components/AffiliateBlock.astro';
 import exams from '../../data/exams.json';
-import products from '../../data/products.json';
 
 export function getStaticPaths() {
   return exams.map((exam) => ({
@@ -27,7 +26,14 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
 
 const related = exams.filter((e) => e.slug !== exam.slug).slice(0, 6);
 const pageUrl = Astro.url.href;
-const examProducts = [exam.slug, 'study-essentials'];
+
+const dim = (b) => (b.unit && b.unit !== 'px' && b.displayWidth)
+  ? `${b.displayWidth} × ${b.displayHeight} ${b.unit === 'in' ? 'inch' : b.unit}`
+  : `${b.widthPx} × ${b.heightPx} px`;
+
+const pxNote = (b) => (b.unit && b.unit !== 'px' && b.displayWidth)
+  ? `That is ${b.widthPx} × ${b.heightPx} pixels at ${b.dpi || 300} DPI.`
+  : null;
 ---
 <BaseLayout title={title} description={description}>
 
@@ -54,6 +60,21 @@ const examProducts = [exam.slug, 'study-essentials'];
       Official {exam.body} site ↗
     </a>
   </div>
+
+  {(exam.thumb || exam.declaration) && (
+    <div class="mt-4 rounded-lg border-2 border-navy-600 bg-navy-100 px-4 py-3">
+      <p class="text-sm font-bold text-navy-900">This exam needs more than a photo and signature.</p>
+      <ul class="mt-2 space-y-1 text-sm text-ink">
+        {exam.photo && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Photograph</span></li>}
+        {isLive && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Photograph, captured live in the portal</span></li>}
+        {exam.combined && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Combined photo and signature image</span></li>}
+        {exam.signature && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Signature</span></li>}
+        {exam.thumb && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Left thumb impression</span></li>}
+        {exam.declaration && <li class="flex gap-2"><span class="text-amber-600">•</span><span>Handwritten declaration</span></li>}
+      </ul>
+      <p class="mt-2 text-xs text-muted">Prepare all of them before you start the form.</p>
+    </div>
+  )}
 
   {isLive && (
     <section class="mt-8">
@@ -84,14 +105,19 @@ const examProducts = [exam.slug, 'study-essentials'];
       <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your photo</h2>
       <ImageResizer label="Photo" fileName="photo"
         widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
-        minKB={exam.photo.minKB} maxKB={exam.photo.maxKB} />
+        minKB={exam.photo.minKB} maxKB={exam.photo.maxKB}
+        unit={exam.photo.unit || 'px'} displayW={exam.photo.displayWidth}
+        displayH={exam.photo.displayHeight} dpi={exam.photo.dpi || 300} />
 
       <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Photo requirements</h3>
       <table class="w-full border-collapse text-sm">
         <tbody>
           <tr class="border-b border-line">
             <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-            <td class="py-2 font-semibold">{exam.photo.widthPx} × {exam.photo.heightPx} px</td>
+            <td class="py-2 font-semibold">
+              {dim(exam.photo)}
+              {pxNote(exam.photo) && <span class="block text-xs font-normal text-muted">{pxNote(exam.photo)}</span>}
+            </td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
@@ -136,7 +162,10 @@ const examProducts = [exam.slug, 'study-essentials'];
         <tbody>
           <tr class="border-b border-line">
             <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
-            <td class="py-2 font-semibold">{exam.combined.widthPx} × {exam.combined.heightPx} px</td>
+            <td class="py-2 font-semibold">
+              {dim(exam.combined)}
+              {pxNote(exam.combined) && <span class="block text-xs font-normal text-muted">{pxNote(exam.combined)}</span>}
+            </td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
@@ -161,7 +190,9 @@ const examProducts = [exam.slug, 'study-essentials'];
       <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your signature</h2>
       <ImageResizer label="Signature" fileName="signature"
         widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
-        minKB={exam.signature.minKB} maxKB={exam.signature.maxKB} />
+        minKB={exam.signature.minKB} maxKB={exam.signature.maxKB}
+        unit={exam.signature.unit || 'px'} displayW={exam.signature.displayWidth}
+        displayH={exam.signature.displayHeight} dpi={exam.signature.dpi || 300} />
 
       <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Signature requirements</h3>
       <table class="w-full border-collapse text-sm">
@@ -169,9 +200,8 @@ const examProducts = [exam.slug, 'study-essentials'];
           <tr class="border-b border-line">
             <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
             <td class="py-2 font-semibold">
-              {exam.signature.widthCm
-                ? exam.signature.widthCm + ' × ' + exam.signature.heightCm + ' cm'
-                : exam.signature.widthPx + ' × ' + exam.signature.heightPx + ' px'}
+              {dim(exam.signature)}
+              {pxNote(exam.signature) && <span class="block text-xs font-normal text-muted">{pxNote(exam.signature)}</span>}
             </td>
           </tr>
           <tr class="border-b border-line">
@@ -193,13 +223,114 @@ const examProducts = [exam.slug, 'study-essentials'];
           <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
         ))}
       </ul>
-      {exam.signature.widthCm && (
-        <p class="mt-3 text-xs text-muted">
-          The notification gives {exam.signature.widthCm} × {exam.signature.heightCm} cm.
-          Our tool produces {exam.signature.widthPx} × {exam.signature.heightPx} px,
-          which is that size at 300 DPI.
+    </section>
+  )}
+
+  {exam.thumb && (
+    <section class="mt-10">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your thumb impression</h2>
+
+      <div class="mb-4 rounded-md bg-navy-100 px-4 py-3 text-sm">
+        <strong class="text-navy-900">Use your left thumb.</strong>
+        <p class="mt-1 text-ink">
+          Press your left thumb onto a stamp pad, then onto plain white paper.
+          If you have no left thumb, use your right, and note that on the form.
         </p>
+      </div>
+
+      <ImageResizer label="Thumb impression" fileName="thumb"
+        widthPx={exam.thumb.widthPx} heightPx={exam.thumb.heightPx}
+        minKB={exam.thumb.minKB} maxKB={exam.thumb.maxKB}
+        unit={exam.thumb.unit || 'px'} displayW={exam.thumb.displayWidth}
+        displayH={exam.thumb.displayHeight} dpi={exam.thumb.dpi || 300} />
+
+      <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Thumb impression requirements</h3>
+      <table class="w-full border-collapse text-sm">
+        <tbody>
+          <tr class="border-b border-line">
+            <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+            <td class="py-2 font-semibold">
+              {dim(exam.thumb)}
+              {pxNote(exam.thumb) && <span class="block text-xs font-normal text-muted">{pxNote(exam.thumb)}</span>}
+            </td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">File size</th>
+            <td class="py-2 font-semibold">{exam.thumb.minKB} to {exam.thumb.maxKB} KB</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Format</th>
+            <td class="py-2 font-semibold">{exam.thumb.format.toUpperCase()}</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Ink colour</th>
+            <td class="py-2 font-semibold">{exam.thumb.ink}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="mt-3 space-y-1 text-sm text-ink">
+        {exam.thumb.notes.map((n) => (
+          <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {exam.declaration && (
+    <section class="mt-10">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Handwritten declaration</h2>
+
+      <div class="mb-4 rounded-md bg-amber-100 px-4 py-3 text-sm">
+        <strong class="text-navy-900">This must be written by hand, not typed.</strong>
+        <p class="mt-1 text-ink">
+          Write it on plain white paper in your own running handwriting, in English,
+          using a black or blue pen. Capital letters are not accepted, and a typed
+          or printed declaration will be rejected.
+        </p>
+      </div>
+
+      {exam.declaration.text && (
+        <div class="mb-5 rounded-lg border-2 border-navy-600 bg-white p-4">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-navy-700">Text to write</p>
+          <p class="text-sm leading-relaxed text-ink" id="declText">{exam.declaration.text}</p>
+          <button type="button"
+                  class="copy-decl mt-3 rounded-md border-2 border-navy-800 px-4 py-2 text-sm font-bold text-navy-800 hover:bg-navy-800 hover:text-white">
+            Copy this text
+          </button>
+        </div>
       )}
+
+      <ImageResizer label="Declaration" fileName="declaration"
+        widthPx={exam.declaration.widthPx} heightPx={exam.declaration.heightPx}
+        minKB={exam.declaration.minKB} maxKB={exam.declaration.maxKB}
+        unit={exam.declaration.unit || 'px'} displayW={exam.declaration.displayWidth}
+        displayH={exam.declaration.displayHeight} dpi={exam.declaration.dpi || 300} />
+
+      <h3 class="mt-6 mb-3 text-base font-bold text-navy-900">Declaration requirements</h3>
+      <table class="w-full border-collapse text-sm">
+        <tbody>
+          <tr class="border-b border-line">
+            <th class="w-2/5 py-2 text-left font-medium text-muted">Dimensions</th>
+            <td class="py-2 font-semibold">
+              {dim(exam.declaration)}
+              {pxNote(exam.declaration) && <span class="block text-xs font-normal text-muted">{pxNote(exam.declaration)}</span>}
+            </td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">File size</th>
+            <td class="py-2 font-semibold">{exam.declaration.minKB} to {exam.declaration.maxKB} KB</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th class="py-2 text-left font-medium text-muted">Format</th>
+            <td class="py-2 font-semibold">{exam.declaration.format.toUpperCase()}</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="mt-3 space-y-1 text-sm text-ink">
+        {exam.declaration.notes.map((n) => (
+          <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
+        ))}
+      </ul>
     </section>
   )}
 
@@ -215,7 +346,7 @@ const examProducts = [exam.slug, 'study-essentials'];
     </a>
   </section>
 
-  <AffiliateBlock groups={examProducts} />
+  <AffiliateBlock groups={[exam.slug]} />
 
   <section class="mt-10 border-t border-line pt-6">
     <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this page</h2>
@@ -238,13 +369,9 @@ const examProducts = [exam.slug, 'study-essentials'];
     <div class="grid grid-cols-2 gap-3">
       {related.map((e) => (
         <a href={`/exams/${e.slug}/`}
-           class="rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-navy-600 hover:bg-navy-100">
+           class="rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100">
           <span class="block text-base font-bold leading-tight text-navy-900">{e.name}</span>
-          <span class="mt-1.5 block text-xs text-muted">
-            {e.photo
-              ? e.photo.widthPx + '×' + e.photo.heightPx + ' px'
-              : e.combined ? 'Combined image' : 'Live photo capture'}
-          </span>
+          <span class="mt-1.5 block text-xs text-muted">Resize photo &amp; sign</span>
         </a>
       ))}
     </div>
@@ -258,6 +385,17 @@ const examProducts = [exam.slug, 'study-essentials'];
       const url = btn.getAttribute('data-copy');
       if (!url) return;
       await navigator.clipboard.writeText(url);
+      const original = btn.textContent;
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  });
+
+  document.querySelectorAll('.copy-decl').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const el = document.getElementById('declText');
+      if (!el) return;
+      await navigator.clipboard.writeText(el.textContent || '');
       const original = btn.textContent;
       btn.textContent = 'Copied ✓';
       setTimeout(() => { btn.textContent = original; }, 1500);

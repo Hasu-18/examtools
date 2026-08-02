@@ -7,43 +7,7 @@
     "category": "central",
     "year": 2026,
     "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-01",
-    "captureMode": "live",
-    "photo": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Your whole face must sit inside the marked area, not too close, not too far",
-      "No cap, mask or spectacles",
-      "Do not photograph an existing printed or digital photo of yourself",
-      "Your appearance at the exam should match the captured photo"
-    ],
-    "signature": {
-      "widthPx": 709,
-      "heightPx": 236,
-      "widthCm": 6,
-      "heightCm": 2,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "ink": "not specified — black or blue on white paper",
-      "notes": [
-        "Signature must be clear",
-        "Blurred or very small signatures may lead to rejection"
-      ]
-    },
-    "thumb": null,
-    "documents": null
-  },
-  {
-    "slug": "ssc-chsl",
-    "name": "SSC CHSL",
-    "fullName": "Staff Selection Commission Combined Higher Secondary (10+2) Level Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-01",
+    "lastVerified": "2026-08-02",
     "captureMode": "live",
     "photo": null,
     "combined": null,
@@ -57,82 +21,178 @@
       "heightCm": 2,
       "ink": "black",
       "notes": [
-        "Scanned signature must be uploaded in JPG/JPEG format",
-        "Signature should be clear and legible",
-        "Blurred signatures will be rejected",
-        "Do not upload a miniature signature",
-        "Sign on plain white paper",
-        "For PwD (VH) candidates, thumb impression is permitted in place of signature"
+        "Sign with black ink on white paper",
+        "Scanned signature must be clear and legible",
+        "Do not upload a blurred or miniature signature",
+        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
       ]
     },
     "thumb": null,
     "documents": null,
     "liveCaptureNotes": [
       "Use a well-lit place with a plain background",
-      "Keep the camera at eye level before taking the photo",
-      "Stand directly in front of the camera and look straight ahead",
-      "Ensure your entire face is within the prescribed capture area",
+      "Keep the camera at eye level and look straight ahead",
       "Do not wear a cap, mask, or spectacles/glasses",
-      "If webcam capture is unavailable, use the official SSC mobile app via the QR code provided in the application portal",
-      "Poor-quality, blurred, miniature, side-facing, or partially visible photos are liable to rejection"
+      "Capture a clear, front-facing photograph with the entire face visible"
     ]
   },
   {
-    "slug": "rrb-group-d",
-    "name": "RRB Group D",
-    "fullName": "Railway Recruitment Board Level 1 Posts (Group D)",
-    "body": "RRB",
+    "slug": "ssc-chsl",
+    "name": "SSC CHSL",
+    "fullName": "Staff Selection Commission Combined Higher Secondary (10+2) Level Examination",
+    "body": "SSC",
     "category": "central",
     "year": 2026,
-    "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-01",
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-02",
     "captureMode": "live",
     "photo": null,
     "combined": null,
     "signature": {
-      "widthPx": 138,
-      "heightPx": 79,
-      "minKB": 30,
-      "maxKB": 49,
+      "widthPx": 472,
+      "heightPx": 236,
+      "minKB": 10,
+      "maxKB": 20,
       "format": "jpg",
+      "widthCm": 4,
+      "heightCm": 2,
       "ink": "black",
       "notes": [
-        "Signature must be written by the candidate only",
-        "Sign using a black ink pen on white paper",
-        "Signature must be in running handwriting (cursive/joined letters)",
-        "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Signature must be clear, legible, and fully visible",
-        "Image file must be in JPG/JPEG format",
-        "Minimum image dimensions: 140 px × 60 px",
-        "Center the signature within the 35 mm × 20 mm scan box"
+        "Sign with black ink on white paper",
+        "Scanned signature must be clear and legible",
+        "Do not upload a blurred or miniature signature",
+        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
       ]
     },
     "thumb": null,
     "documents": null,
     "liveCaptureNotes": [
-      "Candidates are not required to upload a pre-existing photograph",
-      "Capture the live photo using a webcam or the front camera of a mobile phone",
-      "Wear non-white clothing, preferably dark colours, for good contrast",
       "Use a well-lit place with a plain background",
-      "Keep the camera at eye level before capturing the photograph",
-      "Stand directly in front of the camera and look straight ahead with a neutral expression",
-      "Ensure the entire face is clearly visible and centered within the frame",
-      "Do not stand too close to or too far from the camera",
+      "Keep the camera at eye level and look straight ahead",
       "Do not wear a cap, mask, or spectacles/glasses",
-      "Do not capture or upload a photograph of a printed or digital photograph",
-      "Retake the photo if necessary before final submission",
-      "Applications with non-compliant photographs are liable to be rejected"
+      "Capture a clear, front-facing photograph with the entire face visible"
+    ]
+  },
+  {
+    "slug": "ssc-gd",
+    "name": "SSC GD Constable",
+    "fullName": "Staff Selection Commission Constable (General Duty) Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 472,
+      "heightPx": 236,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "widthCm": 4,
+      "heightCm": 2,
+      "ink": "not specified",
+      "notes": [
+        "Sign with black ink on white paper",
+        "Scanned signature must be clear and legible",
+        "Do not upload a blurred or miniature signature",
+        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Capture a clear, front-facing photograph with the entire face visible"
+    ]
+  },
+  {
+    "slug": "ssc-mts",
+    "name": "SSC MTS",
+    "fullName": "Staff Selection Commission Multi-Tasking (Non-Technical) Staff Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 472,
+      "heightPx": 236,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "widthCm": 4,
+      "heightCm": 2,
+      "ink": "not specified",
+      "notes": [
+        "Sign with black ink on white paper",
+        "Scanned signature must be clear and legible",
+        "Do not upload a blurred or miniature signature",
+        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Capture a clear, front-facing photograph with the entire face visible"
+    ]
+  },
+  {
+    "slug": "ssc-cpo",
+    "name": "SSC CPO",
+    "fullName": "Staff Selection Commission Central Police Organization Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 472,
+      "heightPx": 236,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "widthCm": 4,
+      "heightCm": 2,
+      "ink": "not specified",
+      "notes": [
+        "Sign with black ink on white paper",
+        "Scanned signature must be clear and legible",
+        "Do not upload a blurred or miniature signature",
+        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Capture a clear, front-facing photograph with the entire face visible"
     ]
   },
   {
     "slug": "rrb-ntpc-undergraduate",
-    "name": "RRB NTPC Undergraduate",
+    "name": "RRB NTPC UG",
     "fullName": "Railway Recruitment Board Non-Technical Popular Categories (Undergraduate Level)",
     "body": "RRB",
     "category": "railway",
     "year": 2026,
     "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-01",
+    "lastVerified": "2026-08-02",
     "captureMode": "live",
     "photo": null,
     "combined": null,
@@ -145,30 +205,1747 @@
       "ink": "black",
       "notes": [
         "Signature must be written by the candidate only",
-        "Sign using a black ink pen on white paper",
-        "Signature must be in running handwriting (cursive/joined letters)",
+        "Use black ink on white paper in running handwriting (cursive)",
         "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Signature must be clear, legible, and fully visible",
-        "Image file must be in JPG/JPEG format",
-        "Minimum image dimensions: 140 px × 60 px",
-        "Center the signature within the 35 mm × 20 mm scan box"
+        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
       ]
     },
     "thumb": null,
     "documents": null,
     "liveCaptureNotes": [
-      "Candidates are not required to upload a pre-existing photograph",
-      "Capture the live photo using a webcam or the front camera of a mobile phone",
-      "Wear non-white clothing, preferably dark colours, for good contrast",
       "Use a well-lit place with a plain background",
-      "Keep the camera at eye level before capturing the photograph",
-      "Stand directly in front of the camera and look straight ahead with a neutral expression",
-      "Ensure the entire face is clearly visible and centered within the frame",
-      "Do not stand too close to or too far from the camera",
+      "Keep the camera at eye level and look straight ahead",
       "Do not wear a cap, mask, or spectacles/glasses",
-      "Do not capture or upload a photograph of a printed or digital photograph",
-      "Retake the photo if necessary before final submission",
-      "Applications with non-compliant photographs are liable to be rejected"
+      "Wear dark or non-white clothing for better contrast"
+    ]
+  },
+  {
+    "slug": "rrb-group-d",
+    "name": "RRB Group D",
+    "fullName": "Railway Recruitment Board Level 1 Posts",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 138,
+      "heightPx": 79,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be written by the candidate only",
+        "Use black ink on white paper in running handwriting (cursive)",
+        "Do not use BLOCK, CAPITAL, or disjoined letters",
+        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Wear dark or non-white clothing for better contrast"
+    ]
+  },
+  {
+    "slug": "rrb-alp",
+    "name": "RRB ALP",
+    "fullName": "Railway Recruitment Board Assistant Loco Pilot",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 138,
+      "heightPx": 79,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be written by the candidate only",
+        "Use black ink on white paper in running handwriting (cursive)",
+        "Do not use BLOCK, CAPITAL, or disjoined letters",
+        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Wear dark or non-white clothing for better contrast"
+    ]
+  },
+  {
+    "slug": "rrb-je",
+    "name": "RRB JE",
+    "fullName": "Railway Recruitment Board Junior Engineer",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 138,
+      "heightPx": 79,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be written by the candidate only",
+        "Use black ink on white paper in running handwriting (cursive)",
+        "Do not use BLOCK, CAPITAL, or disjoined letters",
+        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
+      ]
+    },
+    "thumb": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Do not wear a cap, mask, or spectacles/glasses",
+      "Wear dark or non-white clothing for better contrast"
+    ]
+  },
+  {
+    "slug": "sbi-po",
+    "name": "SBI PO",
+    "fullName": "State Bank of India Probationary Officer",
+    "body": "SBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://bank.sbi/careers",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used during the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as per the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official SBI PO notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest SBI PO notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official SBI PO notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "No cap, mask or spectacles"
+    ]
+  },
+  {
+    "slug": "ibps-po",
+    "name": "IBPS PO",
+    "fullName": "Institute of Banking Personnel Selection Probationary Officer / Management Trainee",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used during the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as per the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration must exactly match the text prescribed in the official notification"
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "No cap, mask or spectacles"
+    ]
+  },
+  {
+    "slug": "sbi-clerk",
+    "name": "SBI Clerk",
+    "fullName": "State Bank of India Junior Associate (Customer Support & Sales)",
+    "body": "SBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://bank.sbi/careers",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used during the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as per the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration must exactly match the text prescribed in the official notification"
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "No cap, mask or spectacles"
+    ]
+  },
+  {
+    "slug": "sbi-cbo",
+    "name": "SBI CBO",
+    "fullName": "State Bank of India Circle Based Officer",
+    "body": "SBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://bank.sbi/careers",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used during the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as per the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration must exactly match the text prescribed in the official notification"
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "No cap, mask or spectacles"
+    ]
+  },
+  {
+    "slug": "sbi-so",
+    "name": "SBI Specialist Officer",
+    "fullName": "State Bank of India Specialist Officer",
+    "body": "SBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://bank.sbi/careers",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used during the recruitment proces"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 48,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official SBI Specialist Officer notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ibps-clerk",
+    "name": "IBPS Clerk",
+    "fullName": "Institute of Banking Personnel Selection Customer Service Associate (Clerk)",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 48,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official IBPS Clerk notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ibps-so",
+    "name": "IBPS Specialist Officer (SO)",
+    "fullName": "Institute of Banking Personnel Selection Specialist Officer",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 48,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official IBPS SO notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ibps-rrb-po",
+    "name": "IBPS RRB Officer Scale I (PO)",
+    "fullName": "Institute of Banking Personnel Selection Regional Rural Banks Officer Scale I (Probationary Officer)",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 48,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ibps-rrb-office-assistant",
+    "name": "IBPS RRB Office Assistant",
+    "fullName": "Institute of Banking Personnel Selection Regional Rural Banks Office Assistant",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ibps-rrb-officer-scale-2-3",
+    "name": "IBPS RRB Officer Scale II & III",
+    "fullName": "Institute of Banking Personnel Selection Regional Rural Banks Officer Scale II & Officer Scale III",
+    "body": "IBPS",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.ibps.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "rbi-grade-b",
+    "name": "RBI Grade B Officer",
+    "fullName": "Reserve Bank of India Officers in Grade 'B'",
+    "body": "RBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://opportunities.rbi.org.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "rbi-assistant",
+    "name": "RBI Assistant",
+    "fullName": "Reserve Bank of India Assistant",
+    "body": "RBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://opportunities.rbi.org.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "rbi-je",
+    "name": "RBI Junior Engineer (JE)",
+    "fullName": "Reserve Bank of India Junior Engineer",
+    "body": "RBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://opportunities.rbi.org.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "nabard-grade-a",
+    "name": "NABARD Grade A (Assistant Manager)",
+    "fullName": "National Bank for Agriculture and Rural Development Grade 'A' Assistant Manager",
+    "body": "NABARD",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.nabard.org",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "nabard-grade-b",
+    "name": "NABARD Grade B (Manager)",
+    "fullName": "National Bank for Agriculture and Rural Development Grade 'B' Manager",
+    "body": "NABARD",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.nabard.org",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "nabard-development-assistant",
+    "name": "NABARD Development Assistant",
+    "fullName": "National Bank for Agriculture and Rural Development Development Assistant",
+    "body": "NABARD",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.nabard.org",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "sidbi-grade-a",
+    "name": "SIDBI Grade A (Assistant Manager)",
+    "fullName": "Small Industries Development Bank of India Grade 'A' Assistant Manager",
+    "body": "SIDBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.sidbi.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "sidbi-assistant",
+    "name": "SIDBI Assistant",
+    "fullName": "Small Industries Development Bank of India Assistant",
+    "body": "SIDBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.sidbi.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 50,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, cap or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "idbi-bank-executive",
+    "name": "IDBI Bank Executive",
+    "fullName": "IDBI Bank Executive - Sales and Operations (ESO)",
+    "body": "IDBI Bank",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.idbibank.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, a cap, or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "idbi-bank-assistant-manager",
+    "name": "IDBI Bank Assistant Manager",
+    "fullName": "IDBI Bank Assistant Manager",
+    "body": "IDBI Bank",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.idbibank.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, a cap, or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "exim-bank-management-trainee",
+    "name": "EXIM Bank Management Trainee",
+    "fullName": "Export-Import Bank of India Management Trainee",
+    "body": "EXIM Bank",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.eximbankindia.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, a cap, or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "sebi-grade-a",
+    "name": "SEBI Grade A (Assistant Manager)",
+    "fullName": "Securities and Exchange Board of India Officer Grade A (Assistant Manager)",
+    "body": "SEBI",
+    "category": "banking",
+    "year": 2026,
+    "officialUrl": "https://www.sebi.gov.in",
+    "lastVerified": "2026-08-02",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be signed by the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Do not sign in CAPITAL letters",
+        "Signature must match the one used throughout the recruitment process"
+      ]
+    },
+    "thumb": {
+      "widthPx": 240,
+      "heightPx": 240,
+      "unit": "px",
+      "displayWidth": 240,
+      "displayHeight": 240,
+      "dpi": null,
+      "minKB": 20,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black or blue",
+      "notes": [
+        "Use the left thumb impression on white paper",
+        "If the left thumb is unavailable, use the right thumb as permitted in the official notification",
+        "Ensure the impression is clear and not smudged",
+        "Scan and upload only in JPG/JPEG format"
+      ]
+    },
+    "declaration": {
+      "widthPx": 800,
+      "heightPx": 400,
+      "unit": "px",
+      "displayWidth": 800,
+      "displayHeight": 400,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 100,
+      "format": "jpg",
+      "text": "The handwritten declaration must be written exactly as prescribed in the official notification. It must be written in the candidate's own handwriting, in English, using black ink on white paper. The declaration text must not be altered, translated, abbreviated, or written in CAPITAL letters. Any mismatch between the uploaded declaration and the wording specified in the official notification may lead to rejection of the application. Candidates should always refer to the latest notification for the exact declaration text before uploading it.",
+      "notes": [
+        "Write the declaration in English in your own handwriting",
+        "Use black ink on white paper",
+        "Do not write the declaration in CAPITAL letters",
+        "The declaration text must exactly match the wording prescribed in the official notification. Do not alter, omit, translate, abbreviate, or add any words. Any deviation from the prescribed text may lead to rejection of the application."
+      ]
+    },
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a light/plain background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear dark glasses, a cap, or hat (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format within the prescribed size limits"
     ]
   }
 ]
