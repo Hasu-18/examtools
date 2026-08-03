@@ -94,7 +94,7 @@ const faqs = [
 <BaseLayout title="FormSetu, Photo & Signature Size for Indian Government Exam Forms">
 
   <section class="pb-6">
-    <h1 class="text-[2rem] font-bold leading-[1.15] tracking-tight text-navy-900 sm:text-5xl" style="text-wrap:balance;">
+    <h1 class="hero-title text-[2.3rem] font-bold leading-[1.18] text-navy-900 sm:text-[3.5rem]">
       Stop guessing the photo size for your <span class="text-amber-600">dream exam.</span>
     </h1>
     <p class="mt-4 text-base text-muted sm:text-lg">
@@ -105,21 +105,25 @@ const faqs = [
 
   <section class="pb-6">
     <div class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-      <div class="rounded-lg border border-line bg-surface px-2 py-3 text-center">
-        <p class="text-xl font-bold text-navy-900 sm:text-3xl">{exams.length}</p>
-        <p class="mt-0.5 text-[11px] font-medium text-muted sm:text-xs">Exams covered</p>
+      <div class="stat">
+        <span class="stat-shine"></span>
+        <p class="stat-big">{exams.length}</p>
+        <p class="stat-small">Exams covered</p>
       </div>
-      <div class="rounded-lg border border-line bg-surface px-2 py-3 text-center">
-        <p class="text-xl font-bold text-navy-900 sm:text-3xl">26548</p>
-        <p class="mt-0.5 text-[11px] font-medium text-muted sm:text-xs">Files resized till today</p>
+      <div class="stat">
+        <span class="stat-shine"></span>
+        <p class="stat-big">0 uploads</p>
+        <p class="stat-small">Your file stays on your device</p>
       </div>
-      <div class="rounded-lg border border-line bg-surface px-2 py-3 text-center">
-        <p class="text-xl font-bold text-navy-900 sm:text-3xl">Free</p>
-        <p class="mt-0.5 text-[11px] font-medium text-muted sm:text-xs">Always, no signup</p>
+      <div class="stat">
+        <span class="stat-shine"></span>
+        <p class="stat-big">Free</p>
+        <p class="stat-small">Always, no signup</p>
       </div>
-      <div class="rounded-lg border border-line bg-surface px-2 py-3 text-center">
-        <p class="text-base font-bold text-navy-900 sm:text-xl">{verifiedLabel}</p>
-        <p class="mt-0.5 text-[11px] font-medium text-muted sm:text-xs">Last updated</p>
+      <div class="stat">
+        <span class="stat-shine"></span>
+        <p class="stat-big stat-date">{verifiedLabel}</p>
+        <p class="stat-small">Last updated</p>
       </div>
     </div>
   </section>
@@ -142,9 +146,11 @@ const faqs = [
           <div class="mb-7 exam-group">
             <h2 class="mb-3 text-lg font-bold text-navy-900">{c.label}</h2>
             <div class="grid grid-cols-2 gap-3">
-              {items.slice(0, 4).map((e) => (
+              {items.map((e, i) => (
                 <a href={"/exams/" + e.slug + "/"} data-search={searchKey(e)}
-                   class="exam-card rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100 active:scale-[0.98]">
+                   data-extra={i > 3 ? 'yes' : 'no'}
+                   class="exam-card rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100 active:scale-[0.98]"
+                   hidden={i > 3}>
                   <span class="block text-lg font-bold leading-tight text-navy-900">{e.name}</span>
                   <span class="mt-1.5 block text-xs leading-snug text-muted">Resize photo &amp; sign</span>
                   <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
@@ -152,7 +158,7 @@ const faqs = [
               ))}
             </div>
             {items.length > 4 && (
-              <a href={"/exams/category/" + c.key + "/"}
+              <a href={"/exams/category/" + c.key + "/"} data-seeall
                  class="mt-2 inline-block text-xs font-bold text-navy-700 hover:text-amber-600">
                 See all {items.length} {c.label} exams →
               </a>
@@ -222,6 +228,58 @@ const faqs = [
 
 </BaseLayout>
 
+<style>
+  .hero-title { letter-spacing: 0.005em; word-spacing: 0.05em; }
+
+  .stat {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f8fafc;
+    padding: .75rem .5rem;
+    text-align: center;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+  }
+  .stat:hover {
+    transform: translateY(-3px);
+    border-color: #f59e0b;
+    box-shadow: 0 8px 18px rgba(11,31,53,.12);
+  }
+  .stat-shine {
+    position: absolute; top: -60%; left: -80%;
+    width: 40%; height: 220%;
+    background: linear-gradient(100deg, transparent, rgba(245,158,11,.28), transparent);
+    transform: rotate(18deg);
+    animation: statDrift 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .stat:nth-child(2) .stat-shine { animation-delay: .5s; }
+  .stat:nth-child(3) .stat-shine { animation-delay: 1s; }
+  .stat:nth-child(4) .stat-shine { animation-delay: 1.5s; }
+
+  @keyframes statDrift {
+    0%, 72%, 100% { left: -80%; }
+    36% { left: 140%; }
+  }
+
+  .stat-big { position: relative; font-size: 1.25rem; font-weight: 700; color: #0b1f35; }
+  .stat-date { font-size: 1rem; }
+  .stat-small { position: relative; margin-top: .15rem; font-size: 11px; font-weight: 500; color: #4b5563; }
+
+  @media (min-width: 640px) {
+    .stat { padding: 1rem .75rem; }
+    .stat-big { font-size: 1.875rem; }
+    .stat-date { font-size: 1.25rem; }
+    .stat-small { font-size: .75rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stat-shine { animation: none; opacity: 0; }
+    .stat:hover { transform: none; }
+  }
+</style>
+
 <style is:global>
   .faq-a a { color: #d97706; font-weight: 600; text-decoration: underline; }
 </style>
@@ -230,6 +288,7 @@ const faqs = [
   const search = document.getElementById('examSearch');
   const cards = document.querySelectorAll('.exam-card');
   const groups = document.querySelectorAll('.exam-group');
+  const seeAlls = document.querySelectorAll('[data-seeall]');
   const noResults = document.getElementById('noResults');
 
   if (search) {
@@ -237,11 +296,23 @@ const faqs = [
       const term = search.value.trim().toLowerCase();
       let visible = 0;
 
+      if (term === '') {
+        cards.forEach((card) => {
+          card.hidden = card.getAttribute('data-extra') === 'yes';
+        });
+        seeAlls.forEach((a) => { a.hidden = false; });
+        groups.forEach((group) => { group.hidden = false; });
+        noResults.hidden = true;
+        return;
+      }
+
       cards.forEach((card) => {
         const match = (card.getAttribute('data-search') || '').includes(term);
         card.hidden = !match;
         if (match) visible++;
       });
+
+      seeAlls.forEach((a) => { a.hidden = true; });
 
       groups.forEach((group) => {
         group.hidden = group.querySelectorAll('.exam-card:not([hidden])').length === 0;

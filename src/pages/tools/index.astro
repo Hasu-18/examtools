@@ -1,5 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const live = [
+  {
+    href: '/tools/photo-resizer/',
+    name: 'Photo & signature resizer',
+    note: 'Any size, in px, cm or inches. Hits your pixel and KB limits together.'
+  }
+];
+
+const soon = [
+  { name: 'PDF compressor', note: 'Bring a scanned certificate under the portal size limit.' },
+  { name: 'Image to PDF', note: 'Turn photos of documents into one clean PDF.' },
+  { name: 'Merge PDF', note: 'Combine marksheets and certificates into a single file.' },
+  { name: 'Document scanner', note: 'Straighten and brighten a phone photo of a document.' }
+];
 ---
 <BaseLayout title="Free Tools for Exam Form Documents | FormSetu">
 
@@ -15,15 +30,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </p>
 
   <div class="mt-6 grid gap-3 sm:grid-cols-2">
-    <a href="/tools/photo-resizer/"
-       class="rounded-lg border-2 border-line bg-white px-4 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100">
-      <span class="block text-base font-bold text-navy-900">Photo &amp; signature resizer</span>
-      <span class="mt-1.5 block text-sm text-muted">
-        Any size, in px, cm or inches. Hits your pixel and KB limits together.
-      </span>
-      <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
-    </a>
+    {live.map((t) => (
+      <a href={t.href}
+         class="rounded-lg border-2 border-line bg-white px-4 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100">
+        <span class="block text-base font-bold text-navy-900">{t.name}</span>
+        <span class="mt-1.5 block text-sm text-muted">{t.note}</span>
+        <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
+      </a>
+    ))}
   </div>
+
+  <section class="mt-10">
+    <h2 class="mb-1 text-lg font-bold text-navy-900">Coming soon</h2>
+    <p class="mb-4 text-sm text-muted">
+      These are being built next. Tell us which one you need most and we will
+      prioritise it.
+    </p>
+
+    <div class="grid gap-3 sm:grid-cols-2">
+      {soon.map((t) => (
+        <div class="soon relative overflow-hidden rounded-lg border-2 border-dashed border-line bg-surface px-4 py-4">
+          <span class="soon-shine"></span>
+          <span class="soon-badge">In progress</span>
+          <span class="relative block text-base font-bold text-navy-900">{t.name}</span>
+          <span class="relative mt-1.5 block text-sm text-muted">{t.note}</span>
+        </div>
+      ))}
+    </div>
+
+    <a href="mailto:contact@formsetu.com?subject=Tool%20request"
+       class="mt-4 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+      Tell us which tool you need →
+    </a>
+  </section>
 
   <section class="mt-10 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
     <p class="text-sm font-bold text-navy-900">Looking for a specific exam?</p>
@@ -36,3 +75,41 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
 </BaseLayout>
+
+<style>
+  .soon-badge {
+    position: absolute; top: 10px; right: 10px; z-index: 2;
+    border-radius: 999px;
+    background: #0b1f35;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    animation: soonPulse 2.2s ease-in-out infinite;
+  }
+  .soon-shine {
+    position: absolute; top: -60%; left: -80%;
+    width: 40%; height: 220%;
+    background: linear-gradient(100deg, transparent, rgba(245,158,11,.22), transparent);
+    transform: rotate(18deg);
+    animation: soonDrift 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .soon:nth-child(2) .soon-shine { animation-delay: .6s; }
+  .soon:nth-child(3) .soon-shine { animation-delay: 1.2s; }
+  .soon:nth-child(4) .soon-shine { animation-delay: 1.8s; }
+
+  @keyframes soonDrift {
+    0%, 70%, 100% { left: -80%; }
+    35% { left: 140%; }
+  }
+  @keyframes soonPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .6; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .soon-shine, .soon-badge { animation: none; }
+  }
+</style>

@@ -4,7 +4,7 @@ import exams from '../data/exams.json';
 
 const { title, description = "Exact photo, signature and document requirements for Indian government exam forms." } = Astro.props;
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/J8KB4stpDCTFxAyCL7SNuy";
+const WHATSAPP_URL = "PASTE_YOUR_INVITE_LINK_HERE";
 
 const categories = [
   { key: 'central', label: 'SSC & Central' },
@@ -19,7 +19,8 @@ const categories = [
 const byCategory = categories.map((c) => ({
   key: c.key,
   label: c.label,
-  items: exams.filter((e) => e.category === c.key).slice(0, 6)
+  total: exams.filter((e) => e.category === c.key).length,
+  items: exams.filter((e) => e.category === c.key).slice(0, 10)
 }));
 ---
 <!doctype html>
@@ -62,24 +63,30 @@ const byCategory = categories.map((c) => ({
 
   <footer class="border-t border-line bg-surface">
     <div class="mx-auto max-w-5xl px-4 py-10">
-      <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-        {byCategory.map((c) => (
-          <div>
+
+      <div class="grid grid-cols-2 gap-x-5 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
+        {byCategory.map((c) => c.items.length > 0 && (
+          <div class="min-w-0">
             <h3 class="mb-2 text-xs font-bold uppercase text-navy-700">{c.label}</h3>
             <ul class="space-y-1 text-sm">
               {c.items.map((e) => (
-                <li><a href={"/exams/" + e.slug + "/"} class="text-muted hover:text-navy-700">{e.name}</a></li>
+                <li class="min-w-0">
+                  <a href={"/exams/" + e.slug + "/"} title={e.name}
+                     class="block truncate text-muted hover:text-navy-700">{e.name}</a>
+                </li>
               ))}
-              {c.items.length > 0 && (
-                <li><a href={"/exams/category/" + c.key + "/"} class="font-semibold text-amber-600 hover:text-amber-500">View all →</a></li>
-              )}
+              <li>
+                <a href={"/exams/category/" + c.key + "/"}
+                   class="block font-semibold text-amber-600 hover:text-amber-500">
+                  View all {c.total} →
+                </a>
+              </li>
             </ul>
           </div>
         ))}
       </div>
 
       <div class="mt-8 border-t border-line pt-6">
-        <h3 class="mb-2 text-xs font-bold uppercase text-navy-700">Site information</h3>
         <p class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-bold text-navy-800">
           <a href="/about/" class="hover:text-amber-600">About</a>
           <a href="/contact/" class="hover:text-amber-600">Contact</a>
@@ -96,6 +103,7 @@ const byCategory = categories.map((c) => ({
         </p>
         <p class="mt-4 text-xs text-muted">© 2026 FormSetu</p>
       </div>
+
     </div>
   </footer>
 
@@ -106,6 +114,7 @@ const byCategory = categories.map((c) => ({
     }
     .wa-float { animation: waPulse 2.5s infinite; }
     .wa-float:hover { animation: none; }
+    @media (prefers-reduced-motion: reduce) { .wa-float { animation: none; } }
   </style>
 
 </body>
