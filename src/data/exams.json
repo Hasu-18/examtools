@@ -1,330 +1,5 @@
 [
   {
-    "slug": "ssc-cgl",
-    "name": "SSC CGL",
-    "fullName": "Staff Selection Commission Combined Graduate Level Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 472,
-      "heightPx": 236,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "widthCm": 4,
-      "heightCm": 2,
-      "ink": "black",
-      "notes": [
-        "Sign with black ink on white paper",
-        "Scanned signature must be clear and legible",
-        "Do not upload a blurred or miniature signature",
-        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Capture a clear, front-facing photograph with the entire face visible"
-    ]
-  },
-  {
-    "slug": "ssc-chsl",
-    "name": "SSC CHSL",
-    "fullName": "Staff Selection Commission Combined Higher Secondary (10+2) Level Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 472,
-      "heightPx": 236,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "widthCm": 4,
-      "heightCm": 2,
-      "ink": "black",
-      "notes": [
-        "Sign with black ink on white paper",
-        "Scanned signature must be clear and legible",
-        "Do not upload a blurred or miniature signature",
-        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Capture a clear, front-facing photograph with the entire face visible"
-    ]
-  },
-  {
-    "slug": "ssc-gd",
-    "name": "SSC GD Constable",
-    "fullName": "Staff Selection Commission Constable (General Duty) Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 472,
-      "heightPx": 236,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "widthCm": 4,
-      "heightCm": 2,
-      "ink": "not specified",
-      "notes": [
-        "Sign with black ink on white paper",
-        "Scanned signature must be clear and legible",
-        "Do not upload a blurred or miniature signature",
-        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Capture a clear, front-facing photograph with the entire face visible"
-    ]
-  },
-  {
-    "slug": "ssc-mts",
-    "name": "SSC MTS",
-    "fullName": "Staff Selection Commission Multi-Tasking (Non-Technical) Staff Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 472,
-      "heightPx": 236,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "widthCm": 4,
-      "heightCm": 2,
-      "ink": "not specified",
-      "notes": [
-        "Sign with black ink on white paper",
-        "Scanned signature must be clear and legible",
-        "Do not upload a blurred or miniature signature",
-        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Capture a clear, front-facing photograph with the entire face visible"
-    ]
-  },
-  {
-    "slug": "ssc-cpo",
-    "name": "SSC CPO",
-    "fullName": "Staff Selection Commission Central Police Organization Examination",
-    "body": "SSC",
-    "category": "central",
-    "year": 2026,
-    "officialUrl": "https://ssc.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 472,
-      "heightPx": 236,
-      "minKB": 10,
-      "maxKB": 20,
-      "format": "jpg",
-      "widthCm": 4,
-      "heightCm": 2,
-      "ink": "not specified",
-      "notes": [
-        "Sign with black ink on white paper",
-        "Scanned signature must be clear and legible",
-        "Do not upload a blurred or miniature signature",
-        "For PwBD (VH) candidates, a thumb impression is permitted in place of the signature"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Capture a clear, front-facing photograph with the entire face visible"
-    ]
-  },
-  {
-    "slug": "rrb-ntpc-undergraduate",
-    "name": "RRB NTPC UG",
-    "fullName": "Railway Recruitment Board Non-Technical Popular Categories (Undergraduate Level)",
-    "body": "RRB",
-    "category": "railway",
-    "year": 2026,
-    "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 138,
-      "heightPx": 79,
-      "minKB": 30,
-      "maxKB": 49,
-      "format": "jpg",
-      "ink": "black",
-      "notes": [
-        "Signature must be written by the candidate only",
-        "Use black ink on white paper in running handwriting (cursive)",
-        "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Wear dark or non-white clothing for better contrast"
-    ]
-  },
-  {
-    "slug": "rrb-group-d",
-    "name": "RRB Group D",
-    "fullName": "Railway Recruitment Board Level 1 Posts",
-    "body": "RRB",
-    "category": "railway",
-    "year": 2026,
-    "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 138,
-      "heightPx": 79,
-      "minKB": 30,
-      "maxKB": 49,
-      "format": "jpg",
-      "ink": "black",
-      "notes": [
-        "Signature must be written by the candidate only",
-        "Use black ink on white paper in running handwriting (cursive)",
-        "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Wear dark or non-white clothing for better contrast"
-    ]
-  },
-  {
-    "slug": "rrb-alp",
-    "name": "RRB ALP",
-    "fullName": "Railway Recruitment Board Assistant Loco Pilot",
-    "body": "RRB",
-    "category": "railway",
-    "year": 2026,
-    "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 138,
-      "heightPx": 79,
-      "minKB": 30,
-      "maxKB": 49,
-      "format": "jpg",
-      "ink": "black",
-      "notes": [
-        "Signature must be written by the candidate only",
-        "Use black ink on white paper in running handwriting (cursive)",
-        "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Wear dark or non-white clothing for better contrast"
-    ]
-  },
-  {
-    "slug": "rrb-je",
-    "name": "RRB JE",
-    "fullName": "Railway Recruitment Board Junior Engineer",
-    "body": "RRB",
-    "category": "railway",
-    "year": 2026,
-    "officialUrl": "https://rrbapply.gov.in",
-    "lastVerified": "2026-08-02",
-    "captureMode": "live",
-    "photo": null,
-    "combined": null,
-    "signature": {
-      "widthPx": 138,
-      "heightPx": 79,
-      "minKB": 30,
-      "maxKB": 49,
-      "format": "jpg",
-      "ink": "black",
-      "notes": [
-        "Signature must be written by the candidate only",
-        "Use black ink on white paper in running handwriting (cursive)",
-        "Do not use BLOCK, CAPITAL, or disjoined letters",
-        "Minimum image dimensions: 140 × 60 pixels; signature must be centered within the 35 mm × 20 mm scan box"
-      ]
-    },
-    "thumb": null,
-    "documents": null,
-    "liveCaptureNotes": [
-      "Use a well-lit place with a plain background",
-      "Keep the camera at eye level and look straight ahead",
-      "Do not wear a cap, mask, or spectacles/glasses",
-      "Wear dark or non-white clothing for better contrast"
-    ]
-  },
-  {
     "slug": "sbi-po",
     "name": "SBI PO",
     "fullName": "State Bank of India Probationary Officer",
@@ -1946,6 +1621,1086 @@
       "Face should be clearly visible and looking straight at the camera",
       "Do not wear dark glasses, a cap, or hat (religious headwear is permitted if the face is fully visible)",
       "Upload the photograph in JPG/JPEG format within the prescribed size limits"
+    ]
+  },
+  {
+    "slug": "ssc-cgl",
+    "name": "SSC CGL",
+    "fullName": "Staff Selection Commission Combined Graduate Level Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-chsl",
+    "name": "SSC CHSL",
+    "fullName": "Staff Selection Commission Combined Higher Secondary Level Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-mts-havaldar",
+    "name": "SSC MTS & Havaldar",
+    "fullName": "Staff Selection Commission Multi-Tasking (Non-Technical) Staff and Havaldar Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-cpo",
+    "name": "SSC CPO",
+    "fullName": "Staff Selection Commission Central Police Organization Examination",
+    "body": "SSC",
+    "category": "police",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-gd",
+    "name": "SSC GD Constable",
+    "fullName": "Staff Selection Commission Constable (General Duty) Examination",
+    "body": "SSC",
+    "category": "police",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-delhi-police-constable",
+    "name": "SSC Delhi Police Constable",
+    "fullName": "Staff Selection Commission Constable (Executive) Male and Female in Delhi Police Examination",
+    "body": "SSC",
+    "category": "police",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-delhi-police-head-constable",
+    "name": "SSC Delhi Police Head Constable",
+    "fullName": "Staff Selection Commission Head Constable (Ministerial) in Delhi Police Examination",
+    "body": "SSC",
+    "category": "police",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-je",
+    "name": "SSC JE",
+    "fullName": "Staff Selection Commission Junior Engineer Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-stenographer",
+    "name": "SSC Stenographer (Grade C & D)",
+    "fullName": "Staff Selection Commission Stenographer Grade 'C' and Grade 'D' Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-scientific-assistant-imd",
+    "name": "SSC Scientific Assistant in IMD",
+    "fullName": "Staff Selection Commission Scientific Assistant in India Meteorological Department Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-jsa-grade-ldce",
+    "name": "SSC JSA Grade Limited Departmental Competitive Examination",
+    "fullName": "Staff Selection Commission Junior Secretariat Assistant Grade Limited Departmental Competitive Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-jsa-grade-ldce",
+    "name": "SSC LDC Grade Limited Departmental Competitive Examination",
+    "fullName": "Staff Selection Commission Lower Division Clerk Grade Limited Departmental Competitive Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-ssa-ldce",
+    "name": "SSC SSA Grade Limited Departmental Competitive Examination",
+    "fullName": "Staff Selection Commission Senior Secretariat Assistant Grade Limited Departmental Competitive Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "ssc-grade-c-stenographer-ldce",
+    "name": "SSC Grade 'C' Stenographer LDCE",
+    "fullName": "Staff Selection Commission Grade 'C' Stenographer Limited Departmental Competitive Examination",
+    "body": "SSC",
+    "category": "central",
+    "year": 2026,
+    "officialUrl": "https://ssc.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 10,
+      "maxKB": 20,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a webcam or the official SSC mobile application to capture a live photograph during the application process",
+      "Ensure adequate lighting and a plain, light-coloured background",
+      "Look straight at the camera with your face fully visible; keep eyes open and maintain a neutral expression",
+      "Do not wear a cap, mask or spectacles (unless permitted for medical or religious reasons)"
+    ]
+  },
+  {
+    "slug": "rrb-ntpc-graduate",
+    "name": "RRB NTPC (Graduate Level)",
+    "fullName": "Railway Recruitment Board Non-Technical Popular Categories (Graduate Level)",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-ntpc-undergraduate",
+    "name": "RRB NTPC (Undergraduate / 12th Level)",
+    "fullName": "Railway Recruitment Board Non-Technical Popular Categories (Undergraduate Level)",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-sse",
+    "name": "RRB Senior Section Engineer (SSE)",
+    "fullName": "Railway Recruitment Board Senior Section Engineer",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-je",
+    "name": "RRB JE",
+    "fullName": "Railway Recruitment Board Junior Engineer",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-dms",
+    "name": "RRB DMS",
+    "fullName": "Railway Recruitment Board Depot Material Superintendent",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-cma",
+    "name": "RRB CMA",
+    "fullName": "Railway Recruitment Board Chemical and Metallurgical Assistant",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-alp",
+    "name": "RRB ALP",
+    "fullName": "Railway Recruitment Board Assistant Loco Pilot",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-technician",
+    "name": "RRB Technician",
+    "fullName": "Railway Recruitment Board Technician Grade I Signal & Technician Grade III",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-group-d",
+    "name": "RRB Group D",
+    "fullName": "Railway Recruitment Board Level 1 Posts",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-paramedical",
+    "name": "RRB Paramedical Categories",
+    "fullName": "Railway Recruitment Board Paramedical Categories",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rrb-ministerial-isolated",
+    "name": "RRB Ministerial and Isolated Categories",
+    "fullName": "Railway Recruitment Board Ministerial and Isolated Categories",
+    "body": "RRB",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rrbapply.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "rpf",
+    "name": "RPF Constable",
+    "fullName": "Railway Protection Force Recruitment Examination (Constable & Sub-Inspector)",
+    "body": "Railway Protection Force (RPF)",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://rpf.indianrailways.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 140,
+      "heightPx": 60,
+      "unit": "px",
+      "displayWidth": 140,
+      "displayHeight": 60,
+      "dpi": null,
+      "minKB": 30,
+      "maxKB": 49,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Sign on white paper using a black ink pen",
+        "The signature must be of the candidate only",
+        "The signature should be clear, complete, and within the specified area",
+        "Signature in CAPITAL letters is not accepted"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Use a well-lit place with a plain background",
+      "Keep the camera at eye level and look straight ahead",
+      "Ensure your face is clearly visible without shadows or glare",
+      "Do not wear a cap, mask or spectacles while capturing the live photograph"
+    ]
+  },
+  {
+    "slug": "railway-iti-apprentice",
+    "name": "Railway ITI Apprentice",
+    "fullName": "Railway Act Apprentice (ITI Apprenticeship)",
+    "body": "Railway Recruitment Cell (RRC)",
+    "category": "railway",
+    "year": 2026,
+    "officialUrl": "https://indianrailways.gov.in",
+    "lastVerified": "2026-08-03",
+    "captureMode": "live",
+    "photo": null,
+    "combined": null,
+    "signature": {
+      "widthPx": 160,
+      "heightPx": 70,
+      "unit": "px",
+      "displayWidth": 160,
+      "displayHeight": 70,
+      "dpi": null,
+      "minKB": 50,
+      "maxKB": 200,
+      "format": "jpg",
+      "ink": "black",
+      "notes": [
+        "Signature must be of the candidate only",
+        "Sign on white paper using a black ink pen",
+        "Signature should be clear and fully visible",
+        "Upload only in JPG/JPEG format"
+      ]
+    },
+    "thumb": null,
+    "declaration": null,
+    "documents": null,
+    "liveCaptureNotes": [
+      "Upload a recent passport-size colour photograph with a plain white or light-coloured background",
+      "Face should be clearly visible and looking straight at the camera",
+      "Do not wear a cap, hat or dark glasses (religious headwear is permitted if the face is fully visible)",
+      "Upload the photograph in JPG/JPEG format as prescribed in the notification"
     ]
   }
 ]
