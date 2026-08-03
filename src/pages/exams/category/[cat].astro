@@ -4,14 +4,16 @@ import exams from '../../../data/exams.json';
 
 const labels = {
   central: 'SSC & Central',
+  entrance: 'NTA & Entrance',
   railway: 'Railway',
   banking: 'Banking',
   state: 'State PSC',
+  judiciary: 'Court & Judiciary',
   police: 'Police & Defence'
 };
 
 export function getStaticPaths() {
-  const keys = ['central', 'railway', 'banking', 'state', 'police'];
+  const keys = ['central', 'entrance', 'railway', 'banking', 'state', 'judiciary', 'police'];
   return keys.map((cat) => ({ params: { cat } }));
 }
 

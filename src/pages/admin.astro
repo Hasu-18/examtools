@@ -40,6 +40,10 @@
   </style>
 </head>
 <body>
+<button type="button" id="jumpTop" title="Back to Add an exam"
+  style="position:fixed;left:16px;bottom:16px;z-index:99;width:46px;height:46px;border-radius:50%;background:#0b1f35;color:#fff;font-size:20px;line-height:1;box-shadow:0 4px 12px rgba(0,0,0,.25);padding:0;">
+  &#8593;
+</button>
 <div class="wrap">
 
   <h1>Exam data builder</h1>
@@ -52,13 +56,28 @@
 
   <h2>Step 1 — Load what you already have</h2>
   <label>
-    <span>Paste your current src/data/exams.json (or leave empty to start fresh)</span>
-    <textarea id="existing" placeholder="[ ... ]"></textarea>
+    <span style="display:flex;align-items:center;justify-content:space-between;">
+      <span>Paste your current src/data/exams.json (or leave empty to start fresh)</span>
+      <button type="button" id="lockBtn" style="background:none;border:1px solid var(--line);border-radius:6px;padding:.25rem .55rem;font-size:.75rem;color:var(--navy);">
+        &#128274; Locked, click to edit
+      </button>
+    </span>
+    <textarea id="existing" placeholder="[ ... ]" readonly style="background:#f8fafc;"></textarea>
   </label>
   <button class="ghost" id="loadBtn">Load existing exams</button>
   <p class="hint" id="loadMsg"></p>
 
   <h2>Step 2 — Add an exam</h2>
+
+  <fieldset>
+    <legend>Quick fill from JSON (optional)</legend>
+    <label>
+      <span>Paste an exam object here and the form below will fill itself</span>
+      <textarea id="pasteJson" placeholder='{ "name": "SSC CHSL", "slug": "ssc-chsl", "category": "central", ... }'></textarea>
+    </label>
+    <button type="button" class="ghost" id="fetchBtn">Fill the form from this JSON</button>
+    <p class="hint" id="fetchMsg">Nothing is saved until you click Add this exam, so you can check and change anything first.</p>
+  </fieldset>
 
   <fieldset>
     <legend>Basics</legend>
@@ -71,17 +90,37 @@
       <label><span>Body</span><input id="f_body" placeholder="IBPS" /></label>
       <label><span>Category</span>
         <select id="f_cat">
-          <option value="central">central</option>
-          <option value="railway">railway</option>
-          <option value="banking">banking</option>
-          <option value="state">state</option>
-          <option value="police">police</option>
+          <option value="central">central — SSC, UPSC CSE, other central</option>
+          <option value="entrance">entrance — NTA, NEET, JEE, CUET, UGC NET</option>
+          <option value="railway">railway — RRB</option>
+          <option value="banking">banking — IBPS, SBI, RBI</option>
+          <option value="state">state — State PSC and state boards</option>
+          <option value="judiciary">judiciary — High Court, District Court</option>
+          <option value="police">police — police, NDA, CDS, CAPF, defence</option>
         </select>
       </label>
       <label><span>Year</span><input id="f_year" type="number" value="2026" /></label>
       <label><span>Verified on</span><input id="f_ver" type="date" /></label>
     </div>
-    <label><span>Official URL</span><input id="f_url" placeholder="https://ibps.in" /></label>
+    <div class="row row-2">
+      <label><span>Official URL</span><input id="f_url" placeholder="https://ibps.in" /></label>
+      <label><span>State (leave blank for national exams)</span>
+        <input id="f_region" placeholder="West Bengal, Bihar, Maharashtra" list="regionList" />
+        <datalist id="regionList">
+          <option value="Andhra Pradesh"></option><option value="Assam"></option>
+          <option value="Bihar"></option><option value="Chhattisgarh"></option>
+          <option value="Delhi"></option><option value="Gujarat"></option>
+          <option value="Haryana"></option><option value="Himachal Pradesh"></option>
+          <option value="Jharkhand"></option><option value="Karnataka"></option>
+          <option value="Kerala"></option><option value="Madhya Pradesh"></option>
+          <option value="Maharashtra"></option><option value="Odisha"></option>
+          <option value="Punjab"></option><option value="Rajasthan"></option>
+          <option value="Tamil Nadu"></option><option value="Telangana"></option>
+          <option value="Uttar Pradesh"></option><option value="Uttarakhand"></option>
+          <option value="West Bengal"></option>
+        </datalist>
+      </label>
+    </div>
   </fieldset>
 
   <fieldset>
@@ -229,6 +268,19 @@ No cap, mask or spectacles</textarea></label>
   <p class="hint" id="addMsg"></p>
 
   <h2>Step 3 — Your exams (<span id="count">0</span>)</h2>
+  <div class="row row-3" style="margin-bottom:.75rem;">
+    <label style="margin:0;"><span>Filter by category</span>
+      <select id="flt_cat"><option value="">All categories</option></select>
+    </label>
+    <label style="margin:0;"><span>Filter by body</span>
+      <select id="flt_body"><option value="">All bodies</option></select>
+    </label>
+    <label style="margin:0;"><span>Filter by state</span>
+      <select id="flt_region"><option value="">All states</option></select>
+    </label>
+  </div>
+  <label><span>Search by name</span><input id="flt_text" placeholder="Type part of an exam name" /></label>
+  <p class="hint" id="showing"></p>
   <ul id="list"></ul>
 
   <h2>Step 4 — Take the file</h2>
@@ -243,6 +295,7 @@ No cap, mask or spectacles</textarea></label>
 
 <script>
   var exams = [];
+  var editIndex = null;
   var g = function (id) { return document.getElementById(id); };
 
   var PATTERNS = {
@@ -276,15 +329,8 @@ No cap, mask or spectacles</textarea></label>
     return raw.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
   }
 
-  function num(id) {
-    var v = g(id).value;
-    return v === '' ? null : Number(v);
-  }
-
-  function txt(id) {
-    var v = g(id).value.trim();
-    return v === '' ? null : v;
-  }
+  function num(id) { var v = g(id).value; return v === '' ? null : Number(v); }
+  function txt(id) { var v = g(id).value.trim(); return v === '' ? null : v; }
 
   function block(prefix, kind) {
     var unit = g(prefix + '_unit').value;
@@ -293,21 +339,27 @@ No cap, mask or spectacles</textarea></label>
     var rawH = g(prefix + '_h').value;
     var w = toPx(rawW, unit, dpi);
     var h = toPx(rawH, unit, dpi);
-    if (!w || !h) return null;
+    var minKB = num(prefix + '_min');
+    var maxKB = num(prefix + '_max');
+
+    // Nothing at all entered, so this section does not apply to this exam
+    if (!w && !h && minKB === null && maxKB === null) return null;
+
+    var hasSize = !!(w && h);
 
     var o = {
-      widthPx: w,
-      heightPx: h,
-      unit: unit,
-      displayWidth: Number(rawW),
-      displayHeight: Number(rawH),
-      dpi: unit === 'px' ? null : dpi,
-      minKB: num(prefix + '_min'),
-      maxKB: num(prefix + '_max'),
+      widthPx: hasSize ? w : null,
+      heightPx: hasSize ? h : null,
+      unit: hasSize ? unit : null,
+      displayWidth: hasSize ? Number(rawW) : null,
+      displayHeight: hasSize ? Number(rawH) : null,
+      dpi: (hasSize && unit !== 'px') ? dpi : null,
+      minKB: minKB,
+      maxKB: maxKB,
       format: txt(prefix + '_fmt') || 'jpg'
     };
 
-    if (unit === 'cm') { o.widthCm = Number(rawW); o.heightCm = Number(rawH); }
+    if (hasSize && unit === 'cm') { o.widthCm = Number(rawW); o.heightCm = Number(rawH); }
     if (kind === 'photo') o.background = txt(prefix + '_bg') || '';
     if (kind === 'sign' || kind === 'thumb') o.ink = txt(prefix + '_ink') || 'not specified';
     if (kind === 'combined') o.photoRatio = Number(g('c_ratio').value) || 0.72;
@@ -315,6 +367,41 @@ No cap, mask or spectacles</textarea></label>
 
     o.notes = lines(prefix + '_notes');
     return o;
+  }
+
+  function fillBlock(prefix, b) {
+    if (!b) {
+      ['_w','_h','_min','_max','_notes','_bg','_ink','_text'].forEach(function (s) {
+        if (g(prefix + s)) g(prefix + s).value = '';
+      });
+      return;
+    }
+    g(prefix + '_unit').value = b.unit || 'px';
+    g(prefix + '_w').value = (b.displayWidth != null) ? b.displayWidth : (b.widthPx != null ? b.widthPx : '');
+    g(prefix + '_h').value = (b.displayHeight != null) ? b.displayHeight : (b.heightPx != null ? b.heightPx : '');
+    if (g(prefix + '_dpi')) g(prefix + '_dpi').value = b.dpi || 300;
+    g(prefix + '_min').value = (b.minKB != null) ? b.minKB : '';
+    g(prefix + '_max').value = (b.maxKB != null) ? b.maxKB : '';
+    g(prefix + '_fmt').value = b.format || 'jpg';
+    if (g(prefix + '_bg')) g(prefix + '_bg').value = b.background || '';
+    if (g(prefix + '_ink')) g(prefix + '_ink').value = (b.ink && b.ink !== 'not specified') ? b.ink : '';
+    if (prefix === 'c' && g('c_ratio')) g('c_ratio').value = b.photoRatio || 0.72;
+    if (g(prefix + '_text')) g(prefix + '_text').value = b.text || '';
+    g(prefix + '_notes').value = (b.notes || []).join('\n');
+  }
+
+  function detectPattern(e) {
+    var want = {
+      live: e.captureMode === 'live', photo: !!e.photo, combined: !!e.combined,
+      sign: !!e.signature, thumb: !!e.thumb, decl: !!e.declaration
+    };
+    var keys = Object.keys(PATTERNS);
+    for (var i = 0; i < keys.length; i++) {
+      var c = PATTERNS[keys[i]];
+      if (c.live === want.live && c.photo === want.photo && c.combined === want.combined &&
+          c.sign === want.sign && c.thumb === want.thumb && c.decl === want.decl) return keys[i];
+    }
+    return 'ps';
   }
 
   function syncPattern() {
@@ -329,12 +416,115 @@ No cap, mask or spectacles</textarea></label>
   g('f_pattern').addEventListener('change', syncPattern);
   syncPattern();
 
+  function setMode() {
+    if (editIndex === null) {
+      g('addBtn').textContent = 'Add this exam';
+      g('clearFormBtn').textContent = 'Clear form';
+    } else {
+      g('addBtn').textContent = 'Save changes to ' + exams[editIndex].name;
+      g('clearFormBtn').textContent = 'Cancel edit';
+    }
+  }
+
+  function fillForm(e) {
+    g('f_name').value = e.name || '';
+    g('f_slug').value = e.slug || '';
+    g('f_full').value = e.fullName || '';
+    g('f_body').value = e.body || '';
+    g('f_cat').value = e.category || 'central';
+    g('f_year').value = e.year || 2026;
+    g('f_ver').value = e.lastVerified || new Date().toISOString().slice(0, 10);
+    g('f_url').value = e.officialUrl || '';
+    g('f_region').value = e.region || '';
+
+    g('f_pattern').value = detectPattern(e);
+    syncPattern();
+
+    g('f_live').value = (e.liveCaptureNotes || []).join('\n');
+    fillBlock('p', e.photo);
+    fillBlock('c', e.combined);
+    fillBlock('s', e.signature);
+    fillBlock('t', e.thumb);
+    fillBlock('d', e.declaration);
+  }
+
+  function loadIntoForm(i) {
+    var e = exams[i];
+    editIndex = i;
+    fillForm(e);
+    setMode();
+    g('addMsg').textContent = 'Editing ' + e.name + '. Change anything, then save.';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  g('fetchBtn').addEventListener('click', function () {
+    var raw = g('pasteJson').value.trim();
+    if (!raw) { g('fetchMsg').textContent = 'Paste some JSON first.'; return; }
+    try {
+      var obj = JSON.parse(raw);
+      if (Array.isArray(obj)) obj = obj[0];
+      if (!obj || typeof obj !== 'object') throw new Error('bad shape');
+      editIndex = null;
+      fillForm(obj);
+      setMode();
+      g('fetchMsg').textContent = 'Form filled. Check every value against the notification, then click Add this exam.';
+      window.scrollTo({ top: g('f_name').getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    } catch (err) {
+      g('fetchMsg').textContent = 'That is not valid JSON. Check for a missing comma or bracket.';
+    }
+  });
+
+  function fillFilter(id, values) {
+    var sel = g(id);
+    var current = sel.value;
+    var first = sel.options[0].textContent;
+    sel.innerHTML = '';
+    var o0 = document.createElement('option');
+    o0.value = ''; o0.textContent = first;
+    sel.appendChild(o0);
+    values.sort().forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v; o.textContent = v;
+      sel.appendChild(o);
+    });
+    sel.value = current;
+  }
+
+  function refreshFilters() {
+    var cats = [], bodies = [], regions = [];
+    exams.forEach(function (e) {
+      if (e.category && cats.indexOf(e.category) === -1) cats.push(e.category);
+      if (e.body && bodies.indexOf(e.body) === -1) bodies.push(e.body);
+      if (e.region && regions.indexOf(e.region) === -1) regions.push(e.region);
+    });
+    fillFilter('flt_cat', cats);
+    fillFilter('flt_body', bodies);
+    fillFilter('flt_region', regions);
+  }
+
   function render() {
     g('count').textContent = String(exams.length);
+    refreshFilters();
+
+    var fc = g('flt_cat').value;
+    var fb = g('flt_body').value;
+    var fr = g('flt_region').value;
+    var ft = g('flt_text').value.trim().toLowerCase();
+
     var ul = g('list');
     ul.innerHTML = '';
+    var shown = 0;
+
     exams.forEach(function (e, i) {
+      if (fc && e.category !== fc) return;
+      if (fb && e.body !== fb) return;
+      if (fr && e.region !== fr) return;
+      if (ft && (e.name || '').toLowerCase().indexOf(ft) === -1) return;
+      shown++;
+
       var li = document.createElement('li');
+      if (i === editIndex) li.style.borderColor = '#d97706';
+
       var parts = [];
       if (e.photo) parts.push('photo');
       if (e.captureMode === 'live') parts.push('live photo');
@@ -342,20 +532,48 @@ No cap, mask or spectacles</textarea></label>
       if (e.signature) parts.push('signature');
       if (e.thumb) parts.push('thumb');
       if (e.declaration) parts.push('declaration');
+
       var label = document.createElement('span');
-      label.textContent = e.name + '  ·  /exams/' + e.slug + '/  ·  ' + parts.join(' + ');
+      label.textContent = e.name + '  ·  ' + (e.category || '') +
+        (e.region ? ' · ' + e.region : '') + '  ·  ' + parts.join(' + ');
+
+      var btns = document.createElement('span');
+      btns.style.display = 'flex';
+      btns.style.gap = '.3rem';
+      btns.style.flexShrink = '0';
+
+      var edit = document.createElement('button');
+      edit.textContent = 'Edit';
+      edit.style.color = '#0b1f35';
+      edit.addEventListener('click', function () { loadIntoForm(i); render(); });
+
       var del = document.createElement('button');
       del.textContent = 'Remove';
       del.addEventListener('click', function () {
         exams.splice(i, 1);
+        if (editIndex === i) { editIndex = null; setMode(); }
+        else if (editIndex !== null && editIndex > i) editIndex--;
         render();
       });
+
+      btns.appendChild(edit);
+      btns.appendChild(del);
       li.appendChild(label);
-      li.appendChild(del);
+      li.appendChild(btns);
       ul.appendChild(li);
     });
+
+    g('showing').textContent = (shown === exams.length)
+      ? 'Showing all ' + exams.length
+      : 'Showing ' + shown + ' of ' + exams.length;
+
     g('out').value = JSON.stringify(exams, null, 2);
   }
+
+  ['flt_cat','flt_body','flt_region'].forEach(function (id) {
+    g(id).addEventListener('change', render);
+  });
+  g('flt_text').addEventListener('input', render);
 
   g('loadBtn').addEventListener('click', function () {
     var raw = g('existing').value.trim();
@@ -364,7 +582,9 @@ No cap, mask or spectacles</textarea></label>
       var parsed = JSON.parse(raw);
       if (!Array.isArray(parsed)) throw new Error('not an array');
       exams = parsed;
-      g('loadMsg').textContent = 'Loaded ' + exams.length + ' exams.';
+      editIndex = null;
+      setMode();
+      g('loadMsg').textContent = 'Loaded ' + exams.length + ' exams. Use Edit on any of them to change it.';
       render();
     } catch (err) {
       g('loadMsg').textContent = 'That is not valid JSON. Check for a missing or extra comma.';
@@ -376,8 +596,7 @@ No cap, mask or spectacles</textarea></label>
     var slug = txt('f_slug');
     if (!name || !slug) { g('addMsg').textContent = 'Name and slug are required.'; return; }
 
-    var key = g('f_pattern').value;
-    var cfg = PATTERNS[key] || PATTERNS.ps;
+    var cfg = PATTERNS[g('f_pattern').value] || PATTERNS.ps;
 
     var exam = {
       slug: slug.toLowerCase().replace(/\s+/g, '-'),
@@ -385,6 +604,7 @@ No cap, mask or spectacles</textarea></label>
       fullName: txt('f_full') || '',
       body: txt('f_body') || '',
       category: g('f_cat').value,
+      region: txt('f_region') || null,
       year: Number(g('f_year').value) || 2026,
       officialUrl: txt('f_url') || '',
       lastVerified: g('f_ver').value,
@@ -399,21 +619,32 @@ No cap, mask or spectacles</textarea></label>
 
     if (cfg.live) exam.liveCaptureNotes = lines('f_live');
 
-    exams.push(exam);
-    g('addMsg').textContent = 'Added ' + name + '. You now have ' + exams.length + ' exams.';
+    if (editIndex === null) {
+      exams.push(exam);
+      g('addMsg').textContent = 'Added ' + name + '. You now have ' + exams.length + ' exams.';
+    } else {
+      exams[editIndex] = exam;
+      g('addMsg').textContent = 'Saved changes to ' + name + '.';
+      editIndex = null;
+      setMode();
+    }
+
     render();
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   });
 
   g('clearFormBtn').addEventListener('click', function () {
-    ['f_name','f_slug','f_full','f_body','f_url',
+    ['f_name','f_slug','f_full','f_body','f_url','f_region',
      'p_w','p_h','p_min','p_max','p_bg','p_notes',
      'c_w','c_h','c_min','c_max','c_notes',
      's_w','s_h','s_min','s_max','s_notes',
      't_w','t_h','t_min','t_max','t_notes',
      'd_w','d_h','d_min','d_max','d_text','d_notes'].forEach(function (id) {
-      g(id).value = '';
+      if (g(id)) g(id).value = '';
     });
+    editIndex = null;
+    setMode();
+    render();
     g('addMsg').textContent = '';
   });
 
@@ -432,6 +663,19 @@ No cap, mask or spectacles</textarea></label>
     URL.revokeObjectURL(a.href);
   });
 
+  setMode();
+  g('jumpTop').addEventListener('click', function () {
+    var el = g('pasteJson') || g('f_name');
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+  });
+  var unlocked = false;
+  g('lockBtn').addEventListener('click', function () {
+    unlocked = !unlocked;
+    g('existing').readOnly = !unlocked;
+    g('existing').style.background = unlocked ? '#fff' : '#f8fafc';
+    g('lockBtn').innerHTML = unlocked ? '&#128275; Unlocked, click to lock' : '&#128274; Locked, click to edit';
+    if (unlocked) g('existing').focus();
+  });
   render();
 </script>
 </body>

@@ -27,11 +27,14 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
 const related = exams.filter((e) => e.slug !== exam.slug).slice(0, 6);
 const pageUrl = Astro.url.href;
 
-const dim = (b) => (b.unit && b.unit !== 'px' && b.displayWidth)
-  ? `${b.displayWidth} × ${b.displayHeight} ${b.unit === 'in' ? 'inch' : b.unit}`
-  : `${b.widthPx} × ${b.heightPx} px`;
+const dim = (b) => {
+  if (!b.widthPx || !b.heightPx) return 'Not specified in the notification';
+  return (b.unit && b.unit !== 'px' && b.displayWidth)
+    ? `${b.displayWidth} × ${b.displayHeight} ${b.unit === 'in' ? 'inch' : b.unit}`
+    : `${b.widthPx} × ${b.heightPx} px`;
+};
 
-const pxNote = (b) => (b.unit && b.unit !== 'px' && b.displayWidth)
+const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
   ? `That is ${b.widthPx} × ${b.heightPx} pixels at ${b.dpi || 300} DPI.`
   : null;
 ---

@@ -1,8 +1,8 @@
 ---
 const {
   label = "Photo",
-  widthPx = 200,
-  heightPx = 230,
+  widthPx = null,
+  heightPx = null,
   minKB = 20,
   maxKB = 50,
   fileName = "photo",
@@ -14,40 +14,48 @@ const {
   dpi = 300
 } = Astro.props;
 
-const boxW = (displayW === null || displayW === undefined) ? widthPx : displayW;
-const boxH = (displayH === null || displayH === undefined) ? heightPx : displayH;
+const hasSize = !!(widthPx && heightPx);
+const boxW = hasSize ? ((displayW === null || displayW === undefined) ? widthPx : displayW) : '';
+const boxH = hasSize ? ((displayH === null || displayH === undefined) ? heightPx : displayH) : '';
 const unitLabel = unit === 'in' ? 'inch' : unit;
-const targetLine = unit === 'px'
-  ? `${widthPx} × ${heightPx} px · ${minKB} to ${maxKB} KB · JPG`
-  : `${boxW} × ${boxH} ${unitLabel} · ${minKB} to ${maxKB} KB · JPG`;
+
+const targetLine = !hasSize
+  ? `Any dimensions · ${minKB} to ${maxKB} KB · JPG`
+  : (unit === 'px'
+      ? `${widthPx} × ${heightPx} px · ${minKB} to ${maxKB} KB · JPG`
+      : `${boxW} × ${boxH} ${unitLabel} · ${minKB} to ${maxKB} KB · JPG`);
 ---
 <div class="rz rounded-lg border border-line bg-white"
-     data-w={widthPx} data-h={heightPx} data-min={minKB} data-max={maxKB}
-     data-name={fileName} data-unit={unit} data-dw={boxW} data-dh={boxH} data-dpi={dpi}>
+     data-w={hasSize ? widthPx : 0} data-h={hasSize ? heightPx : 0}
+     data-min={minKB} data-max={maxKB} data-name={fileName}
+     data-unit={hasSize ? unit : 'px'} data-dw={boxW || 0} data-dh={boxH || 0} data-dpi={dpi}>
 
   <div class="border-b border-line bg-navy-100 px-4 py-3">
     <h3 class="text-base font-bold text-navy-900">{label} resizer</h3>
     <p class="rz-target mt-0.5 text-sm text-muted">{targetLine}</p>
-    {unit !== 'px' && (
+    {hasSize && unit !== 'px' && (
       <p class="mt-0.5 text-xs text-muted">That is {widthPx} × {heightPx} pixels at {dpi} DPI.</p>
+    )}
+    {!hasSize && (
+      <p class="mt-1 text-xs text-muted">This exam does not state pixel dimensions, so we keep your image as it is and only bring the file size into range.</p>
     )}
   </div>
 
   {editable && (
     <div class="border-b border-line bg-surface px-4 py-3">
       <button type="button" class="rz-toggle w-full rounded-md border-2 border-amber-500 bg-white px-4 py-2.5 text-sm font-bold text-amber-600 hover:bg-amber-100">
-        ⚙ Change size or units
+        Change size or units
       </button>
 
       <div class="rz-size mt-3" hidden={!openByDefault}>
         <div class="grid grid-cols-3 gap-2">
           <label class="block text-xs">
             <span class="text-muted">Width</span>
-            <input type="number" class="rz-in-w mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxW} min="0.1" step="any" />
+            <input type="number" class="rz-in-w mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxW} min="0.1" step="any" placeholder="auto" />
           </label>
           <label class="block text-xs">
             <span class="text-muted">Height</span>
-            <input type="number" class="rz-in-h mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxH} min="0.1" step="any" />
+            <input type="number" class="rz-in-h mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={boxH} min="0.1" step="any" placeholder="auto" />
           </label>
           <label class="block text-xs">
             <span class="text-muted">Unit</span>
@@ -81,8 +89,8 @@ const targetLine = unit === 'px'
         </button>
 
         <p class="mt-2 text-xs text-muted">
-          Always check these against your official notification. Requirements differ
-          between exams and change between years.
+          Leave width and height blank to keep your image at its own size and only
+          change the file size. Always check against your official notification.
         </p>
       </div>
     </div>
@@ -104,18 +112,18 @@ const targetLine = unit === 'px'
     </div>
 
     <div class="rz-edit" hidden>
-      <p class="mb-2 text-sm font-semibold text-navy-900">Drag to position, then resize</p>
+      <p class="rz-editnote mb-2 text-sm font-semibold text-navy-900">Drag to position, then resize</p>
       <div class="relative flex justify-center rounded bg-surface p-3">
         <canvas class="rz-stage touch-none cursor-move rounded border border-line" style="max-width:100%;height:auto;"></canvas>
         <div class="rz-hint pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2">
           <div class="rz-hint-arrow flex items-center gap-2 rounded-full bg-navy-900/85 px-4 py-2 text-xs font-bold text-white">
-            <span>←</span><span>Drag to move</span><span>→</span>
+            <span>&#8592;</span><span>Drag to move</span><span>&#8594;</span>
           </div>
         </div>
       </div>
 
       <div class="mt-4 space-y-3 text-sm">
-        <label class="block">
+        <label class="rz-zoom-wrap block">
           <span class="text-muted">Zoom</span>
           <input type="range" class="rz-zoom mt-1 w-full" min="100" max="300" value="100" />
         </label>
@@ -171,18 +179,21 @@ const targetLine = unit === 'px'
     let DW = +root.dataset.dw;
     let DH = +root.dataset.dh;
     let DPI = +root.dataset.dpi || 300;
+    let FIXED = W > 0 && H > 0;
     const NAME = root.dataset.name || 'photo';
 
     const q = (s) => root.querySelector(s);
     const pick = q('.rz-pick'), edit = q('.rz-edit'), done = q('.rz-done');
     const fileIn = q('.rz-file'), stage = q('.rz-stage');
-    const zoomIn = q('.rz-zoom'), brightIn = q('.rz-bright'), contrastIn = q('.rz-contrast');
+    const zoomIn = q('.rz-zoom'), zoomWrap = q('.rz-zoom-wrap');
+    const brightIn = q('.rz-bright'), contrastIn = q('.rz-contrast');
     const applyBtn = q('.rz-apply'), resetBtn = q('.rz-reset'), againBtn = q('.rz-again');
     const warn = q('.rz-warn'), err = q('.rz-err');
     const origImg = q('.rz-orig'), outImg = q('.rz-out');
     const origMeta = q('.rz-orig-meta'), outMeta = q('.rz-out-meta');
     const verdict = q('.rz-verdict'), dl = q('.rz-dl');
-    const target = q('.rz-target');
+    const target = q('.rz-target'), editnote = q('.rz-editnote');
+    const hint = q('.rz-hint');
 
     const toggle = q('.rz-toggle'), sizePanel = q('.rz-size');
     const inW = q('.rz-in-w'), inH = q('.rz-in-h'), unitSel = q('.rz-unit');
@@ -193,16 +204,34 @@ const targetLine = unit === 'px'
     let bmp = null, base = 1, zoom = 1, ox = 0, oy = 0;
     let origURL = null, outURL = null;
 
-    function setStage() { stage.width = W; stage.height = H; }
-    setStage();
-
     function unitName(u) { return u === 'in' ? 'inch' : u; }
 
     function updateTarget() {
-      if (UNIT === 'px') {
-        target.textContent = W + ' × ' + H + ' px · ' + MIN + ' to ' + MAX + ' KB · JPG';
+      if (!FIXED) {
+        target.textContent = 'Any dimensions - ' + MIN + ' to ' + MAX + ' KB - JPG';
+      } else if (UNIT === 'px') {
+        target.textContent = W + ' x ' + H + ' px - ' + MIN + ' to ' + MAX + ' KB - JPG';
       } else {
-        target.textContent = DW + ' × ' + DH + ' ' + unitName(UNIT) + ' · ' + MIN + ' to ' + MAX + ' KB · JPG';
+        target.textContent = DW + ' x ' + DH + ' ' + unitName(UNIT) + ' - ' + MIN + ' to ' + MAX + ' KB - JPG';
+      }
+    }
+
+    function applyMode() {
+      if (FIXED) {
+        stage.width = W;
+        stage.height = H;
+        if (editnote) editnote.textContent = 'Drag to position, then resize';
+        if (zoomWrap) zoomWrap.hidden = false;
+        if (hint) hint.classList.remove('gone');
+        stage.classList.add('cursor-move');
+      } else {
+        if (bmp) { W = bmp.width; H = bmp.height; }
+        stage.width = W || 1;
+        stage.height = H || 1;
+        if (editnote) editnote.textContent = 'Your image is kept at its own size. Adjust brightness if needed.';
+        if (zoomWrap) zoomWrap.hidden = true;
+        if (hint) hint.classList.add('gone');
+        stage.classList.remove('cursor-move');
       }
     }
 
@@ -211,27 +240,32 @@ const targetLine = unit === 'px'
       unitSel.addEventListener('change', () => { dpiWrap.hidden = unitSel.value === 'px'; });
 
       applySize.addEventListener('click', () => {
-        const unit = unitSel.value;
-        const dpiVal = +dpiIn.value || 300;
-        const rawW = +inW.value, rawH = +inH.value;
-        if (!rawW || !rawH) return;
-
-        let pxW = rawW, pxH = rawH;
-        if (unit === 'cm') { pxW = rawW / 2.54 * dpiVal; pxH = rawH / 2.54 * dpiVal; }
-        else if (unit === 'mm') { pxW = rawW / 25.4 * dpiVal; pxH = rawH / 25.4 * dpiVal; }
-        else if (unit === 'in') { pxW = rawW * dpiVal; pxH = rawH * dpiVal; }
-
-        W = Math.max(1, Math.round(pxW));
-        H = Math.max(1, Math.round(pxH));
-        UNIT = unit; DW = rawW; DH = rawH; DPI = dpiVal;
         MIN = Math.max(0, +inMin.value || 0);
         MAX = Math.max(1, +inMax.value || 1);
 
-        setStage();
+        const rawW = +inW.value, rawH = +inH.value;
+
+        if (!rawW || !rawH) {
+          FIXED = false;
+          if (bmp) { W = bmp.width; H = bmp.height; }
+        } else {
+          const u = unitSel.value;
+          const d = +dpiIn.value || 300;
+          let pxW = rawW, pxH = rawH;
+          if (u === 'cm') { pxW = rawW / 2.54 * d; pxH = rawH / 2.54 * d; }
+          else if (u === 'mm') { pxW = rawW / 25.4 * d; pxH = rawH / 25.4 * d; }
+          else if (u === 'in') { pxW = rawW * d; pxH = rawH * d; }
+          W = Math.max(1, Math.round(pxW));
+          H = Math.max(1, Math.round(pxH));
+          UNIT = u; DW = rawW; DH = rawH; DPI = d;
+          FIXED = true;
+        }
+
+        applyMode();
         updateTarget();
 
         if (bmp) {
-          base = Math.max(W / bmp.width, H / bmp.height);
+          base = FIXED ? Math.max(W / bmp.width, H / bmp.height) : 1;
           zoom = 1;
           zoomIn.value = 100;
           ox = (W - bmp.width * base) / 2;
@@ -243,6 +277,7 @@ const targetLine = unit === 'px'
     }
 
     function clamp() {
+      if (!FIXED) { ox = 0; oy = 0; return; }
       const dw = bmp.width * base * zoom;
       const dh = bmp.height * base * zoom;
       ox = Math.min(0, Math.max(W - dw, ox));
@@ -273,9 +308,11 @@ const targetLine = unit === 'px'
         if (origURL) URL.revokeObjectURL(origURL);
         origURL = URL.createObjectURL(file);
         origImg.src = origURL;
-        origMeta.textContent = bmp.width + ' × ' + bmp.height + ' px · ' + origKB.toFixed(0) + ' KB';
+        origMeta.textContent = bmp.width + ' x ' + bmp.height + ' px - ' + origKB.toFixed(0) + ' KB';
 
-        base = Math.max(W / bmp.width, H / bmp.height);
+        applyMode();
+
+        base = FIXED ? Math.max(W / bmp.width, H / bmp.height) : 1;
         zoom = 1;
         zoomIn.value = 100;
         brightIn.value = 100;
@@ -284,8 +321,8 @@ const targetLine = unit === 'px'
         oy = (H - bmp.height * base) / 2;
         render();
 
-        if (bmp.width < W || bmp.height < H) {
-          warn.textContent = 'This photo is smaller than the required size, so it may look stretched or blurry. Use a sharper original if you have one.';
+        if (FIXED && (bmp.width < W || bmp.height < H)) {
+          warn.textContent = 'This image is smaller than the required size, so it may look stretched or blurry. Use a sharper original if you have one.';
           warn.hidden = false;
         }
 
@@ -299,14 +336,14 @@ const targetLine = unit === 'px'
     });
 
     let drag = false, lx = 0, ly = 0;
-    const hint = q('.rz-hint');
     stage.addEventListener('pointerdown', (e) => {
+      if (!FIXED) return;
       drag = true; stage.setPointerCapture(e.pointerId);
       lx = e.clientX; ly = e.clientY;
       if (hint) hint.classList.add('gone');
     });
     stage.addEventListener('pointermove', (e) => {
-      if (!drag || !bmp) return;
+      if (!drag || !bmp || !FIXED) return;
       const r = stage.getBoundingClientRect();
       const k = stage.width / r.width;
       ox += (e.clientX - lx) * k;
@@ -318,7 +355,7 @@ const targetLine = unit === 'px'
     stage.addEventListener('pointercancel', () => { drag = false; });
 
     zoomIn.addEventListener('input', () => {
-      if (!bmp) return;
+      if (!bmp || !FIXED) return;
       const prev = zoom;
       zoom = +zoomIn.value / 100;
       const cx = (W / 2 - ox) / prev;
@@ -354,19 +391,24 @@ const targetLine = unit === 'px'
       if (outURL) URL.revokeObjectURL(outURL);
       outURL = URL.createObjectURL(best);
       outImg.src = outURL;
-      outMeta.textContent = (UNIT === 'px')
-        ? W + ' × ' + H + ' px · ' + kb.toFixed(0) + ' KB'
-        : DW + ' × ' + DH + ' ' + unitName(UNIT) + ' · ' + kb.toFixed(0) + ' KB';
+
+      if (!FIXED) {
+        outMeta.textContent = W + ' x ' + H + ' px - ' + kb.toFixed(0) + ' KB';
+      } else if (UNIT === 'px') {
+        outMeta.textContent = W + ' x ' + H + ' px - ' + kb.toFixed(0) + ' KB';
+      } else {
+        outMeta.textContent = DW + ' x ' + DH + ' ' + unitName(UNIT) + ' - ' + kb.toFixed(0) + ' KB';
+      }
 
       if (ok) {
         verdict.className = 'rz-verdict mt-4 rounded bg-pass-bg px-3 py-3 text-sm font-semibold text-pass';
-        verdict.textContent = '✓ Perfect match, meets the size you set.';
+        verdict.textContent = 'Perfect match, meets the size you set.';
       } else if (kb < MIN) {
         verdict.className = 'rz-verdict mt-4 rounded bg-amber-100 px-3 py-3 text-sm';
         verdict.textContent = 'Size is ' + kb.toFixed(0) + ' KB, below the ' + MIN + ' KB minimum. Most portals still accept this, but a sharper original would push it higher.';
       } else {
         verdict.className = 'rz-verdict mt-4 rounded bg-fail-bg px-3 py-3 text-sm text-fail';
-        verdict.textContent = 'Could not get under ' + MAX + ' KB. Try a simpler background or a less detailed photo.';
+        verdict.textContent = 'Could not get under ' + MAX + ' KB. Try a simpler background or a less detailed image.';
       }
 
       dl.href = outURL;
@@ -389,6 +431,7 @@ const targetLine = unit === 'px'
     resetBtn.addEventListener('click', reset);
     againBtn.addEventListener('click', reset);
 
+    applyMode();
     updateTarget();
   }
 
