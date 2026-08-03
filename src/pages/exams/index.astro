@@ -7,10 +7,12 @@ const categories = [
   { key: 'entrance', label: 'NTA & Entrance' },
   { key: 'railway', label: 'Railway' },
   { key: 'banking', label: 'Banking' },
-  { key: 'state', label: 'State PSC' },
+  { key: 'state', label: 'State' },
   { key: 'judiciary', label: 'Court & Judiciary' },
   { key: 'police', label: 'Police & Defence' }
 ];
+const searchKey = (e) => [e.name, e.fullName, e.slug, e.body, e.region]
+  .filter(Boolean).join(' ').toLowerCase();
 ---
 <BaseLayout title="All Exams, Photo & Signature Size Requirements | FormSetu">
 
@@ -26,16 +28,26 @@ const categories = [
     application forms, checked against the official notification.
   </p>
 
+  <div class="relative mt-5">
+    <input type="search" id="examSearch"
+      placeholder="Search your exam, SSC CGL, RRB, IBPS..."
+      class="w-full rounded-lg border-2 border-navy-600 bg-white px-4 py-2.5 pr-11 text-base shadow-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-100" />
+    <svg viewBox="0 0 24 24" class="pointer-events-none absolute right-3.5 top-1/2 h-5 w-5 -translate-y-1/2 fill-none stroke-navy-600" stroke-width="2.2" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20l-3.5-3.5" stroke-linecap="round" />
+    </svg>
+  </div>
+
   {categories.map((c) => {
     const items = exams.filter((e) => e.category === c.key);
     return items.length > 0 && (
-      <section class="mt-8">
+      <section class="mt-8 exam-group">
         <h2 class="mb-3 text-lg font-bold text-navy-900">{c.label}</h2>
         <div class="grid grid-cols-2 gap-3">
           {items.slice(0, 4).map((e) => (
-            <a href={"/exams/" + e.slug + "/"}
-               class="rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100 active:scale-[0.98]">
-              <span class="block text-base font-bold leading-tight text-navy-900">{e.name}</span>
+            <a href={"/exams/" + e.slug + "/"} data-search={searchKey(e)}
+               class="exam-card rounded-lg border-2 border-line bg-white px-3 py-4 shadow-sm transition hover:border-amber-500 hover:bg-amber-100 active:scale-[0.98]">
+              <span class="block text-lg font-bold leading-tight text-navy-900">{e.name}</span>
               <span class="mt-1.5 block text-xs text-muted">Resize photo &amp; sign</span>
               <span class="mt-2 inline-block text-xs font-bold text-amber-600">Open tool →</span>
             </a>
@@ -43,13 +55,27 @@ const categories = [
         </div>
         {items.length > 4 && (
           <a href={"/exams/category/" + c.key + "/"}
-             class="mt-3 inline-block rounded-md border-2 border-navy-800 px-4 py-2 text-sm font-bold text-navy-800 hover:bg-navy-800 hover:text-white">
+             class="mt-2 inline-block text-xs font-bold text-navy-700 hover:text-amber-600">
             See all {items.length} {c.label} exams →
           </a>
         )}
       </section>
     );
   })}
+
+  <div id="noResults" class="mt-6 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4" hidden>
+    <p class="text-sm font-bold text-navy-900">No exam matched that search.</p>
+    <p class="mt-1 text-sm text-ink">
+      Use the custom resizer and enter the size from your own notification.
+    </p>
+    <a href="/tools/photo-resizer/" class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+      Open custom resizer →
+    </a>
+    <p class="mt-3 text-xs text-muted">
+      Want it added?
+      <a href="mailto:contact@formsetu.com?subject=Please%20add%20an%20exam" class="font-semibold text-navy-700 underline">Email us the exam name</a>
+    </p>
+  </div>
 
   <section class="mt-10 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
     <p class="text-sm font-bold text-navy-900">Exam not listed?</p>
@@ -62,3 +88,29 @@ const categories = [
   </section>
 
 </BaseLayout>
+
+<script>
+  const search = document.getElementById('examSearch');
+  const cards = document.querySelectorAll('.exam-card');
+  const groups = document.querySelectorAll('.exam-group');
+  const noResults = document.getElementById('noResults');
+
+  if (search) {
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const match = (card.getAttribute('data-search') || '').includes(term);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+
+      groups.forEach((group) => {
+        group.hidden = group.querySelectorAll('.exam-card:not([hidden])').length === 0;
+      });
+
+      noResults.hidden = visible > 0;
+    });
+  }
+</script>

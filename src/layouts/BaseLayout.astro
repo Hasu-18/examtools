@@ -4,14 +4,14 @@ import exams from '../data/exams.json';
 
 const { title, description = "Exact photo, signature and document requirements for Indian government exam forms." } = Astro.props;
 
-const WHATSAPP_URL = "https://chat.whatsapp.com/REPLACE_ME";
+const WHATSAPP_URL = "https://chat.whatsapp.com/J8KB4stpDCTFxAyCL7SNuy";
 
 const categories = [
   { key: 'central', label: 'SSC & Central' },
   { key: 'entrance', label: 'NTA & Entrance' },
   { key: 'railway', label: 'Railway' },
   { key: 'banking', label: 'Banking' },
-  { key: 'state', label: 'State PSC' },
+  { key: 'state', label: 'State' },
   { key: 'judiciary', label: 'Court & Judiciary' },
   { key: 'police', label: 'Police & Defence' }
 ];
@@ -49,12 +49,15 @@ const byCategory = categories.map((c) => ({
   </main>
 
   <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-     class="wa-float fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-bold text-white shadow-lg transition hover:scale-105 hover:brightness-95">
-    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+     class="wa-float fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-2xl bg-[#25D366] px-4 py-2.5 text-white shadow-lg transition hover:scale-105 hover:brightness-95">
+    <svg viewBox="0 0 24 24" class="h-6 w-6 shrink-0 fill-current" aria-hidden="true">
       <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 2.5 1 3 .8 3.6.8.5 0 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/>
       <path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.8-1.5A10 10 0 1012 2zm0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/>
     </svg>
-    <span>Join community</span>
+    <span class="leading-tight">
+      <span class="block text-sm font-bold">Join Private Community</span>
+      <span class="block text-[10px] opacity-90">Free notes &amp; exam guidance</span>
+    </span>
   </a>
 
   <footer class="border-t border-line bg-surface">
