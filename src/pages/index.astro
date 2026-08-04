@@ -307,7 +307,8 @@ const faqs = [
       }
 
       cards.forEach((card) => {
-        const match = (card.getAttribute('data-search') || '').includes(term);
+        const hay = card.getAttribute('data-search') || '';
+        const match = term.split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
         card.hidden = !match;
         if (match) visible++;
       });

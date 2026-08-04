@@ -14,20 +14,23 @@ const {
   dpi = 300
 } = Astro.props;
 
+const minVal = (minKB === null || minKB === undefined || isNaN(minKB)) ? 0 : minKB;
+const maxVal = (maxKB === null || maxKB === undefined || isNaN(maxKB)) ? 0 : maxKB;
+
 const hasSize = !!(widthPx && heightPx);
 const boxW = hasSize ? ((displayW === null || displayW === undefined) ? widthPx : displayW) : '';
 const boxH = hasSize ? ((displayH === null || displayH === undefined) ? heightPx : displayH) : '';
 const unitLabel = unit === 'in' ? 'inch' : unit;
 
 const targetLine = !hasSize
-  ? `Any dimensions · ${minKB} to ${maxKB} KB · JPG`
+  ? `Any dimensions · ${minVal} to ${maxVal} KB · JPG`
   : (unit === 'px'
-      ? `${widthPx} × ${heightPx} px · ${minKB} to ${maxKB} KB · JPG`
-      : `${boxW} × ${boxH} ${unitLabel} · ${minKB} to ${maxKB} KB · JPG`);
+      ? `${widthPx} × ${heightPx} px · ${minVal} to ${maxVal} KB · JPG`
+      : `${boxW} × ${boxH} ${unitLabel} · ${minVal} to ${maxVal} KB · JPG`);
 ---
 <div class="rz rounded-lg border border-line bg-white"
      data-w={hasSize ? widthPx : 0} data-h={hasSize ? heightPx : 0}
-     data-min={minKB} data-max={maxKB} data-name={fileName}
+     data-min={minVal} data-max={maxVal} data-name={fileName}
      data-unit={hasSize ? unit : 'px'} data-dw={boxW || 0} data-dh={boxH || 0} data-dpi={dpi}>
 
   <div class="border-b border-line bg-navy-100 px-4 py-3">
@@ -76,11 +79,11 @@ const targetLine = !hasSize
         <div class="mt-2 grid grid-cols-2 gap-2">
           <label class="block text-xs">
             <span class="text-muted">Min KB</span>
-            <input type="number" class="rz-in-min mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={minKB} min="0" />
+            <input type="number" class="rz-in-min mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={minVal} min="0" />
           </label>
           <label class="block text-xs">
             <span class="text-muted">Max KB</span>
-            <input type="number" class="rz-in-max mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={maxKB} min="1" />
+            <input type="number" class="rz-in-max mt-1 w-full rounded border border-line px-2 py-1.5 text-sm" value={maxVal} min="1" />
           </label>
         </div>
 
@@ -179,8 +182,8 @@ const targetLine = !hasSize
   function initRz(root) {
     let W = +root.dataset.w;
     let H = +root.dataset.h;
-    let MIN = +root.dataset.min;
-    let MAX = +root.dataset.max;
+    let MIN = +root.dataset.min || 0;
+    let MAX = +root.dataset.max || 0;
     let UNIT = root.dataset.unit || 'px';
     let DW = +root.dataset.dw;
     let DH = +root.dataset.dh;

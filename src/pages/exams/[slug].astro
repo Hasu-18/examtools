@@ -24,7 +24,20 @@ const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
   day: 'numeric', month: 'long', year: 'numeric',
 });
 
-const related = exams.filter((e) => e.slug !== exam.slug).slice(0, 6);
+const shuffle = (arr) => arr
+  .map((v) => [Math.random(), v])
+  .sort((a, b) => a[0] - b[0])
+  .map((p) => p[1]);
+
+const sameCat = shuffle(
+  exams.filter((e) => e.slug !== exam.slug && e.category === exam.category)
+).slice(0, 2);
+
+const others = shuffle(
+  exams.filter((e) => e.slug !== exam.slug && !sameCat.some((s) => s.slug === e.slug))
+).slice(0, 6 - sameCat.length);
+
+const related = [...sameCat, ...others];
 const pageUrl = Astro.url.href;
 
 const dim = (b) => {
@@ -33,7 +46,7 @@ const dim = (b) => {
     ? `${b.displayWidth} × ${b.displayHeight} ${b.unit === 'in' ? 'inch' : b.unit}`
     : `${b.widthPx} × ${b.heightPx} px`;
 };
-
+const kb = (b) => `${(b.minKB === null || b.minKB === undefined) ? 0 : b.minKB} to ${(b.maxKB === null || b.maxKB === undefined) ? 0 : b.maxKB} KB`;
 const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
   ? `That is ${b.widthPx} × ${b.heightPx} pixels at ${b.dpi || 300} DPI.`
   : null;
@@ -126,7 +139,7 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.photo.minKB} to {exam.photo.maxKB} KB</td>
+            <td class="py-2 font-semibold">{kb(exam.photo)}</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -174,7 +187,7 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.combined.minKB} to {exam.combined.maxKB} KB</td>
+            <td class="py-2 font-semibold">{kb(exam.combined)}</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -211,7 +224,7 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.signature.minKB} to {exam.signature.maxKB} KB</td>
+            <td class="py-2 font-semibold">{kb(exam.signature)}</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -261,7 +274,7 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.thumb.minKB} to {exam.thumb.maxKB} KB</td>
+            <td class="py-2 font-semibold">{kb(exam.thumb)}</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
@@ -323,7 +336,7 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">File size</th>
-            <td class="py-2 font-semibold">{exam.declaration.minKB} to {exam.declaration.maxKB} KB</td>
+            <td class="py-2 font-semibold">{kb(exam.declaration)}</td>
           </tr>
           <tr class="border-b border-line">
             <th class="py-2 text-left font-medium text-muted">Format</th>
