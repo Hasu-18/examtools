@@ -2,9 +2,13 @@
 import '../styles/global.css';
 import exams from '../data/exams.json';
 
-const { title, description = "Exact photo, signature and document requirements for Indian government exam forms." } = Astro.props;
+const {
+  title,
+  description = "Exact photo and signature size for Indian government exam forms, checked against the official notification. Free resizer that hits both the pixel and KB limits, working entirely in your browser with no upload."
+} = Astro.props;
 
-const WHATSAPP_URL = "PASTE_YOUR_INVITE_LINK_HERE";
+const WHATSAPP_URL = "https://chat.whatsapp.com/J8KB4stpDCTFxAyCL7SNuy";
+const GTM_ID = "GTM-XXXXXXX";
 
 const categories = [
   { key: 'central', label: 'SSC & Central' },
@@ -22,6 +26,8 @@ const byCategory = categories.map((c) => ({
   total: exams.filter((e) => e.category === c.key).length,
   items: exams.filter((e) => e.category === c.key).slice(0, 10)
 }));
+
+const canonical = Astro.url.href;
 ---
 <!doctype html>
 <html lang="en">
@@ -31,12 +37,39 @@ const byCategory = categories.map((c) => ({
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="theme-color" content="#0b1f35" />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Form Setu" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary" />
+
+  {GTM_ID !== "GTM-XXXXXXX" && (
+    <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`} />
+  )}
 </head>
 <body class="bg-white text-ink">
 
+  {GTM_ID !== "GTM-XXXXXXX" && (
+    <noscript set:html={`<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`} />
+  )}
+
   <header class="bg-navy-900 text-white">
     <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-      <a href="/" class="text-lg font-bold text-white">Form <span class="text-amber-500">Setu</span></a>
+      <a href="/" class="flex items-center gap-2" aria-label="Form Setu home">
+        <svg viewBox="0 0 64 64" class="h-8 w-8 shrink-0" aria-hidden="true">
+          <path d="M12 42c0-11 9-20 20-20s20 9 20 20" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+          <path d="M8 42h48" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M22 42V33M32 42V29M42 42V33" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <span class="text-lg font-bold tracking-tight text-white">Form <span class="text-amber-500">Setu</span></span>
+      </a>
       <nav class="flex gap-4 text-sm">
         <a href="/exams/" class="text-white hover:text-amber-500">Exams</a>
         <a href="/blog/" class="text-white hover:text-amber-500">Notifications</a>
