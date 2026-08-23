@@ -57,7 +57,7 @@ const generalGroups = groups.filter((g) => !g.isExam);
 
   {examGroups.map((g) => (
     <section class="book-group mt-8" data-search={g.search}>
-      <AffiliateBlock groups={[g.key]} />
+    <AffiliateBlock groups={[g.key]} showDisclosure={false} />
       <a href={"/exams/" + g.key + "/"} class="inline-block text-sm font-bold text-navy-700 hover:text-amber-600">
         Open the {g.examName} resizer →
       </a>
@@ -66,11 +66,17 @@ const generalGroups = groups.filter((g) => !g.isExam);
 
   {generalGroups.map((g) => (
     <section class="book-group mt-8" data-search={g.search}>
-      <AffiliateBlock groups={[g.key]} />
+    <AffiliateBlock groups={[g.key]} showDisclosure={false} />
     </section>
   ))}
 
   <p id="bookNone" class="mt-6 text-sm text-muted" hidden>No books matched that search.</p>
+
+  <p class="mt-10 rounded-md bg-surface px-4 py-3 text-xs text-muted">
+    As an Amazon Associate, Form Setu earns from qualifying purchases.
+    This costs you nothing extra and does not change what we recommend.
+    We only list books we would recommend to a friend.
+  </p>
 
 </BaseLayout>
 

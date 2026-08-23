@@ -1,7 +1,7 @@
 ---
 import products from '../data/products.json';
 
-const { groups = [] } = Astro.props;
+const { groups = [], showDisclosure = true } = Astro.props;
 
 const shown = groups
   .map((key) => products[key])
@@ -18,10 +18,12 @@ const shades = [
 ---
 {shown.length > 0 && (
   <section class="mt-10">
-    <p class="mb-4 rounded-md bg-surface px-3 py-2 text-xs text-muted">
-      As an Amazon Associate, Form Setu earns from qualifying purchases.
-      This costs you nothing extra and does not change what we recommend.
-    </p>
+    {showDisclosure && (
+      <p class="mb-4 rounded-md bg-surface px-3 py-2 text-xs text-muted">
+        As an Amazon Associate, Form Setu earns from qualifying purchases.
+        This costs you nothing extra and does not change what we recommend.
+      </p>
+    )}
 
     {shown.map((g) => (
       <div class="mb-8">

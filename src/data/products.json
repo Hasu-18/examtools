@@ -28,5 +28,155 @@
         "url": "https://link.amazon/B08gVQNuY"
       }
     ]
+  },
+  "rrb-group-d": {
+    "label": "Books for RRB Group D",
+    "note": "",
+    "items": [
+      {
+        "title": "PW All in One RRB Group D Level-1 Book 2026-27",
+        "publisher": "Physics Wallah",
+        "badge": "Complete Guide",
+        "note": "Includes 15 previous year papers with 15 practice sets for RRB Group D Level-1 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0gBXas4Z"
+      },
+      {
+        "title": "PW Railway Game Changer General Awareness",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 7500+ TCS MCQs along with chapter-, topic- and exam-wise PYQs for major railway exams.",
+        "image": "",
+        "url": "https://link.amazon/B0f7lRlS3"
+      },
+      {
+        "title": "PW All in One RRB Group D Level-1 Hindi 2026-27",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Hindi-medium book with chapter-wise theory, tricks, exercises and 13 previous year papers with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B0fKklm3e"
+      }
+    ]
+  },
+  "ssc-chsl": {
+    "label": "Books for SSC CHSL",
+    "note": "",
+    "items": [
+      {
+        "title": "SSC CHSL 2026-27 Ultimate Guide for Tier 1 & 2",
+        "publisher": "Eduquity",
+        "badge": "PYQ",
+        "note": "Covers 10 years of chapter-wise solved papers from 2016-2026 with 3200+ MCQs for Tier 1 and Tier 2.",
+        "image": "",
+        "url": "https://link.amazon/B0gyxLUyn"
+      },
+      {
+        "title": "PW SSC CHSL Tier 1 & 2 Previous Year Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 20 year-wise sets of SSC CHSL Tier 1 and Tier 2 PYQs through April 2026 with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B0d3zA1LI"
+      },
+      {
+        "title": "Oswaal SSC CHSL Tier-1 29 Previous Years Solved Papers",
+        "publisher": "Oswaal",
+        "badge": "PYQ",
+        "note": "Includes 29 previous year Tier-1 papers with 2900+ questions and 2 practice papers for 2026 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0a5wgYZh"
+      }
+    ]
+  },
+  "ssc-mts-havaldar": {
+    "label": "Books for SSC MTS & Havaldar",
+    "note": "",
+    "items": [
+      {
+        "title": "SSC MTS Tier 1 2026-27: 3240 EBP MCQs",
+        "publisher": "Eduquity",
+        "badge": "PYQ",
+        "note": "Contains 3240 Eduquity-based-pattern MCQs from the February 2026 exam with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B04OIDVr6"
+      },
+      {
+        "title": "Oswaal Objective General Knowledge for Competitive Exams",
+        "publisher": "Oswaal",
+        "badge": "Practice Sets",
+        "note": "Provides subject-wise and chapter-wise general knowledge MCQs with explanations for SSC, banking, railways and defence exams.",
+        "image": "",
+        "url": "https://link.amazon/B0bE6IVUF"
+      },
+      {
+        "title": "Disha 20 Year-wise SSC MTS Previous Year Solved Papers",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Includes 20 year-wise SSC MTS solved papers from 2013-2026, including 5 sets from the 2026 exam.",
+        "image": "",
+        "url": "https://link.amazon/B0bQv5cUh"
+      }
+    ]
+  },
+  "ssc-je": {
+    "label": "Books for SSC JE",
+    "note": "",
+    "items": [
+      {
+        "title": "Samanya Gyan SSC | Hindi Medium | GK/GS Theory",
+        "publisher": "GvKaksha",
+        "badge": "2026 Edition",
+        "note": "Provides GK and GS theory in Hindi for SSC CGL, CHSL, CPO, MTS, Steno and other one-day competitive exams.",
+        "image": "",
+        "url": "https://link.amazon/B09csvRpa"
+      },
+      {
+        "title": "2026 SSC Reasoning 7200+ Chapter-wise MCQs",
+        "publisher": "GvKaksha",
+        "badge": "Practice Sets",
+        "note": "Contains 7200+ chapter-wise reasoning MCQs with detailed explanations and short tricks for major SSC exams.",
+        "image": "",
+        "url": "https://link.amazon/B0hAC9VBNG"
+      },
+      {
+        "title": "Sudarshan Chakra 2026: Chapterwise SSC & Railway PYQs",
+        "publisher": "GvKaksha",
+        "badge": "PYQ",
+        "note": "Provides chapter-wise previous year questions for SSC, RRB and other competitive exams in Hindi medium.",
+        "image": "",
+        "url": "https://link.amazon/B01a7CbMr"
+      }
+    ]
+  },
+  "ssc-stenographer": {
+    "label": "Books for SSC Stenographer",
+    "note": "",
+    "items": [
+      {
+        "title": "Examcart SSC Stenographer Grade C & D Practice Sets 2026",
+        "publisher": "Examcart",
+        "badge": "Practice Sets",
+        "note": "Contains 10 SSC Stenographer Grade C and D practice papers with detailed solutions covering Reasoning, GK and English.",
+        "image": "",
+        "url": "https://link.amazon/B05G6jI2i"
+      },
+      {
+        "title": "SSC Stenographers Grade C & D Practice Workbook 2026-27",
+        "publisher": "Eduquity",
+        "badge": "Practice Sets",
+        "note": "Provides practice material and solved papers aligned with the Eduquity pattern for SSC Stenographer Grade C and D.",
+        "image": "",
+        "url": "https://link.amazon/B0dBKLQDH"
+      },
+      {
+        "title": "SSC Stenographer Ultimate Guide Grade C & D 2026-27",
+        "publisher": "Eduquity",
+        "badge": "PYQ",
+        "note": "Covers the syllabus chapter-wise with 10 years of solved PYQs from 2016-2026 and 3000+ MCQs.",
+        "image": "",
+        "url": "https://link.amazon/B0ccXvJzu"
+      }
+    ]
   }
 }
