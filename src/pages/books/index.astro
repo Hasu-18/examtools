@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateBlock from '../../components/AffiliateBlock.astro';
+import products from '../../data/products.json';
+import exams from '../../data/exams.json';
+
+const keys = Object.keys(products).filter((k) => products[k].items && products[k].items.length > 0);
+
+const groups = keys.map((k) => {
+  const exam = exams.find((e) => e.slug === k);
+  return {
+    key: k,
+    label: products[k].label || k,
+    isExam: !!exam,
+    examName: exam ? exam.name : null,
+    count: products[k].items.length,
+    search: [products[k].label, k, exam ? exam.name : '', exam ? exam.fullName : '']
+      .filter(Boolean).join(' ').toLowerCase()
+  };
+});
+
+const examGroups = groups.filter((g) => g.isExam);
+const generalGroups = groups.filter((g) => !g.isExam);
+---
+<BaseLayout
+  title="Recommended Books for Indian Government Exams | Form Setu"
+  description="Books we recommend for Indian government exam preparation, grouped by exam.">
+
+  <nav class="mb-4 text-xs text-muted">
+    <a href="/" class="hover:text-navy-700">Home</a>
+    <span class="mx-1">/</span>
+    <span class="text-ink">Books</span>
+  </nav>
+
+  <h1 class="text-2xl font-bold text-navy-900 sm:text-3xl">Recommended books</h1>
+  <p class="mt-2 text-sm text-muted">
+    Books worth buying, grouped by exam. We only list what we would recommend to a friend.
+  </p>
+
+  {groups.length === 0 && (
+    <div class="mt-8 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
+      <p class="text-sm font-bold text-navy-900">No books listed yet.</p>
+      <p class="mt-1 text-sm text-ink">Recommendations are coming soon.</p>
+      <a href="/exams/" class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">Browse exams →</a>
+    </div>
+  )}
+
+  {groups.length > 2 && (
+    <div class="relative mt-5">
+      <input type="search" id="bookSearch" placeholder="Search by exam name..."
+        class="w-full rounded-lg border-2 border-navy-600 bg-white px-4 py-2.5 pr-11 text-base shadow-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-100" />
+      <svg viewBox="0 0 24 24" class="pointer-events-none absolute right-3.5 top-1/2 h-5 w-5 -translate-y-1/2 fill-none stroke-navy-600" stroke-width="2.2" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" stroke-linecap="round" />
+      </svg>
+    </div>
+  )}
+
+  {examGroups.map((g) => (
+    <section class="book-group mt-8" data-search={g.search}>
+      <AffiliateBlock groups={[g.key]} />
+      <a href={"/exams/" + g.key + "/"} class="inline-block text-sm font-bold text-navy-700 hover:text-amber-600">
+        Open the {g.examName} resizer →
+      </a>
+    </section>
+  ))}
+
+  {generalGroups.map((g) => (
+    <section class="book-group mt-8" data-search={g.search}>
+      <AffiliateBlock groups={[g.key]} />
+    </section>
+  ))}
+
+  <p id="bookNone" class="mt-6 text-sm text-muted" hidden>No books matched that search.</p>
+
+</BaseLayout>
+
+<script>
+  const s = document.getElementById('bookSearch');
+  if (s) {
+    const groups = document.querySelectorAll('.book-group');
+    const none = document.getElementById('bookNone');
+    s.addEventListener('input', () => {
+      const term = s.value.trim().toLowerCase();
+      let vis = 0;
+      groups.forEach((g) => {
+        const hay = g.getAttribute('data-search') || '';
+        const match = term.split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+        g.hidden = !match;
+        if (match) vis++;
+      });
+      none.hidden = vis > 0;
+    });
+  }
+</script>

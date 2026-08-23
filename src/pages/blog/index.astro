@@ -6,13 +6,14 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const labels = {
-  notification: 'Notification',
+  'exam-details': 'Exam details',
+  notification: 'Notifications',
   guide: 'How to apply',
   problem: 'Common problems',
   books: 'Books'
 };
 
-const groups = ['notification', 'guide', 'problem', 'books'].map((key) => ({
+const groups = ['notification', 'exam-details', 'guide', 'problem', 'books'].map((key) => ({
   key,
   label: labels[key],
   items: posts.filter((p) => p.data.category === key)
