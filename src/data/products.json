@@ -418,5 +418,35 @@
         "url": "https://link.amazon/B0eAfDO6p"
       }
     ]
+  },
+  "fci": {
+    "label": "Books for FCI",
+    "note": "",
+    "items": [
+      {
+        "title": "FCI Phase-1 Exam Practice Set Book",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium FCI Assistant Grade 3 preparation book with 21 practice sets and previous year papers.",
+        "image": "",
+        "url": "https://link.amazon/B0euTCoky"
+      },
+      {
+        "title": "FSO Food Safety Officer Exam Guide",
+        "publisher": "RBD Publication",
+        "badge": "Complete Guide",
+        "note": "Hindi-medium guide by Surendra Bharti and Surendra Haritwal covering preparation for Food Safety Officer exams.",
+        "image": "",
+        "url": "https://link.amazon/B04a925L8"
+      },
+      {
+        "title": "MPPSC Food Safety Officer 3000+ MCQ",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium chapter-wise question bank with 3000+ MCQs and full explanations for the MPPSC Food Safety Officer exam.",
+        "image": "",
+        "url": "https://link.amazon/B0gJiMqGe"
+      }
+    ]
   }
 }
