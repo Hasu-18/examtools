@@ -178,5 +178,245 @@
         "url": "https://link.amazon/B0ccXvJzu"
       }
     ]
+  },
+  "upsc-capf": {
+    "label": "Books for UPSC CAPF",
+    "note": "",
+    "items": [
+      {
+        "title": "UPSC CAPF Assistant Commandant Solved Papers 2003-2025",
+        "publisher": "Kiran",
+        "badge": "2026 Edition",
+        "note": "Contains solved UPSC CAPF Assistant Commandant exam papers from 2003 to 2025 in Hindi medium.",
+        "image": "",
+        "url": "https://link.amazon/B01a3e7oF"
+      },
+      {
+        "title": "Arihant UPSC CAPF Assistant Commandant 2026 Guide",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Hindi-medium guide covering General Studies and English for CAPF Assistant Commandant Paper 1 and Paper 2.",
+        "image": "",
+        "url": "https://link.amazon/B0b0tQcBh"
+      },
+      {
+        "title": "UPSC CAPF Assistant Commandant Solved Papers 2003-2024",
+        "publisher": "Kiran",
+        "badge": "PYQ",
+        "note": "Provides solved UPSC CAPF Assistant Commandant exam papers from 2003 to 2024 in Hindi medium.",
+        "image": "",
+        "url": "https://link.amazon/B0fwNEdfH"
+      }
+    ]
+  },
+  "upsc-cms": {
+    "label": "Books for UPSC CMS",
+    "note": "",
+    "items": [
+      {
+        "title": "Target CMS 2026 Rapid Revision",
+        "publisher": "Target",
+        "badge": "2026 Edition",
+        "note": "Covers 240 frequently repeated topics for UPSC CMS preparation, authored by Dr. Varun Agarwal and Dr. Ritu Agarwal.",
+        "image": "",
+        "url": "https://link.amazon/B0fkLr63K"
+      },
+      {
+        "title": "UPSC CMS Paper-I Chapterwise Question Bank",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise Paper-I questions with explanations and UPSC CMS exam papers from 2009 to 2025.",
+        "image": "",
+        "url": "https://link.amazon/B05DcuDG5"
+      },
+      {
+        "title": "Target CMS Solved Papers 2020-2025 + Rapid Revision 2026",
+        "publisher": "Target",
+        "badge": "2026 Edition",
+        "note": "A two-book UPSC CMS preparation bundle combining solved papers from 2020-2025 with a 2026 rapid revision book.",
+        "image": "",
+        "url": "https://link.amazon/B097IZvyD"
+      }
+    ]
+  },
+  "ctet": {
+    "label": "Books for CTET",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant Success Master CTET 2026 Paper 1",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium Paper 1 guide covering CDP, English, Hindi, Mathematics and EVS with 3000+ MCQs and solved papers.",
+        "image": "",
+        "url": "https://link.amazon/B0hS9cqk7"
+      },
+      {
+        "title": "CTET Master Book | CDP & All Subject Pedagogy",
+        "publisher": "Invincible",
+        "badge": "PYQ",
+        "note": "Hindi edition focused on CDP and subject pedagogy with CTET previous year questions from 2012-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0epOqfte"
+      },
+      {
+        "title": "CTET & TET Class VI-VIII Social Science",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Covers Social Science preparation for CTET and TET examinations for Classes VI-VIII.",
+        "image": "",
+        "url": "https://link.amazon/B0f42DsLj"
+      }
+    ]
+  },
+  "ssc-selection-posts": {
+    "label": "Books for SSC Selection Posts (Phase XI, XII, XIII)",
+    "note": "",
+    "items": [
+      {
+        "title": "Samanya Gyan SSC | Hindi Medium | GK/GS Theory",
+        "publisher": "",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium GK and GS theory book covering SSC CGL, CHSL, CPO, MTS, Steno and other one-day competitive exams.",
+        "image": "",
+        "url": "https://link.amazon/B09qTq9br"
+      },
+      {
+        "title": "SSC Samanya Adhyayan 4200+ PYQs",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains 4200+ subject-wise and chapter-wise SSC General Studies PYQs based on the Eduquity pattern for 2026-27 exams.",
+        "image": "",
+        "url": "https://link.amazon/B0bo2R3xK"
+      },
+      {
+        "title": "SSC Selection Post Phase X Matriculation Level Book",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 8 mock tests, 8 sectional tests and 2 previous year papers with 1200 solved questions.",
+        "image": "",
+        "url": "https://link.amazon/B0bxvqa7l"
+      }
+    ]
+  },
+  "india-post-gds": {
+    "label": "Books for India Post GDS",
+    "note": "",
+    "items": [
+      {
+        "title": "Parmar SSC Fatman | GK/GS Theory Book",
+        "publisher": "Parmar SSC",
+        "badge": "",
+        "note": "Hindi-medium GK and GS theory book for SSC CGL, CHSL, CPO, MTS, Steno, Selection Post and other one-day exams.",
+        "image": "",
+        "url": "https://link.amazon/B0b3iYkoA"
+      },
+      {
+        "title": "SSC Maths 6800+ MCQ Chapter-wise",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Contains 6800+ chapter-wise Maths MCQs with detailed explanations and short tricks for SSC exams.",
+        "image": "",
+        "url": "https://link.amazon/B09toDvhJ"
+      },
+      {
+        "title": "SSC General Awareness Chapterwise & Typewise Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise and type-wise SSC General Awareness solved papers with TCS PYQs through January 2025.",
+        "image": "",
+        "url": "https://link.amazon/B04xNCZih"
+      }
+    ]
+  },
+  "upsc-epfo": {
+    "label": "Books for UPSC EPFO",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha UPSC EPFO EO/AO/APFC 2026 Exam Guide",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Hindi-medium guide covering UPSC EPFO EO, AO and APFC preparation with previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B0e9bkgUA"
+      },
+      {
+        "title": "Disha UPSC EPFO EO/AO/APFC 2026 Exam Guide",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "English-medium guide for EPFO Enforcement Officer, Accounts Officer and APFC exams with previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B0fjHrOSv"
+      },
+      {
+        "title": "Disha Super 10 Mock Tests for UPSC EPFO EO/AO",
+        "publisher": "Disha",
+        "badge": "Practice Sets",
+        "note": "Includes 10 mock tests and 3 previous year solved papers for UPSC EPFO Enforcement Officer and Accounts Officer preparation.",
+        "image": "",
+        "url": "https://link.amazon/B00iVQPUG"
+      }
+    ]
+  },
+  "epfo-ssa": {
+    "label": "Books for EPFO SSA",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha UPSC EPFO EO/AO/APFC 2026 Exam Guide",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Hindi-medium guide covering UPSC EPFO EO, AO and APFC preparation with previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B0e9bkgUA"
+      },
+      {
+        "title": "Disha UPSC EPFO EO/AO/APFC 2026 Exam Guide",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "English-medium guide for EPFO Enforcement Officer, Accounts Officer and APFC exams with previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B0fjHrOSv"
+      },
+      {
+        "title": "Disha Super 10 Mock Tests for UPSC EPFO EO/AO",
+        "publisher": "Disha",
+        "badge": "Practice Sets",
+        "note": "Includes 10 mock tests and 3 previous year solved papers for UPSC EPFO Enforcement Officer and Accounts Officer preparation.",
+        "image": "",
+        "url": "https://link.amazon/B00iVQPUG"
+      }
+    ]
+  },
+  "kvs": {
+    "label": "Books for KVS (Kendriya Vidyalaya Sangathan)",
+    "note": "",
+    "items": [
+      {
+        "title": "Examcart KVS & NVS Tier-1 Recruitment Exam Book 2025",
+        "publisher": "Examcart",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium book with 15 practice sets and 5 solved papers for KVS and NVS Tier-1 recruitment exams.",
+        "image": "",
+        "url": "https://link.amazon/B0c3Xmbc3"
+      },
+      {
+        "title": "KVS Hindi Medium Head Master 2025-26 Set of 6 Books",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "A six-book Hindi-medium set for KVS Head Master Limited Departmental Examination Tier 1.",
+        "image": "",
+        "url": "https://link.amazon/B0bkELM8N"
+      },
+      {
+        "title": "KVS PRT Primary Teacher Online Exam Practice Workbook",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium practice workbook for KVS PRT with solved papers for the primary teacher exam.",
+        "image": "",
+        "url": "https://link.amazon/B0eAfDO6p"
+      }
+    ]
   }
 }
