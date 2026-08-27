@@ -448,5 +448,35 @@
         "url": "https://link.amazon/B0gJiMqGe"
       }
     ]
+  },
+  "upsssc-pet": {
+    "label": "Books for UPSSSC PET",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant UPSSSC PET 2026 Complete Preparation Guide",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium guide with chapter-wise study notes, 2000+ practice questions with detailed solutions and previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B02k1oDYb"
+      },
+      {
+        "title": "UPSSSC PET 2026 Updated Books",
+        "publisher": "RWA",
+        "badge": "2026 Edition",
+        "note": "Provides updated preparation material by Ankit Bhati Sir for candidates preparing for the UPSSSC PET 2026 exam.",
+        "image": "",
+        "url": "https://link.amazon/B0fsNDq1Z"
+      },
+      {
+        "title": "UPSSSC PET Practice Workbook 2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Hindi-medium practice workbook containing solved papers and previous year questions for UPSSSC PET preparation.",
+        "image": "",
+        "url": "https://link.amazon/B08Vx5U3u"
+      }
+    ]
   }
 }
