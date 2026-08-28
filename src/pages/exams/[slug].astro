@@ -15,11 +15,27 @@ export async function getStaticPaths() {
 
 const { exam } = Astro.props;
 const isLive = exam.captureMode === 'live';
+const hasNothing = !exam.photo && !exam.combined && !exam.signature
+  && !exam.thumb && !exam.declaration && !isLive;
+const fullForm = exam.fullName && exam.fullName !== exam.name ? exam.fullName : null;
 
-const title = `${exam.name} Photo & Signature Size ${exam.year}, Exact Requirements`;
-const description = exam.photo
-  ? `${exam.name} ${exam.year}: photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB} to ${exam.photo.maxKB} KB. Signature size and free resizer tool.`
-  : `${exam.name} ${exam.year} photo and signature upload requirements, with a free tool to match them exactly.`;
+const title = exam.photo
+  ? `${exam.name} Photo & Signature Size ${exam.year} — Free Online Resizer`
+  : exam.signature
+    ? `${exam.name} Signature Size ${exam.year} — Free Online Resizer`
+    : `${exam.name} Photo & Signature Requirements ${exam.year}`;
+
+const sizeBit = exam.photo
+  ? `Photo ${exam.photo.widthPx}×${exam.photo.heightPx} px, ${exam.photo.minKB} to ${exam.photo.maxKB} KB.`
+  : '';
+const signBit = exam.signature
+  ? ` Signature ${exam.signature.widthPx}×${exam.signature.heightPx} px, ${exam.signature.minKB} to ${exam.signature.maxKB} KB.`
+  : '';
+
+const description =
+  `${exam.name} ${exam.year} photo and signature size. ${sizeBit}${signBit} ` +
+  `Resize your photo, signature and thumb impression to the exact size in one click. ` +
+  `Free, no signup, nothing uploaded.`;
 
 const verified = new Date(exam.lastVerified).toLocaleDateString('en-IN', {
   day: 'numeric', month: 'long', year: 'numeric',
@@ -72,7 +88,11 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
   <h1 class="text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">
     {exam.name} Photo &amp; Signature Size {exam.year}
   </h1>
-  <p class="mt-1.5 text-sm text-muted">{exam.fullName}</p>
+   {fullForm && (
+    <p class="mt-1.5 text-sm text-muted">
+      <strong class="text-navy-800">{exam.name}</strong> stands for {fullForm}.
+    </p>
+  )}
 
   <div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
     <span class="inline-flex items-center gap-1.5 rounded-full bg-pass-bg px-2.5 py-1 font-semibold text-pass">
@@ -85,6 +105,14 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
        class="rounded-full bg-navy-100 px-2.5 py-1 font-semibold text-navy-700 hover:bg-navy-600 hover:text-white">
       Official {exam.body} site ↗
     </a>
+
+  {exam.body && (exam.body === 'UPSSSC' || exam.body === 'SSC' || exam.body === 'IBPS') && (
+    <p class="mt-3 rounded-md bg-surface px-3 py-2 text-sm text-muted">
+      These are the same sizes you need for {exam.body} One Time Registration (OTR).
+      Upload the correct size once and it carries over to every {exam.body} form.
+    </p>
+  )}
+
   </div>
 
   {(exam.thumb || exam.declaration) && (
@@ -357,6 +385,62 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
           <li class="flex gap-2"><span class="text-amber-600">•</span><span>{n}</span></li>
         ))}
       </ul>
+    </section>
+  )}
+
+  {!exam.photo && !exam.combined && !exam.signature && !exam.thumb && !exam.declaration && !isLive && (
+    <section class="mt-8">
+      <div class="mb-5 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
+        <p class="text-sm font-bold text-navy-900">
+          We have not verified {exam.name} sizes against an official notification yet.
+        </p>
+        <p class="mt-1 text-sm text-ink">
+          Open your notification PDF, find the photograph and signature section, and
+          enter those numbers below. The tool works for any size.
+        </p>
+        {exam.officialUrl && (
+          <a href={exam.officialUrl} rel="nofollow noopener" target="_blank"
+             class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+            Open the official {exam.body} site ↗
+          </a>
+        )}
+      </div>
+
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your photo</h2>
+      <ImageResizer label="Photo" fileName="photo" openByDefault={true}
+        widthPx={200} heightPx={230} minKB={20} maxKB={50} />
+
+      <h2 class="mt-8 mb-3 text-lg font-bold text-navy-900">Resize your signature</h2>
+      <ImageResizer label="Signature" fileName="signature" openByDefault={true}
+        widthPx={140} heightPx={60} minKB={10} maxKB={20} />
+    </section>
+  )}
+
+  {hasNothing && (
+    <section class="mt-8">
+      <div class="mb-5 rounded-lg border-2 border-amber-500 bg-amber-100 px-4 py-4">
+        <p class="text-sm font-bold text-navy-900">
+          We have not verified {exam.name} sizes against an official notification yet.
+        </p>
+        <p class="mt-1 text-sm text-ink">
+          Open your notification PDF, find the photograph and signature section, and
+          enter those numbers below. The tool works for any size.
+        </p>
+        {exam.officialUrl && (
+          <a href={exam.officialUrl} rel="nofollow noopener" target="_blank"
+             class="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-bold text-white hover:bg-amber-500">
+            Open the official site ↗
+          </a>
+        )}
+      </div>
+
+      <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your photo</h2>
+      <ImageResizer label="Photo" fileName="photo" openByDefault={true}
+        widthPx={200} heightPx={230} minKB={20} maxKB={50} />
+
+      <h2 class="mt-8 mb-3 text-lg font-bold text-navy-900">Resize your signature</h2>
+      <ImageResizer label="Signature" fileName="signature" openByDefault={true}
+        widthPx={140} heightPx={60} minKB={10} maxKB={20} />
     </section>
   )}
 

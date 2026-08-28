@@ -18,13 +18,6 @@ const shades = [
 ---
 {shown.length > 0 && (
   <section class="mt-10">
-    {showDisclosure && (
-      <p class="mb-4 rounded-md bg-surface px-3 py-2 text-xs text-muted">
-        As an Amazon Associate, Form Setu earns from qualifying purchases.
-        This costs you nothing extra and does not change what we recommend.
-      </p>
-    )}
-
     {shown.map((g) => (
       <div class="mb-8">
         <h2 class="text-lg font-bold text-navy-900">{g.label}</h2>
@@ -71,6 +64,13 @@ const shades = [
         </div>
       </div>
     ))}
+
+    {showDisclosure && (
+      <p class="mt-2 rounded-md bg-surface px-3 py-2 text-xs text-muted">
+        As an Amazon Associate, Form Setu earns from qualifying purchases.
+        This costs you nothing extra and does not change what we recommend.
+      </p>
+    )}
   </section>
 )}
 

@@ -4,7 +4,7 @@ description: "Full reference for UPSSSC PET: eligibility, exam pattern, syllabus
 date: 2026-08-23
 category: "exam-details"
 relatedExam: "upsssc-pet"
-products: ["photo-resizer", "signature-resizer"]
+products: ["upsssc-pet"]
 quickFacts:
   - label: "Conducted by"
     value: "Uttar Pradesh Subordinate Services Selection Commission (UPSSSC)"

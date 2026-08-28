@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const fmt = (x) => x.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const labels = {
+  guide: 'How to guides',
+  problem: 'Common problems',
+  books: 'Book recommendations'
+};
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((p) => p.data.category === 'guide' || p.data.category === 'problem' || p.data.category === 'books')
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .map((p) => ({
+    href: '/blog/' + p.id + '/',
+    title: p.data.title,
+    description: p.data.description,
+    category: p.data.category,
+    dateText: fmt(p.data.date)
+  }));
+
+const groups = ['guide', 'problem', 'books']
+  .map((k) => ({
+    key: k,
+    label: labels[k],
+    items: posts.filter((p) => p.category === k)
+  }))
+  .filter((g) => g.items.length > 0);
+---
+<BaseLayout
+  title="Photo, Signature & Document Guides | Form Setu"
+  description="Plain guides to photo sizes, signature formats, scanning documents and why exam applications get rejected.">
+
+  <nav class="mb-4 text-xs text-muted">
+    <a href="/" class="hover:text-navy-700">Home</a>
+    <span class="mx-1">/</span>
+    <span class="text-ink">Guides</span>
+  </nav>
+
+  <h1 class="text-2xl font-bold text-navy-900 sm:text-3xl">Guides</h1>
+  <p class="mt-2 text-sm text-muted">
+    Everything about photos, signatures and documents that applies to any exam, not just one.
+  </p>
+
+  {groups.length === 0 && (
+    <p class="mt-8 text-sm text-muted">Nothing published yet.</p>
+  )}
+
+  {groups.map((g) => (
+    <section class="mt-8">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">{g.label}</h2>
+      <div class="space-y-2">
+        {g.items.map((p) => (
+          <a href={p.href} class="block rounded-lg border-2 border-line bg-white px-4 py-3 shadow-sm transition hover:border-amber-500 hover:bg-amber-100">
+            <span class="block text-base font-bold leading-snug text-navy-900">{p.title}</span>
+            <span class="mt-1 block text-sm text-muted">{p.description}</span>
+            <span class="mt-1.5 block text-xs text-muted">{p.dateText}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+</BaseLayout>
