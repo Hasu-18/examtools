@@ -3,7 +3,6 @@ title: "KB, MB, Pixels and DPI: What Form Instructions Actually Mean"
 description: "A plain explanation of the units exam portals use, and why a photo can be the right size and the wrong size at the same time."
 date: 2026-08-01
 category: guide
-products: ["study-essentials"]
 draft: false
 ---
 

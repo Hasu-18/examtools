@@ -4,7 +4,7 @@ description: "RRB Technician CEN 02/2026 notification details: 6,557 vacancies, 
 date: 2026-08-23
 category: "notification"
 relatedExam: "rrb-technician"
-products: ["signature-resizer"]
+products: ["rrb-technician"]
 quickFacts:
   - label: "Vacancies"
     value: "6,557 (323 Gr-I + 6,234 Gr-III)"
