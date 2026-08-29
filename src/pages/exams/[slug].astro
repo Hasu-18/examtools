@@ -4,6 +4,7 @@ import ImageResizer from '../../components/ImageResizer.astro';
 import CombinedResizer from '../../components/CombinedResizer.astro';
 import AffiliateBlock from '../../components/AffiliateBlock.astro';
 import exams from '../../data/exams.json';
+import products from '../../data/products.json';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,6 +15,13 @@ export async function getStaticPaths() {
 }
 
 const { exam } = Astro.props;
+const bookGroup = products[exam.slug];
+const hasBooks = !!(bookGroup && bookGroup.items && bookGroup.items.length);
+const showNoBooks = !hasBooks;
+const booksHeading = 'Books for ' + exam.name;
+const booksFallbackDefault = 'We have not found a book written specifically for this exam that we would recommend. Many smaller exams do not have one, and candidates use standard subject material instead. We will add books here if we find good ones.';
+const booksFallbackText = exam.booksNote ? exam.booksNote : booksFallbackDefault;
+const bookSuggestMailto = 'mailto:contact@formsetu.com?subject=Book%20suggestion';
 const isLive = exam.captureMode === 'live';
 const hasNothing = !exam.photo && !exam.combined && !exam.signature
   && !exam.thumb && !exam.declaration && !isLive;
@@ -497,6 +505,20 @@ const pxNote = (b) => (b.widthPx && b.unit && b.unit !== 'px' && b.displayWidth)
   )}
 
   <AffiliateBlock groups={[exam.slug]} />
+
+  {showNoBooks && (
+    <section class="mt-10">
+      <h2 class="mb-3 text-lg font-bold text-navy-900">{booksHeading}</h2>
+      <div class="rounded-lg border border-line bg-surface px-4 py-4">
+        <p class="text-sm text-navy-900">{booksFallbackText}</p>
+        <p class="mt-3 text-xs text-muted">
+          Know a book that genuinely helped you?{' '}
+          <a href={bookSuggestMailto} class="font-semibold text-navy-700 underline">Tell us</a>
+          {' '}and we will look at it.
+        </p>
+      </div>
+    </section>
+  )}
 
   <section class="mt-10 border-t border-line pt-6">
     <h2 class="mb-3 text-sm font-bold uppercase tracking-wide text-navy-700">Share this page</h2>

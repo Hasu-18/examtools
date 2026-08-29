@@ -1722,5 +1722,295 @@
         "url": "https://link.amazon/B06oqATjv"
       }
     ]
+  },
+  "rrb-ntpc-graduate": {
+    "label": "Books for RRB NTPC (Graduate Level)",
+    "note": "",
+    "items": [
+      {
+        "title": "PW RRB NTPC Book 2026 – 45 Solved Papers CBT 1 & 2",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 45 RRB NTPC Graduate Level solved papers from 2016-2025 for CBT 1 and CBT 2, plus 7 online mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B0atjVXwb"
+      },
+      {
+        "title": "PW All-in-One RRB NTPC Book 2025 & CBT-1 2026",
+        "publisher": "Physics Wallah",
+        "badge": "Complete Guide",
+        "note": "Covers Graduate and Undergraduate NTPC preparation with chapter-wise theory, short tricks, exercises, 21 PYQs from 2016-2025 and 10 online CBTs.",
+        "image": "",
+        "url": "https://link.amazon/B0j2ThskI"
+      }
+    ]
+  },
+  "rrb-ntpc-undergraduate": {
+    "label": "Books for RRB NTPC (Undergraduate / 12th Level)",
+    "note": "",
+    "items": [
+      {
+        "title": "Examcart All Railway Exams Mathematics Combo 2026",
+        "publisher": "Examcart",
+        "badge": "PYQ",
+        "note": "Combines competitive mathematics and previous year questions for RRB NTPC, Group D, ALP, JE and RPF exams.",
+        "image": "",
+        "url": "https://link.amazon/B03QbKpKI"
+      },
+      {
+        "title": "PW Railway Game Changer General Awareness 2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 7500+ TCS MCQs and chapter-, topic- and exam-wise PYQs for RRB Group D, NTPC, RPF, ALP and JE exams.",
+        "image": "",
+        "url": "https://link.amazon/B01VXUjF8"
+      }
+    ]
+  },
+  "rrb-sse": {
+    "label": "Books for RRB Senior Section Engineer (SSE)",
+    "note": "",
+    "items": [
+      {
+        "title": "GKP RRB Senior Railway Section Engineer Solved Papers",
+        "publisher": "GKP",
+        "badge": "PYQ",
+        "note": "Contains 12 chapter-wise solved RRB Senior Railway Section Engineer papers along with 2 practice papers.",
+        "image": "",
+        "url": "https://link.amazon/B06EWdtWJ"
+      }
+    ]
+  },
+  "rrb-je": {
+    "label": "Books for RRB JE",
+    "note": "",
+    "items": [
+      {
+        "title": "RRB JE Civil Engineering SmartBook 2025-26",
+        "publisher": "Testbook",
+        "badge": "PYQ",
+        "note": "English SmartBook with topic-wise technical and non-technical RRB JE PYQs for CBT I and CBT II.",
+        "image": "",
+        "url": "https://link.amazon/B0fz2hhvo"
+      },
+      {
+        "title": "RRB JE Electrical Engineering SmartBook 2025-26",
+        "publisher": "Testbook",
+        "badge": "PYQ",
+        "note": "Hindi SmartBook with topic-wise technical and non-technical RRB JE PYQs for CBT I and CBT II.",
+        "image": "",
+        "url": "https://link.amazon/B02uDqEur"
+      },
+      {
+        "title": "GKP RRB JE CBT-II Question Bank 2025-26",
+        "publisher": "GKP",
+        "badge": "Practice Sets",
+        "note": "Chapter-wise RRB JE CBT-II question bank for Computer Science and Information Technology with technical and non-technical questions and mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B01FJap6I"
+      }
+    ]
+  },
+  "rrb-dms": {
+    "label": "Books for RRB DMS",
+    "note": "",
+    "items": [
+      {
+        "title": "SRI GURUKUL RRB JE/DMS/CMA CBT Exam 2026",
+        "publisher": "SRI GURUKUL",
+        "badge": "Practice Sets",
+        "note": "English printed book with 25 practice papers, 2 solved papers and 2500+ MCQs with detailed solutions based on the new syllabus and exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B0bQ0oe35"
+      },
+      {
+        "title": "RRB JE DMS/CMA Production Technology 2024-25",
+        "publisher": "",
+        "badge": "",
+        "note": "Covers Production Technology for RRB JE, DMS and CMA exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B09xQe8ob"
+      },
+      {
+        "title": "SURA'S RRB JE, DMS, CMA Stage-I Exam Guide 2026",
+        "publisher": "SURA'S",
+        "badge": "2026 Edition",
+        "note": "Updated preparation guide covering the RRB Junior Engineer, DMS and CMA Stage-I examinations.",
+        "image": "",
+        "url": "https://link.amazon/B03hwtUF5"
+      }
+    ]
+  },
+  "rrb-cma": {
+    "label": "Books for RRB CMA",
+    "note": "",
+    "items": [
+      {
+        "title": "SRI GURUKUL RRB JE/DMS/CMA CBT Exam 2026",
+        "publisher": "SRI GURUKUL",
+        "badge": "Practice Sets",
+        "note": "English printed book with 25 practice papers, 2 solved papers and 2500+ MCQs with detailed solutions based on the new syllabus and exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B049sp74M"
+      },
+      {
+        "title": "SURA'S RRB JE, DMS, CMA Stage-I Exam Guide 2026",
+        "publisher": "SURA'S",
+        "badge": "2026 Edition",
+        "note": "Updated guide for the RRB Junior Engineer, DMS, CMA and C&MS Stage-I examinations.",
+        "image": "",
+        "url": "https://link.amazon/B0fqZAo8v"
+      },
+      {
+        "title": "Arihant RRB Junior Engineer Stage I CBT 2026-27",
+        "publisher": "Arihant",
+        "badge": "Practice Sets",
+        "note": "Covers the complete syllabus for multiple RRB JE disciplines with solved papers and 10 mock tests in English.",
+        "image": "",
+        "url": "https://link.amazon/B01Lla1GG"
+      }
+    ]
+  },
+  "rrb-alp": {
+    "label": "Books for RRB ALP",
+    "note": "",
+    "items": [
+      {
+        "title": "PW RRB ALP CBT-1 All in One Book 2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Includes chapter-wise theory and exercises, 20 solved RRB ALP CBT-1 papers from 2018, 2024 and 2026, plus 15 online CBT mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B05aWp9dk"
+      },
+      {
+        "title": "RRB ALP 1st Stage TCS PYQs Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains solved TCS previous year questions for the RRB ALP first-stage examination in English medium.",
+        "image": "",
+        "url": "https://link.amazon/B06Mq3wwG"
+      },
+      {
+        "title": "Arihant Mastermind RRB ALP Exam 2026",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Covers RRB ALP CBT-I, CBT-II and CBAT with notes, mock tests, solved papers, a formula cheat book and current affairs.",
+        "image": "",
+        "url": "https://link.amazon/B063rw0H8"
+      }
+    ]
+  },
+  "rrb-technician": {
+    "label": "Books for RRB Technician",
+    "note": "",
+    "items": [
+      {
+        "title": "RRB Technician SmartBook 5000+ TCS PYQs & MCQs",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "English SmartBook with 5000+ chapter-wise TCS PYQs and MCQs in Quantitative Aptitude, GK, Reasoning and General Science for railway exams.",
+        "image": "",
+        "url": "https://link.amazon/B07iGmt3T"
+      },
+      {
+        "title": "PW All In One RRB Technician Grade 3 2026-27",
+        "publisher": "Physics Wallah",
+        "badge": "Practice Sets",
+        "note": "English guide with chapter-wise theory and exercises, 4000+ practice questions, 10 PYQs and 15 CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B02CDXv0j"
+      },
+      {
+        "title": "Disha GoTo Guide for RRB Technician Grade I Signal 2026",
+        "publisher": "Disha",
+        "badge": "Complete Guide",
+        "note": "Preparation guide for the RRB Technician Grade I Signal recruitment examination under CEN 02/2026.",
+        "image": "",
+        "url": "https://link.amazon/B050Cd5h6"
+      }
+    ]
+  },
+  "rrb-paramedical": {
+    "label": "Books for RRB Paramedical Categories",
+    "note": "",
+    "items": [
+      {
+        "title": "RRB Paramedical Theory Study Material 2024-25",
+        "publisher": "",
+        "badge": "",
+        "note": "Provides theory study material for RRB Paramedical recruitment exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B09wYmbYH"
+      },
+      {
+        "title": "RRB Staff Nurse Paramedical Recruitment Exam Book 2025",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English-medium book with 15 practice tests containing 1500 solved MCQs and access to online tests.",
+        "image": "",
+        "url": "https://link.amazon/B0jeGPwrT"
+      },
+      {
+        "title": "RRB Paramedical Nursing Exam Books Set of 4",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Four-book set covering General Knowledge, General Science, professional nursing knowledge and aptitude, arithmetic and reasoning ability.",
+        "image": "",
+        "url": "https://link.amazon/B08O4LdmW"
+      }
+    ]
+  },
+  "rrb-ministerial-isolated": {
+    "label": "Books for RRB Ministerial and Isolated Categories",
+    "note": "",
+    "items": [
+      {
+        "title": "RRB Ministerial & Isolated Categories Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for the common subjects in RRB Ministerial and Isolated Categories examinations.",
+        "image": "",
+        "url": "https://link.amazon/B094IsAMc"
+      },
+      {
+        "title": "RRB Ministerial & Isolated Categories PGT & TGT Guide 2025",
+        "publisher": "",
+        "badge": "",
+        "note": "Preparation guide for RRB PGT and TGT recruitment tests under the Ministerial and Isolated Categories.",
+        "image": "",
+        "url": "https://link.amazon/B0iHn5yp9"
+      }
+    ]
+  },
+  "rpf": {
+    "label": "Books for RPF Constable",
+    "note": "",
+    "items": [
+      {
+        "title": "Examcart RPF/RPSF Constable & SI Practice Book 2026",
+        "publisher": "Examcart",
+        "badge": "Hindi & English",
+        "note": "Bilingual practice book with 15 solved previous year papers for RPF/RPSF Constable and Sub-Inspector recruitment exams.",
+        "image": "",
+        "url": "https://link.amazon/B00EjAxNJ"
+      },
+      {
+        "title": "PW RRB RPF/RPSF 30 Year-wise Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains year-wise solved RPF and RPSF Constable recruitment papers, including papers from 2019 and 2025, for 2026 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0eealWf3"
+      },
+      {
+        "title": "Chakshu Railway RPF & RPSF Constable Practice Sets",
+        "publisher": "Chakshu",
+        "badge": "Practice Sets",
+        "note": "Provides practice sets with solved papers for RPF and RPSF Constable recruitment exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B066HbYfu"
+      }
+    ]
   }
 }
