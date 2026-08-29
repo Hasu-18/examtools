@@ -478,5 +478,1249 @@
         "url": "https://link.amazon/B08Vx5U3u"
       }
     ]
+  },
+  "jee-main": {
+    "label": "Books for JEE (Main)",
+    "note": "",
+    "items": [
+      {
+        "title": "MTG 25 Years JEE Main Physics PYQ Book",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Contains 25 years of JEE Main Physics previous year solved papers organized chapter-wise and topic-wise for the 2027 exam.",
+        "image": "",
+        "url": "https://link.amazon/B03nDRh47"
+      },
+      {
+        "title": "PW JEE Main Physics 8 Years PYQs 2019-2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Includes all 162 sets of JEE Main Physics previous year solved papers from 2019 to 2026, arranged chapter-wise and topic-wise.",
+        "image": "",
+        "url": "https://link.amazon/B02LyIIOB"
+      },
+      {
+        "title": "PW JEE Main 8 Years PYQs Physics Chemistry Maths Combo",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Three-book combo covering Physics, Chemistry and Mathematics with 162 sets of JEE Main PYQs from 2019-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0aJ58MKz"
+      }
+    ]
+  },
+  "cuet-ug": {
+    "label": "Books for CUET (UG)",
+    "note": "",
+    "items": [
+      {
+        "title": "PW CUET UG 2026 General Test & English",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Covers General Test and English with chapter-wise theory, exercises, PYQs from 2022-2025, probable MCQs and mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B060Ipn0e"
+      },
+      {
+        "title": "PW CUET UG 2026 Physics Chemistry Maths GT English",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Five-book combo covering Physics, Chemistry, Mathematics, General Test and English with MCQs, PYQs from 2022-2025 and mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B06C8NuTO"
+      },
+      {
+        "title": "Oswaal NTA CUET UG General Aptitude Test Question Bank",
+        "publisher": "Oswaal",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise solved papers and NCERT-aligned MCQs based on CUET General Aptitude Test PYQs from 2021-2026 for the 2027 exam.",
+        "image": "",
+        "url": "https://link.amazon/B02ANzKeX"
+      }
+    ]
+  },
+  "cuet-pg": {
+    "label": "Books for CUET (PG)",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant CUET PG 2026 Hindi Notes & Question Bank",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium book with chapter-wise notes, 1000+ NCERT-based MCQs, mind maps, flash cards and a solved 2025 paper.",
+        "image": "",
+        "url": "https://link.amazon/B0d4vD9Wl"
+      },
+      {
+        "title": "Arihant CUET PG 2026 English Notes & Question Bank",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "English-medium book with chapter-wise notes, 1500+ exam-pattern MCQs, revision material, a solved 2025 paper and two final drills.",
+        "image": "",
+        "url": "https://link.amazon/B0gbFQxBc"
+      },
+      {
+        "title": "PW CUET PG English Literature Theory & 6 Years PYQs",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Covers English Literature concepts and six years of CUET PG PYQs from 2021-2026 for university entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0h3uuaDh"
+      }
+    ]
+  },
+  "ugc-net": {
+    "label": "Books for UGC NET",
+    "note": "",
+    "items": [
+      {
+        "title": "Pearson UGC NET Paper 1 2026 by KVS Madaan",
+        "publisher": "Pearson",
+        "badge": "2026 Edition",
+        "note": "Hindi-language guide with 4000+ practice questions, unit-wise PYQs and solved January 2026 and June 2025 papers.",
+        "image": "",
+        "url": "https://link.amazon/B0cImMGGh"
+      },
+      {
+        "title": "PW UGC NET Paper 1 Book 2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 70 solved Paper 1 papers from 2009 to June 2025 with unit-wise and topic-wise PYQs and chapter notes.",
+        "image": "",
+        "url": "https://link.amazon/B09DYow4s"
+      },
+      {
+        "title": "UGC NET Paper 1 2026 by Arpita Karwa",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 4000+ practice questions, 50+ full-length mock tests, 120 videos and solved January 2026 and June 2025 papers.",
+        "image": "",
+        "url": "https://link.amazon/A07J3xCJW"
+      }
+    ]
+  },
+  "csir-ugc-net": {
+    "label": "Books for CSIR UGC NET",
+    "note": "",
+    "items": [
+      {
+        "title": "CSIR NET JRF Life Science & Biotechnology Theory 2026",
+        "publisher": "",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium two-book theory set covering 14 chapters in detail according to the changed CSIR NET syllabus for 2026.",
+        "image": "",
+        "url": "https://link.amazon/B04JPyYrZ"
+      },
+      {
+        "title": "CSIR NET General Aptitude Book 2026",
+        "publisher": "IFAS Publications",
+        "badge": "PYQ",
+        "note": "Contains Part A previous year solved papers through December 2025 with detailed solutions for CSIR UGC NET and JRF.",
+        "image": "",
+        "url": "https://link.amazon/B0iJ4u4Pj"
+      },
+      {
+        "title": "CSIR NET Life Science Previous Year Solved Papers",
+        "publisher": "IFAS Publications",
+        "badge": "PYQ",
+        "note": "Provides topic-wise Life Science solved papers from 2015 through December 2025 with answer keys for CSIR NET and related exams.",
+        "image": "",
+        "url": "https://link.amazon/B0f6dhDYv"
+      }
+    ]
+  },
+  "cmat": {
+    "label": "Books for CMAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha Comprehensive Guide to NTA CMAT 2026",
+        "publisher": "Disha",
+        "badge": "Complete Guide",
+        "note": "Comprehensive CMAT preparation guide covering the exam with previous year questions for MBA entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05sh2ijV"
+      },
+      {
+        "title": "CMAT Entrance Exam Guide with 5 Online Practice Tests",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Provides CMAT preparation material along with 5 online practice tests for exam practice.",
+        "image": "",
+        "url": "https://link.amazon/B03I4Fa5I"
+      },
+      {
+        "title": "Disha Target NTA CMAT 2026",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Includes 7 previous year solved papers from 2020-2025 and 15 practice sets for CMAT 2026 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0cyWWQbn"
+      }
+    ]
+  },
+  "nchm-jee": {
+    "label": "Books for NCHM JEE",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant Guide to Hotel Management Entrance Exam 2026",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "English-medium NCHMCT JEE preparation book with 3000+ MCQs, solved papers, crack sets and sectional tests.",
+        "image": "",
+        "url": "https://link.amazon/B0girOUkR"
+      },
+      {
+        "title": "Guide for Hotel Management Entrance NCHMCT JEE",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for the NCHMCT JEE hotel management entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B08b9a0Rn"
+      },
+      {
+        "title": "Hotel Management Entrance Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "General preparation guide for candidates appearing for hotel management entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B04pBUqij"
+      }
+    ]
+  },
+  "icar-aieea": {
+    "label": "Books for ICAR AIEEA",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant FarmAce B.Sc Agriculture Entrance Guide 2026",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium guide for ICAR AIEEA UG, BHU PAT, IGKV, PJTSAU, CUET-Agri and state agriculture entrance exams.",
+        "image": "",
+        "url": "https://link.amazon/B08vb877M"
+      },
+      {
+        "title": "Agri Darpan 2026 Agriculture & Veterinary Entrance Guide",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Contains 7000+ MCQs, solved PYQs and mock tests for B.Sc Agriculture and agriculture-related entrance exams.",
+        "image": "",
+        "url": "https://link.amazon/B05OMQgKi"
+      },
+      {
+        "title": "FarmAce B.Sc Agriculture Guide 2026 English Edition",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "English-medium entrance guide for ICAR AIEEA UG, BHU, IGKV, CUET-Agri and other agriculture exams with revision material.",
+        "image": "",
+        "url": "https://link.amazon/B07GaROd4"
+      }
+    ]
+  },
+  "aiapget": {
+    "label": "Books for AIAPGET",
+    "note": "",
+    "items": [
+      {
+        "title": "AIAPGET Ayurveda Book 2026 Question Bank",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Bilingual English and Hindi question bank with 1500 topic-wise and chapter-wise questions with solutions for AIAPGET Ayurveda.",
+        "image": "",
+        "url": "https://link.amazon/B0bY78Z9s"
+      },
+      {
+        "title": "Ayurved Samucchaya 2026",
+        "publisher": "",
+        "badge": "2026 Edition",
+        "note": "Provides notes for Ayurvedic exams and includes the latest 2024-25 papers for AIAPGET and related preparation.",
+        "image": "",
+        "url": "https://link.amazon/B06FPx8G8"
+      },
+      {
+        "title": "AIAPGET Homoeopathy Book 2026",
+        "publisher": "Diwakar Education Hub",
+        "badge": "PYQ",
+        "note": "Combines solved previous year papers from 2022-2025 with 1100 chapter-wise questions and detailed solutions based on the latest syllabus.",
+        "image": "",
+        "url": "https://link.amazon/B0hDLFQNu"
+      }
+    ]
+  },
+  "nift-entrance-exam": {
+    "label": "Books for NIFT Entrance Examination",
+    "note": "",
+    "items": [
+      {
+        "title": "Guide for NIFT Entrance",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for candidates appearing for the NIFT entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B07Su3kdC"
+      },
+      {
+        "title": "Arihant NIFT NID IIFT Navigator Entrance Guide 2026",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Covers UG and PG design entrance preparation with GAT, CAT and Situation Test content plus solved papers.",
+        "image": "",
+        "url": "https://link.amazon/B03enObqs"
+      },
+      {
+        "title": "Complete Guide on NIFT with Previous & Sample Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "A preparation bundle containing NIFT previous year papers and sample papers for entrance exam practice.",
+        "image": "",
+        "url": "https://link.amazon/B0fhv4lZQ"
+      }
+    ]
+  },
+  "aissee": {
+    "label": "Books for AISSEE",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant AISSEE Sainik School Class 6 Entrance 2027",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Complete Class 6 entrance guide with quick revision notes, practice MCQs and PYQs from 2018-2026 based on the new syllabus.",
+        "image": "",
+        "url": "https://link.amazon/B01x9xcMn"
+      },
+      {
+        "title": "Arihant AISSEE Sainik School Class 9 Entrance 2027",
+        "publisher": "Arihant",
+        "badge": "Practice Sets",
+        "note": "Complete Class 9 entrance guide with 15 practice sets, 10 solved papers from 2017-2026, OMR sheets and the 2026 solved paper.",
+        "image": "",
+        "url": "https://link.amazon/B0eso48La"
+      },
+      {
+        "title": "General Knowledge GK Guide for Sainik School AISSEE",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "English-medium GK study guide for Sainik School AISSEE Class 6, RMS and other entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B0cXQllSm"
+      }
+    ]
+  },
+  "jee-advanced": {
+    "label": "Books for JEE (Advanced)",
+    "note": "",
+    "items": [
+      {
+        "title": "PW JEE Advanced Rankers Test Series 2026",
+        "publisher": "Physics Wallah",
+        "badge": "Practice Sets",
+        "note": "Includes 10 JEE Advanced mock tests with 5 Paper I and 5 Paper II tests, detailed solutions and past-year analysis.",
+        "image": "",
+        "url": "https://link.amazon/B01psSVTo"
+      },
+      {
+        "title": "MTG 49 + 25 Years JEE Main & Advanced Physics PYQ",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise and topic-wise solved Physics papers covering JEE Advanced from 1978-2026 and JEE Main from 2002-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0blum7EX"
+      },
+      {
+        "title": "Disha Errorless 49 Years JEE Advanced & 25 Years JEE Main",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Three-book set covering Physics, Chemistry and Mathematics with chapter-wise and topic-wise JEE Main and Advanced PYQs through 2026.",
+        "image": "",
+        "url": "https://link.amazon/B017wVLpS"
+      }
+    ]
+  },
+  "bitsat": {
+    "label": "Books for BITSAT",
+    "note": "",
+    "items": [
+      {
+        "title": "MTG 11 Years BITSAT Chapterwise Solved Papers",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Contains 11 years of chapter-wise BITSAT solved papers plus 3 model tests with explanations across Physics, Chemistry, Mathematics, English and Logical Reasoning.",
+        "image": "",
+        "url": "https://link.amazon/B0gBS2tvv"
+      },
+      {
+        "title": "PW BITSAT Book 2026 All-in-One Prep Guide",
+        "publisher": "Physics Wallah",
+        "badge": "2026 Edition",
+        "note": "Covers PCM, English Proficiency and Logical Reasoning with concise theory, chapter-wise PYQs, probable MCQs and a question bank.",
+        "image": "",
+        "url": "https://link.amazon/B02FyiP3U"
+      }
+    ]
+  },
+  "viteee": {
+    "label": "Books for VITEEE",
+    "note": "",
+    "items": [
+      {
+        "title": "MTG 15 Years VITEEE Chapterwise Solved Papers",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Contains 15 years of VITEEE chapter-wise solved papers from 2010-2025 plus 5 model tests with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B0540G33K"
+      },
+      {
+        "title": "Disha Errorless 20 Years VITEEE Solved Papers",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Includes 20 years of chapter-wise and topic-wise VITEEE PYQs from 2006-2026 covering Physics, Chemistry, Mathematics, English and Aptitude.",
+        "image": "",
+        "url": "https://link.amazon/B0edQ0KDS"
+      },
+      {
+        "title": "Arihant VITEEE Engineering Entrance Exam 2027",
+        "publisher": "Arihant",
+        "badge": "Practice Sets",
+        "note": "Contains 10 years of solved VITEEE papers from 2016-2026 with detailed solutions and 3 mock tests for the 2027 exam.",
+        "image": "",
+        "url": "https://link.amazon/B0eJJZILq"
+      }
+    ]
+  },
+  "srmjeee": {
+    "label": "Books for SRMJEEE",
+    "note": "",
+    "items": [
+      {
+        "title": "SRMJEEE 10 Years Chapterwise Solutions",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Provides 10 years of chapter-wise solved questions for SRMJEEE entrance exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B038tzy69"
+      },
+      {
+        "title": "Examcart Complete General English Book",
+        "publisher": "Examcart",
+        "badge": "Complete Guide",
+        "note": "Covers General English for government and competitive exams including Bank, SSC, Defence, Management, Railway, Police and Civil Services.",
+        "image": "",
+        "url": "https://link.amazon/B07RLnLBK"
+      },
+      {
+        "title": "SRM University M.Tech ECE Entrance Exam Book 2026",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Covers core Electronics and Communication Engineering topics with practice sets for the SRM University M.Tech entrance exam.",
+        "image": "",
+        "url": "https://link.amazon/B0dcqLlHN"
+      }
+    ]
+  },
+  "comedk-uget": {
+    "label": "Books for COMEDK UGET",
+    "note": "",
+    "items": [
+      {
+        "title": "COMEDK UGET 2026-27 Set of 4 Books",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Four-book set for COMEDK UGET preparation covering the undergraduate entrance examination syllabus.",
+        "image": "",
+        "url": "https://link.amazon/B03Sqd3yE"
+      },
+      {
+        "title": "Arihant COMEDK UGET Solved Papers 2012-2025",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Contains 14 years of COMEDK UGET solved papers from 2012-2025 along with 5 mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B0eUCJ2yj"
+      },
+      {
+        "title": "Karnataka CET / COMEDK UGET 2026",
+        "publisher": "MCC Publications",
+        "badge": "PYQ",
+        "note": "Includes previous examination papers for Karnataka CET and COMEDK UGET covering engineering, architecture, pharmacy and related courses.",
+        "image": "",
+        "url": "https://link.amazon/B0cCnnULp"
+      }
+    ]
+  },
+  "nata": {
+    "label": "Books for NATA",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant B.Arch Entrance Exam Guide 2027",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Covers NATA and JEE B.Arch Aptitude, Drawing and Mathematics with chapter-wise theory, practice exercises and a solved 2026 paper.",
+        "image": "",
+        "url": "https://link.amazon/B00dsJbri"
+      },
+      {
+        "title": "NATA Entrance Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for candidates appearing for the NATA architecture entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B0513srht"
+      },
+      {
+        "title": "Guide for NATA B.Arch Entrance",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for the NATA B.Arch entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B0gHFWMlw"
+      }
+    ]
+  },
+  "neet-pg": {
+    "label": "Books for NEET PG",
+    "note": "",
+    "items": [
+      {
+        "title": "NEET PG Chapterwise Previous Year Question Bank 2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains NEET PG exam papers from 2018-2025 with chapter-wise organization and detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B088QG9Bj"
+      },
+      {
+        "title": "NEET PG Chapterwise PYQ 2018-2025",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Subject-wise question bank covering NEET PG previous year questions from 2018-2025 with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0iAbjEvG"
+      },
+      {
+        "title": "Master Class for NEET PG: Goldmine to Crack Exam",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains subject- and year-wise solved NEET PG papers from 2021-2025 along with mnemonics, exam pearls and flash facts.",
+        "image": "",
+        "url": "https://link.amazon/B0hiNcPxV"
+      }
+    ]
+  },
+  "ini-cet": {
+    "label": "Books for INI-CET",
+    "note": "",
+    "items": [
+      {
+        "title": "INI-CET Chapterwise Previous Year Question Bank 2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains INI-CET exam papers from 2020-2025 organized chapter-wise with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0f2kQnVI"
+      },
+      {
+        "title": "INI-CET Yearwise Solved Question Papers 2020-2025",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Provides year-wise INI-CET previous year question papers from 2020-2025 with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0eVxOWg5"
+      },
+      {
+        "title": "INI-CET Solved Question Papers 2020-2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains solved INI-CET previous year papers from 2020-2026 with detailed solutions for INI-CET, NEET PG and FMGE preparation.",
+        "image": "",
+        "url": "https://link.amazon/B08yYNNgP"
+      }
+    ]
+  },
+  "fmge": {
+    "label": "Books for FMGE",
+    "note": "",
+    "items": [
+      {
+        "title": "FMGE Chapterwise Previous Year Question Bank 2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains FMGE exam papers from 2020-2025 organized chapter-wise with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B06QRjNET"
+      },
+      {
+        "title": "Medrise Night Before Notes Final Revision 2026",
+        "publisher": "Medrise",
+        "badge": "2026 Edition",
+        "note": "A final-revision spiral-bound book based on Core BTR annotated notes for NEET PG, INI-CET and FMGE preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0fRac9FW"
+      },
+      {
+        "title": "Core BTR Annotated Notes 3.0 2026-27 Set of 3",
+        "publisher": "",
+        "badge": "2026 Edition",
+        "note": "Three-book set of annotated notes for NEET PG, INI-CET and FMGE preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0gUELOM9"
+      }
+    ]
+  },
+  "cat": {
+    "label": "Books for CAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Oswaal CAT 25 Years' Chapterwise & Topicwise Solved Papers",
+        "publisher": "Oswaal",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise and topic-wise CAT solved papers covering the years 1993-2008 and 2017-2025 for the 2026 exam.",
+        "image": "",
+        "url": "https://link.amazon/B0ir3pNrB"
+      },
+      {
+        "title": "Oswaal CAT 25 Years' Solved Papers + 10 Mock Tests",
+        "publisher": "Oswaal",
+        "badge": "Practice Sets",
+        "note": "Two-book set combining 25 years of CAT solved papers with 10 mock test papers for 2026 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B01Ju1Ukt"
+      },
+      {
+        "title": "Oswaal CAT 10 Years' Chapterwise & Topicwise Solved Papers",
+        "publisher": "Oswaal",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise and topic-wise CAT solved papers from 2008 and 2017-2025 for the 2026 exam.",
+        "image": "",
+        "url": "https://link.amazon/B08FIGjCH"
+      }
+    ]
+  },
+  "xat": {
+    "label": "Books for XAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha 16 Year-wise XAT Solved Papers 2011-2026",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Contains XAT solved papers from 2011-2026 with 5 mock tests covering essays, Quantitative Aptitude, Verbal Ability, Reading Comprehension and Reasoning.",
+        "image": "",
+        "url": "https://link.amazon/B04qks2Rf"
+      },
+      {
+        "title": "GKP XAT 2025-26 Solved Papers 2008-2025",
+        "publisher": "GKP",
+        "badge": "PYQ",
+        "note": "Provides 17 years of XAT previous year papers from 2008-2025 with detailed solutions for XLRI MBA entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B03AfEXeI"
+      },
+      {
+        "title": "Oswaal Formulae & Tricks Quantitative Aptitude",
+        "publisher": "Oswaal",
+        "badge": "",
+        "note": "Focuses on quantitative aptitude formulae and problem-solving tricks for CAT, XAT, MAT and other entrance and government exams.",
+        "image": "",
+        "url": "https://link.amazon/B0hAUxv3V"
+      }
+    ]
+  },
+  "snap": {
+    "label": "Books for SNAP",
+    "note": "",
+    "items": [
+      {
+        "title": "SNAP Symbiosis National Aptitude Test Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for the Symbiosis National Aptitude Test covering the main areas tested in SNAP.",
+        "image": "",
+        "url": "https://link.amazon/B01yiptiX"
+      },
+      {
+        "title": "Map the SNAP 5 Mock Tests & Solved Papers",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 5 SNAP mock tests and solved papers covering the period from 2005 to 2022.",
+        "image": "",
+        "url": "https://link.amazon/B0ivw6ZJ2"
+      },
+      {
+        "title": "TARGET SNAP Previous Year Solved Papers 2005-2022",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains SNAP solved papers from 2005-2022 with 5 mock tests covering Quantitative Aptitude, Verbal Ability, Reading Comprehension and Reasoning.",
+        "image": "",
+        "url": "https://link.amazon/B05rpgA5W"
+      }
+    ]
+  },
+  "nmat": {
+    "label": "Books for NMAT",
+    "note": "",
+    "items": [
+      {
+        "title": "NMAT Entrance Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Provides preparation material for candidates appearing for the NMAT entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B0a1HUVfU"
+      },
+      {
+        "title": "NMAT by GMAC Official Guide, 11th Edition",
+        "publisher": "GMAC",
+        "badge": "Complete Guide",
+        "note": "Official NMAT preparation guide from GMAC for candidates preparing for the NMAT by GMAC exam.",
+        "image": "",
+        "url": "https://link.amazon/B0bxIwFJQ"
+      }
+    ]
+  },
+  "mat": {
+    "label": "Books for MAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Complete Guide for MAT & Other MBA Entrance Exams",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Preparation guide for MAT and other MBA entrance exams with previous year solved questions.",
+        "image": "",
+        "url": "https://link.amazon/B0e91qkJg"
+      },
+      {
+        "title": "MAT 15 Years Topic-wise Previous Year Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains 2900+ topic-wise MAT previous year questions from 2011-2025 with solved answers.",
+        "image": "",
+        "url": "https://link.amazon/B0a4CGMIZ"
+      },
+      {
+        "title": "MAT 15 Years Topic-wise Previous Year Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains 2900+ topic-wise MAT previous year questions from 2011-2025 with solved answers.",
+        "image": "",
+        "url": "https://link.amazon/B07AbtfY4"
+      }
+    ]
+  },
+  "clat": {
+    "label": "Books for CLAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Pearson 16 Solved Papers CLAT & AILET 2019-2026",
+        "publisher": "Pearson",
+        "badge": "PYQ",
+        "note": "Contains 16 solved CLAT and AILET papers from 2019-2026 with legal reasoning, legal awareness, practice sets and 2400+ questions.",
+        "image": "",
+        "url": "https://link.amazon/B086IXtzs"
+      },
+      {
+        "title": "Arihant CLAT Preparation Guide 2027",
+        "publisher": "Arihant",
+        "badge": "Practice Sets",
+        "note": "Covers Legal Reasoning, English, Quantitative Aptitude, Logical Reasoning and Current Affairs with 2025-2026 PYQs, 2000+ MCQs and 3 practice sets.",
+        "image": "",
+        "url": "https://link.amazon/B09gHhuXL"
+      },
+      {
+        "title": "GKP CLAT 2027 Mock Tests Book",
+        "publisher": "GKP",
+        "badge": "Practice Sets",
+        "note": "Includes 10 full-length CLAT practice papers and fully solved CLAT question papers from 2024-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0bbNPgOA"
+      }
+    ]
+  },
+  "ailet": {
+    "label": "Books for AILET",
+    "note": "",
+    "items": [
+      {
+        "title": "CLAT & AILET 2027 Complete Guide by Priya Jain",
+        "publisher": "GKP",
+        "badge": "Complete Guide",
+        "note": "Covers English, Legal Reasoning, GK, Logical Reasoning and Quantitative sections with fully solved CLAT and AILET 2026 papers.",
+        "image": "",
+        "url": "https://link.amazon/B01OyosiD"
+      },
+      {
+        "title": "Pearson 16 Solved Papers CLAT & AILET 2019-2026",
+        "publisher": "Pearson",
+        "badge": "PYQ",
+        "note": "Contains 16 solved CLAT and AILET papers from 2019-2026 with legal awareness, legal reasoning, PYQs and practice sets.",
+        "image": "",
+        "url": "https://link.amazon/B04nrdDFo"
+      },
+      {
+        "title": "Pearson Legal Awareness & Legal Reasoning 2026-27",
+        "publisher": "Pearson",
+        "badge": "Complete Guide",
+        "note": "Focuses on Legal Awareness and Legal Reasoning for CLAT, SLAT and AILET, with recent CLAT, AILET and PU papers from 2023-2025.",
+        "image": "",
+        "url": "https://link.amazon/B0a8DX6xb"
+      }
+    ]
+  },
+  "lsat-india": {
+    "label": "Books for LSAT—India",
+    "note": "",
+    "items": [
+      {
+        "title": "LSAT Loophole Prep 2025-2026",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Covers all LSAT sections with full-length practice tests for candidates preparing for law school admission.",
+        "image": "",
+        "url": "https://link.amazon/B010JzKdF"
+      },
+      {
+        "title": "Arihant LawSprint LLB Entrance Exam 2026",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "English-medium preparation book covering CLAT, AILET, SLAT, LSAT and other major law entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B04sF6uCN"
+      },
+      {
+        "title": "LSAT Prep 2026-2027 Study Guide",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 3 practice tests and study material for candidates preparing for the LSAT.",
+        "image": "",
+        "url": "https://link.amazon/B027rAU7t"
+      }
+    ]
+  },
+  "uceed": {
+    "label": "Books for UCEED",
+    "note": "",
+    "items": [
+      {
+        "title": "UCEED 2027 Study Guide with 12 Years Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Covers design aptitude, spatial reasoning and Part-B drawing preparation with solved UCEED papers from 2015-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0e0CYB6F"
+      },
+      {
+        "title": "101 Design Challenges for NID, UCEED & NIFT",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Provides 101 design problem-solving activities focused on Part-B preparation for NID, UCEED and NIFT UG and PG entrances.",
+        "image": "",
+        "url": "https://link.amazon/B0cvHYPBF"
+      },
+      {
+        "title": "UCEED 2024 10 Full Length Mock Tests",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Contains 10 full-length UCEED mock tests with solved questions and access to additional online tests.",
+        "image": "",
+        "url": "https://link.amazon/B0gGKpo32"
+      }
+    ]
+  },
+  "ceed": {
+    "label": "Books for CEED",
+    "note": "",
+    "items": [
+      {
+        "title": "Cracking CEED & UCEED",
+        "publisher": "",
+        "badge": "",
+        "note": "Preparation book focused on CEED and UCEED design entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B02SO6oHW"
+      },
+      {
+        "title": "UCEED CEED Exam Study Material 2025 Set of 4",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Four-book study material set for UCEED and CEED exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05wSLN7O"
+      },
+      {
+        "title": "UCEED NID NIFT CEED Entrance Exam Workbook",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Workbook providing practice material for UCEED, NID, NIFT and CEED design entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B0czktD6j"
+      }
+    ]
+  },
+  "nid-dat": {
+    "label": "Books for NID DAT",
+    "note": "",
+    "items": [
+      {
+        "title": "NID DAT Sample Papers for B.Des",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Contains sample papers for NID DAT B.Des preparation based on the latest exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B0jgsCEFk"
+      },
+      {
+        "title": "NID B.Des Previous Year Question Papers 2015-2025",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains original-format NID B.Des previous year papers from 2015-2025.",
+        "image": "",
+        "url": "https://link.amazon/B035pL7d1"
+      },
+      {
+        "title": "NID M.Des Studio Test Preparation 2026",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 10 years of Studio Test papers from 2015-2025 and 5 mock Studio Tests for NID M.Des preparation.",
+        "image": "",
+        "url": "https://link.amazon/B06qQNEtO"
+      }
+    ]
+  },
+  "mp-pat": {
+    "label": "Books for MP PAT",
+    "note": "",
+    "items": [
+      {
+        "title": "Examcart MP Patwari Study Guide Book 2026",
+        "publisher": "Examcart",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium guide with complete theory, 2400+ practice questions and the latest solved paper for MP Patwari preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0bJ7G1FG"
+      },
+      {
+        "title": "MP Patwari 2026-27 Set of 8 Books",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "An eight-book preparation set for the Madhya Pradesh Patwari examination conducted by MPESB.",
+        "image": "",
+        "url": "https://link.amazon/B0eHF7U76"
+      },
+      {
+        "title": "Examcart MP Patwari Group 2 Sub Group 4 Study Guide",
+        "publisher": "Examcart",
+        "badge": "PYQ",
+        "note": "Hindi-medium book with updated theory, 250+ practice questions, 1300+ PYQs and 2 practice sets.",
+        "image": "",
+        "url": "https://link.amazon/B09f5SXtP"
+      }
+    ]
+  },
+  "mp-pnst": {
+    "label": "Books for MP PNST",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant MP GNTST/PNST Exam 2026 Complete Guide",
+        "publisher": "Arihant",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium guide covering Physics, Chemistry, Biology, English and GK for MP GNTST and PNST entrance exams.",
+        "image": "",
+        "url": "https://link.amazon/B09I4xjQl"
+      },
+      {
+        "title": "PNST Best Book in MP | Nursing Entrance Preparation",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium PNST preparation book covering Biology, Physics and Chemistry with MCQs and practice questions.",
+        "image": "",
+        "url": "https://link.amazon/B06dRH8YZ"
+      },
+      {
+        "title": "Arihant PNST 25 Solved Papers 2014-2025",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Contains 25 MP PNST solved papers from 2014-2025 with detailed solutions for PNST and GNTST entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0ghX2KUR"
+      }
+    ]
+  },
+  "wb-anm-gnm": {
+    "label": "Books for ANM & GNM",
+    "note": "",
+    "items": [
+      {
+        "title": "West Bengal ANM & GNM Entrance Exam 2026-27",
+        "publisher": "Adda247",
+        "badge": "2026 Edition",
+        "note": "Bengali printed guide with 5700+ MCQs and detailed solutions based on the WBJEEB syllabus and exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B0azlBiUX"
+      },
+      {
+        "title": "ANM GNM Practice Set in Bengali 2026",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Bengali practice book containing 32 sets, previous year questions, OMR sheets and a GK booklet.",
+        "image": "",
+        "url": "https://link.amazon/B05f5l8Fq"
+      },
+      {
+        "title": "Tulshir WBJEE ANM & GNM Handbook",
+        "publisher": "Tulshir",
+        "badge": "Complete Guide",
+        "note": "Bengali handbook for candidates preparing for the WBJEE ANM and GNM entrance examinations.",
+        "image": "",
+        "url": "https://link.amazon/B02sY3klP"
+      }
+    ]
+  },
+  "jenpas-ug": {
+    "label": "Books for JENPAS UG",
+    "note": "",
+    "items": [
+      {
+        "title": "JENPAS UG Entrance Book & Practice Set",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Provides preparation material and practice sets for the JENPAS UG entrance examination.",
+        "image": "",
+        "url": "https://link.amazon/B0gbL7ioQ"
+      },
+      {
+        "title": "Disha GoTo Guide for JENPAS UG 2027 Paper I",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Includes JENPAS UG Paper I preparation material with solved previous year papers from 2022-2026.",
+        "image": "",
+        "url": "https://link.amazon/B0iQMybk0"
+      },
+      {
+        "title": "GoTo Guide for JENPAS UG 2025 Paper I",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Includes Paper I preparation material with solved JENPAS UG previous year papers from 2022-2024.",
+        "image": "",
+        "url": "https://link.amazon/B01WqKrO4"
+      }
+    ]
+  },
+  "ts-eapcet": {
+    "label": "Books for TS EAPCET",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha Telangana EAPCET PCM Solved Papers 2015-2026",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Contains 7000+ chapter-wise and topic-wise Telangana EAPCET Physics, Chemistry and Mathematics solved PYQs from 2015-2026 with synopses.",
+        "image": "",
+        "url": "https://link.amazon/B0bCc4pr8"
+      },
+      {
+        "title": "Disha Telangana EAPCET Physics PYQs 2015-2026",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Contains 1880 chapter-wise and topic-wise Telangana EAPCET Physics PYQs from 2015-2026 with synopses.",
+        "image": "",
+        "url": "https://link.amazon/B04aM7Hr2"
+      },
+      {
+        "title": "Disha Andhra EAPCET PCM Solved Papers 2015-2026",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Contains 7000+ chapter-wise and topic-wise Andhra EAPCET Physics, Chemistry and Mathematics solved PYQs from 2015-2026 with concept maps.",
+        "image": "",
+        "url": "https://link.amazon/B06uM41lz"
+      }
+    ]
+  },
+  "gate": {
+    "label": "Books for GATE",
+    "note": "",
+    "items": [
+      {
+        "title": "Oswaal GATE General Aptitude & Engineering Mathematics",
+        "publisher": "Oswaal",
+        "badge": "PYQ",
+        "note": "Two-book set with 17 years of chapter-wise and topic-wise solved papers from 2010-2026 for GATE General Aptitude and Engineering Mathematics.",
+        "image": "",
+        "url": "https://link.amazon/B00Wde1tw"
+      },
+      {
+        "title": "GATE AR 2027 Study Guide Vol 2",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Covers GATE Architecture and Planning Part B with solved papers from 2017-2026 and a UPSC CPWD solved paper from 2015.",
+        "image": "",
+        "url": "https://link.amazon/B07JiHIVR"
+      },
+      {
+        "title": "GATE CE 2027 Civil Engineering Year-wise Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Contains 26 years of GATE Civil Engineering solved papers from 2000-2026, including 2400+ MCQs, NTQs and MSQs with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B022sav8l"
+      }
+    ]
+  },
+  "ca-chartered-accountancy": {
+    "label": "Books for CA (Chartered Accountancy)",
+    "note": "",
+    "items": [
+      {
+        "title": "PW CA Foundation Business Laws Summary Book",
+        "publisher": "Physics Wallah",
+        "badge": "2026 Edition",
+        "note": "Concise chapter-wise Business Laws summaries for the May 2026 CA Foundation exam with highlighted keywords and important case laws.",
+        "image": "",
+        "url": "https://link.amazon/B0eoP39gZ"
+      },
+      {
+        "title": "PW CA Intermediate Group 1 Income Tax Concept Book",
+        "publisher": "Physics Wallah",
+        "badge": "2026 Edition",
+        "note": "Covers Income Tax theory, exercises and previous year questions with solutions for CA Intermediate Group 1 under the latest syllabus.",
+        "image": "",
+        "url": "https://link.amazon/B01cnph6t"
+      },
+      {
+        "title": "Taxmann's CRACKER for CA Foundation Business Laws",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Contains 650+ chapter-wise solved Business Laws questions with source tags, plus RTPs and MTPs for CA Foundation exams.",
+        "image": "",
+        "url": "https://link.amazon/B0b5TImIX"
+      }
+    ]
+  },
+  "cs-company-secretary": {
+    "label": "Books for CS (Company Secretary)",
+    "note": "",
+    "items": [
+      {
+        "title": "Taxmann's CRACKER for Corporate Accounting & Financial Management",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Turns past Corporate Accounting and Financial Management exam questions into topic-wise exam practice for CS Executive.",
+        "image": "",
+        "url": "https://link.amazon/B0iQ3keBr"
+      },
+      {
+        "title": "Taxmann's CRACKER for Tax Laws & Practice",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Provides fully solved past-exam Tax Laws and Practice questions arranged topic-wise for CS Executive.",
+        "image": "",
+        "url": "https://link.amazon/B0cvXN5GR"
+      },
+      {
+        "title": "Taxmann's CRACKER for Compliance Management, Audit & Due Diligence",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Contains fully solved, topic-wise questions for Compliance Management, Audit and Due Diligence for CS Professional.",
+        "image": "",
+        "url": "https://link.amazon/B09DmUkeJ"
+      }
+    ]
+  },
+  "cma-cost-and-management-accountant": {
+    "label": "Books for CMA (Cost and Management Accountant)",
+    "note": "",
+    "items": [
+      {
+        "title": "Taxmann's CRACKER for Business Laws & Ethics",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Exam-focused solved question bank for CMA Intermediate with the latest amended law and revision tools.",
+        "image": "",
+        "url": "https://link.amazon/B00umNaOD"
+      },
+      {
+        "title": "Taxmann's CRACKER for Business Economics & Management",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Contains 950+ exam-pattern MCQs covering Fundamentals of Business Economics and Management for CMA Foundation.",
+        "image": "",
+        "url": "https://link.amazon/B0dJbcjnm"
+      },
+      {
+        "title": "Taxmann's CRACKER for Management Accounting",
+        "publisher": "Taxmann",
+        "badge": "Practice Sets",
+        "note": "Combines concise chapter theory digests with fully solved past-exam questions for CMA Intermediate Management Accounting.",
+        "image": "",
+        "url": "https://link.amazon/B0hAqwnMB"
+      }
+    ]
+  },
+  "aibe": {
+    "label": "Books for AIBE (All India Bar Examination)",
+    "note": "",
+    "items": [
+      {
+        "title": "AIBE Exam Books 2026: 16 Years Solved Papers",
+        "publisher": "IFAS",
+        "badge": "PYQ",
+        "note": "Contains 16 years of AIBE previous question papers from 2011-2026 with detailed solutions arranged topic-wise.",
+        "image": "",
+        "url": "https://link.amazon/B0dMTB8Ej"
+      },
+      {
+        "title": "PW AIBE 20 Previous Year Solved Papers 2011-2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Includes 20 AIBE solved papers from 2011-2026 with a case law compilation and 2000 PYQs with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0ebtFMFH"
+      },
+      {
+        "title": "Lawmann's AIBE Solved Papers 2026",
+        "publisher": "Lawmann",
+        "badge": "PYQ",
+        "note": "Contains 19 AIBE previous year papers from 2011-2025 with answer keys and explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0af9jMXf"
+      }
+    ]
+  },
+  "iit-jam": {
+    "label": "Books for IIT JAM",
+    "note": "",
+    "items": [
+      {
+        "title": "PW IIT JAM Recap 22 Years Physics PYQ",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains chapter-wise and year-wise IIT JAM Physics solved papers from 2005-2026 with 5 mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B0fMUPzt4"
+      },
+      {
+        "title": "IIT JAM Physics Practice Book 2026",
+        "publisher": "IFAS Publications",
+        "badge": "Practice Sets",
+        "note": "Contains 1600+ topic-wise IIT JAM Physics practice questions with detailed solutions for MSc Physics entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0dtmftco"
+      },
+      {
+        "title": "IIT JAM Mathematical Statistics PYQ Book 2027",
+        "publisher": "IFAS Publications",
+        "badge": "PYQ",
+        "note": "Contains topic-wise IIT JAM Mathematical Statistics solved papers from 2005-2026 with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B06oqATjv"
+      }
+    ]
   }
 }
