@@ -17,8 +17,10 @@ const categories = [
   { key: 'police', label: 'Police & Defence' }
 ];
 
+const firstRelated = (p) => p.data.relatedExam
+  || (p.data.relatedExams && p.data.relatedExams.length ? p.data.relatedExams[0] : null);
 const catOf = (p) => {
-  const e = exams.find((x) => x.slug === p.data.relatedExam);
+  const e = exams.find((x) => x.slug === firstRelated(p));
   return e ? e.category : 'other';
 };
 
@@ -26,7 +28,8 @@ const grouped = categories
   .map((c) => ({ ...c, items: posts.filter((p) => catOf(p) === c.key) }))
   .filter((c) => c.items.length > 0);
 
-const key = (p) => [p.data.title, p.data.description, p.data.relatedExam].filter(Boolean).join(' ').toLowerCase();
+const key = (p) => [p.data.title, p.data.description, p.data.relatedExam]
+  .concat(p.data.relatedExams || []).filter(Boolean).join(' ').toLowerCase();
 ---
 <BaseLayout
   title="Exam Details: Syllabus, Pattern, Salary & Eligibility | Form Setu"

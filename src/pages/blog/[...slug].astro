@@ -29,11 +29,29 @@ const labels = {
 
 const categoryLabel = labels[d.category] || d.category;
 
-const exam = d.relatedExam ? exams.find((e) => e.slug === d.relatedExam) : null;
+const rawRelated = (d.relatedExam ? [d.relatedExam] : []).concat(d.relatedExams || []);
+const relatedSlugs = rawRelated.filter((s, i) => rawRelated.indexOf(s) === i);
+const relatedExamObjs = relatedSlugs
+  .map((s) => exams.find((e) => e.slug === s))
+  .filter((e) => !!e);
+const exam = relatedExamObjs.length ? relatedExamObjs[0] : null;
+const resizerBlocks = relatedExamObjs.map((e) => ({
+  slug: e.slug,
+  name: e.name,
+  heading: 'Resize your ' + e.name + ' documents',
+  href: '/exams/' + e.slug + '/',
+  linkText: 'Open the full ' + e.name + ' resizer page →',
+  photo: e.photo,
+  signature: e.signature,
+  photoUnit: (e.photo && e.photo.unit) || 'px',
+  photoDpi: (e.photo && e.photo.dpi) || 300,
+  signUnit: (e.signature && e.signature.unit) || 'px',
+  signDpi: (e.signature && e.signature.dpi) || 300
+}));
 
 const fallbackProducts = (d.products && d.products.length)
   ? d.products
-  : (d.relatedExam ? [d.relatedExam] : []);
+  : relatedSlugs;
 
 const pageUrl = Astro.url.href;
 
@@ -41,8 +59,11 @@ const all = (await getCollection('blog', ({ data }) => !data.draft))
   .filter((p) => p.id !== post.id)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const sameExam = d.relatedExam
-  ? all.filter((p) => p.data.relatedExam === d.relatedExam)
+const sameExam = relatedSlugs.length
+  ? all.filter((p) => {
+      const other = (p.data.relatedExam ? [p.data.relatedExam] : []).concat(p.data.relatedExams || []);
+      return other.some((s) => relatedSlugs.indexOf(s) !== -1);
+    })
   : [];
 
 const wantCategory = d.category === 'notification' ? 'exam-details' : 'notification';
@@ -321,34 +342,34 @@ const tgUrl = encodeURIComponent(pageUrl);
       </section>
     )}
 
-    {exam && (
+    {resizerBlocks.map((b) => (
       <section class="mt-10">
-        <h2 class="mb-3 text-lg font-bold text-navy-900">Resize your {exam.name} documents</h2>
+        <h2 class="mb-3 text-lg font-bold text-navy-900">{b.heading}</h2>
 
-        {exam.photo && (
+        {b.photo && (
           <div class="mb-6">
             <ImageResizer label="Photo" fileName="photo"
-              widthPx={exam.photo.widthPx} heightPx={exam.photo.heightPx}
-              minKB={exam.photo.minKB} maxKB={exam.photo.maxKB}
-              unit={exam.photo.unit || 'px'} displayW={exam.photo.displayWidth}
-              displayH={exam.photo.displayHeight} dpi={exam.photo.dpi || 300} />
+              widthPx={b.photo.widthPx} heightPx={b.photo.heightPx}
+              minKB={b.photo.minKB} maxKB={b.photo.maxKB}
+              unit={b.photoUnit} displayW={b.photo.displayWidth}
+              displayH={b.photo.displayHeight} dpi={b.photoDpi} />
           </div>
         )}
 
-        {exam.signature && (
+        {b.signature && (
           <ImageResizer label="Signature" fileName="signature"
-            widthPx={exam.signature.widthPx} heightPx={exam.signature.heightPx}
-            minKB={exam.signature.minKB} maxKB={exam.signature.maxKB}
-            unit={exam.signature.unit || 'px'} displayW={exam.signature.displayWidth}
-            displayH={exam.signature.displayHeight} dpi={exam.signature.dpi || 300} />
+            widthPx={b.signature.widthPx} heightPx={b.signature.heightPx}
+            minKB={b.signature.minKB} maxKB={b.signature.maxKB}
+            unit={b.signUnit} displayW={b.signature.displayWidth}
+            displayH={b.signature.displayHeight} dpi={b.signDpi} />
         )}
 
-        <a href={'/exams/' + exam.slug + '/'}
+        <a href={b.href}
            class="mt-4 inline-block rounded-md bg-navy-800 px-4 py-2 text-sm font-bold text-white hover:bg-navy-700">
-          Open the full {exam.name} resizer page →
+          {b.linkText}
         </a>
       </section>
-    )}
+    ))}
 
     <AffiliateBlock groups={fallbackProducts} />
 

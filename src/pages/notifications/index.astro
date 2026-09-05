@@ -11,7 +11,8 @@ const open = posts.filter((p) => p.data.closes && p.data.closes.getTime() >= now
 const closed = posts.filter((p) => !p.data.closes || p.data.closes.getTime() < now);
 
 const fmt = (x) => x.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
-const key = (p) => [p.data.title, p.data.description, p.data.relatedExam].filter(Boolean).join(' ').toLowerCase();
+const key = (p) => [p.data.title, p.data.description, p.data.relatedExam]
+  .concat(p.data.relatedExams || []).filter(Boolean).join(' ').toLowerCase();
 ---
 <BaseLayout
   title="Latest Exam Notifications | Form Setu"

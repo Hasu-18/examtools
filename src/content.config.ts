@@ -17,6 +17,7 @@ const blog = defineCollection({
     closes: z.date().optional(),
 
     relatedExam: z.string().optional(),
+    relatedExams: z.array(z.string()).optional(),
     products: z.array(z.string()).optional(),
 
     cover: z.string().optional(),

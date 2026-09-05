@@ -65,8 +65,13 @@ const others = shuffle(
 const related = [...sameCat, ...others];
 const pageUrl = Astro.url.href;
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const postExamSlugs = (p) => {
+  const one = p.data.relatedExam ? [p.data.relatedExam] : [];
+  const many = p.data.relatedExams || [];
+  return one.concat(many);
+};
 const forThisExam = allPosts
-  .filter((p) => p.data.relatedExam === exam.slug)
+  .filter((p) => postExamSlugs(p).indexOf(exam.slug) !== -1)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const examNotifications = forThisExam.filter((p) => p.data.category === 'notification');
