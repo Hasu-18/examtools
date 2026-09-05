@@ -106,7 +106,11 @@ const maxVac = d.vacancyHistory ? Math.max(...d.vacancyHistory.map((v) => v.vaca
 const salaryVals = (d.salary && d.salary.posts || []).map((p) => p.amount || 0);
 const maxPay = salaryVals.length ? Math.max(...salaryVals) : 0;
 
-const stillOpen = d.closes && d.closes.getTime() >= Date.now();
+const RECENT_CLOSE_MS = 30 * 86400000;
+const nowMs = Date.now();
+const stillOpen = d.closes && d.closes.getTime() >= nowMs;
+const closedRecently = !!(d.closes && !stillOpen && (nowMs - d.closes.getTime()) < RECENT_CLOSE_MS);
+const closedOnLabel = d.closes ? 'Closed on ' + fmt(d.closes) : '';
 
 const waText = encodeURIComponent(d.title + ' ' + pageUrl);
 const tgUrl = encodeURIComponent(pageUrl);
@@ -142,6 +146,12 @@ const tgUrl = encodeURIComponent(pageUrl);
         </span>
         <p class="mt-1.5 text-sm font-bold text-navy-900">Applications close on {fmt(d.closes)}</p>
       </div>
+    )}
+
+    {closedRecently && (
+      <p class="mt-4 inline-block rounded-lg border-2 border-amber-500 bg-amber-100 px-3 py-1.5 text-sm font-bold text-navy-900">
+        {closedOnLabel}
+      </p>
     )}
 
     {d.cover && (

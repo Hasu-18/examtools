@@ -13,6 +13,16 @@ const closed = posts.filter((p) => !p.data.closes || p.data.closes.getTime() < n
 const fmt = (x) => x.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 const key = (p) => [p.data.title, p.data.description, p.data.relatedExam]
   .concat(p.data.relatedExams || []).filter(Boolean).join(' ').toLowerCase();
+const RECENT_CLOSE_MS = 30 * 86400000;
+const closedCards = closed.map((p) => ({
+  href: '/blog/' + p.id + '/',
+  title: p.data.title,
+  description: p.data.description,
+  dateText: fmt(p.data.date),
+  searchKey: key(p),
+  isClosedRecently: !!(p.data.closes && (now - p.data.closes.getTime()) < RECENT_CLOSE_MS),
+  closedOnText: p.data.closes ? 'Closed on ' + fmt(p.data.closes) : ''
+}));
 ---
 <BaseLayout
   title="Latest Exam Notifications | Form Setu"
@@ -70,12 +80,17 @@ const key = (p) => [p.data.title, p.data.description, p.data.relatedExam]
     <section class="mt-10 notif-group">
       <h2 class="mb-3 text-lg font-bold text-navy-900">All notifications</h2>
       <div class="space-y-2">
-        {closed.map((p) => (
-          <a href={"/blog/" + p.id + "/"} data-search={key(p)}
+        {closedCards.map((c) => (
+          <a href={c.href} data-search={c.searchKey}
              class="notif-card block rounded-lg border-2 border-line bg-white px-4 py-3 shadow-sm transition hover:border-amber-500 hover:bg-amber-100">
-            <span class="block text-base font-bold leading-snug text-navy-900">{p.data.title}</span>
-            <span class="mt-1 block text-sm text-muted">{p.data.description}</span>
-            <span class="mt-1.5 block text-xs text-muted">{fmt(p.data.date)}</span>
+            {c.isClosedRecently && (
+              <span class="mb-1.5 inline-block rounded border-2 border-amber-500 bg-amber-100 px-2 py-0.5 text-xs font-bold text-navy-900">
+                {c.closedOnText}
+              </span>
+            )}
+            <span class="block text-base font-bold leading-snug text-navy-900">{c.title}</span>
+            <span class="mt-1 block text-sm text-muted">{c.description}</span>
+            <span class="mt-1.5 block text-xs text-muted">{c.dateText}</span>
           </a>
         ))}
       </div>

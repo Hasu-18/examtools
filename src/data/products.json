@@ -2012,5 +2012,49 @@
         "url": "https://link.amazon/B066HbYfu"
       }
     ]
+  },
+  "ibps-clerk": {
+    "label": "Books for IBPS Clerk",
+    "note": "",
+    "items": [
+      {
+        "title": "PW All in One IBPS Clerk 2026 Prelims & Mains",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Covers Prelims and Mains with chapter-wise theory and exercises, 12 solved PYQ papers through October 2025 and 15 online CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B05ItV2pC"
+      },
+      {
+        "title": "PW IBPS Clerk 27 Year-wise Prelims & Mains Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 27 years of IBPS Clerk Prelims and Mains solved papers through November 2025, plus 15 online CBT tests and 3750 PYQs.",
+        "image": "",
+        "url": "https://link.amazon/B0bdm97ni"
+      },
+      {
+        "title": "Arihant IBPS Clerk Prelims & Mains Exam 2026",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Provides chapter-wise and topic-wise concept notes, shortcuts, tricks and 3000+ practice MCQs with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0bdstlJE"
+      }
+    ]
+  },
+  "ibps-po": {
+    "label": "Books for IBPS PO",
+    "note": "",
+    "items": [
+      {
+        "title": "PW IBPS PO 27 Year-wise Prelims & Mains Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "English book with 27 years of IBPS PO Prelims and Mains solved papers through October 2025, plus 15 online CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B0dclkYhT"
+      }
+    ]
   }
 }
