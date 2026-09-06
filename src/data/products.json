@@ -2128,5 +2128,635 @@
         "url": "https://link.amazon/B089KPYUJ"
       }
     ]
+  },
+  "sbi-clerk": {
+    "label": "Books for SBI Clerk",
+    "note": "",
+    "items": [
+      {
+        "title": "PW SBI Clerk 24 Prelims & Mains Previous Year Solved Papers 2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 24 SBI Clerk Prelims and Mains previous year solved papers through November 2025, with 3500 PYQ questions and 15 online CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B05nQjyHI"
+      },
+      {
+        "title": "PW All in One SBI Clerk Book 2026",
+        "publisher": "Physics Wallah",
+        "badge": "Complete Guide",
+        "note": "English-medium preparation book covering Prelims and Mains with chapter-wise theory, exercises, 10 previous year question papers and 15 online CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B0hWTTsQq"
+      },
+      {
+        "title": "Bank PO & Clerk English Language Chapterwise Previous Year Papers",
+        "publisher": "Adda247",
+        "badge": "PYQ",
+        "note": "English-language chapter-wise previous year papers for Prelims and Mains across IBPS, SBI, RBI, RRB, SEBI and NABARD banking exams.",
+        "image": "",
+        "url": "https://link.amazon/B0eynhpYi"
+      }
+    ]
+  },
+  "sbi-cbo": {
+    "label": "Books for SBI CBO",
+    "note": "",
+    "items": [
+      {
+        "title": "Comprehensive Guide for SBI Circle Based Officer (CBO) Online Test 2026-27",
+        "publisher": "Adda247",
+        "badge": "Complete Guide",
+        "note": "English printed guide with 3300+ questions along with answers and detailed solutions for the SBI CBO online test.",
+        "image": "",
+        "url": "https://link.amazon/B02vWvvHs"
+      },
+      {
+        "title": "SBI CBO 2026 State Bank of India Circle Based Officers",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 5 books designed for SBI Circle Based Officer exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B02Tm8cZc"
+      },
+      {
+        "title": "SBI CBO Objective + Descriptive Online Exam Practice Workbook",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium practice workbook covering both objective and descriptive sections of the SBI CBO online examination.",
+        "image": "",
+        "url": "https://link.amazon/B0aT5z2hs"
+      }
+    ]
+  },
+  "sbi-so": {
+    "label": "Books for SBI Specialist Officer",
+    "note": "",
+    "items": [
+      {
+        "title": "Bank PO | Clerk | SO | MT Prelims Complete Guide",
+        "publisher": "Adda247",
+        "badge": "Complete Guide",
+        "note": "Hindi printed guide for IBPS, SBI, RBI and RRB exams based on the latest exam pattern, with 3200+ questions and detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B0cLUxtp8"
+      },
+      {
+        "title": "Adda247 Insights of Banking Awareness 2026-27",
+        "publisher": "Adda247",
+        "badge": "Practice Sets",
+        "note": "Banking awareness book covering Budget 2026-27 and 1500+ objective questions for IBPS PO, Clerk, MT, SO, IBPS RRB, RBI Grade B, SBI PO and Clerk exams.",
+        "image": "",
+        "url": "https://link.amazon/B0iYmraZs"
+      },
+      {
+        "title": "Ace Banking and Static Awareness Book",
+        "publisher": "Adda247",
+        "badge": "Complete Guide",
+        "note": "English printed book covering banking awareness and static awareness for competitive banking examinations.",
+        "image": "",
+        "url": "https://link.amazon/B07SryzSc"
+      }
+    ]
+  },
+  "ibps-so": {
+    "label": "Books for IBPS Specialist Officer (SO)",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha The All New Professional Knowledge for IBPS & SBI Specialist IT Officer",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "9th edition covering professional knowledge for IBPS and SBI Specialist IT Officer exams with previous year questions and 15 practice sets.",
+        "image": "",
+        "url": "https://link.amazon/B0aafr0Lh"
+      },
+      {
+        "title": "IBPS Specialist Officer (SO) Law Officer Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Preparation guide for the IBPS Specialist Officer Law Officer Preliminary and Main examinations.",
+        "image": "",
+        "url": "https://link.amazon/B0gOUM08M"
+      },
+      {
+        "title": "IBPS SO IT Officer Professional Knowledge Book",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English printed book with 1300+ MCQs for IBPS SO IT Officer, also useful for IBPS RRB SO IT, SBI SO IT and other Bank IT Officer exams.",
+        "image": "",
+        "url": "https://link.amazon/B0166Dk9m"
+      }
+    ]
+  },
+  "ibps-rrb-office-assistant": {
+    "label": "Books for IBPS RRB Office Assistant",
+    "note": "",
+    "items": [
+      {
+        "title": "IBPS RRB Office Assistant CRP XV Solved Papers 2016-2025",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Hindi-medium solved papers book covering IBPS RRB Gramin Bank Office Assistant CRP papers from 2016 to 2025, with a 2026 edition.",
+        "image": "",
+        "url": "https://link.amazon/B02hQRvTZ"
+      },
+      {
+        "title": "PW IBPS RRB Clerk & PO 24 Yearwise Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Covers 24 yearwise previous year solved papers from 2020 to 2025 for RRB Officers Scale-I and Office Assistants, with 15 online mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B0fnBoOYA"
+      },
+      {
+        "title": "Disha 43 IBPS RRB Officer Scale 1 & Office Assistant Solved Papers",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "7th edition featuring 43 previous year-wise solved papers from 2013 to 2025 for Officer Scale 1 and Office Assistant Preliminary and Main exams.",
+        "image": "",
+        "url": "https://link.amazon/B07oIOaHp"
+      }
+    ]
+  },
+  "ibps-rrb-officer-scale-2-3": {
+    "label": "Books for IBPS RRB Officer Scale II & III",
+    "note": "",
+    "items": [
+      {
+        "title": "IBPS RRB CRP 14 Officers & Office Assistant 2025-26",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 3 books covering IBPS RRB Officers PO Scale I, II, III and Office Assistant (Multipurpose) exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B03akDAqc"
+      },
+      {
+        "title": "Disha 43 IBPS RRB Officer Scale 1 & Office Assistant Solved Papers",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "7th edition featuring 43 previous year-wise solved papers from 2013 to 2025 for Officer Scale 1 and Office Assistant Preliminary and Main exams.",
+        "image": "",
+        "url": "https://link.amazon/B0b6NIwwb"
+      },
+      {
+        "title": "IBPS RRB Guide for Officer Scale 1 Prelims & Mains",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "9th edition guide for Officer Scale 1 Preliminary and Main exams featuring past year questions and practice exercises.",
+        "image": "",
+        "url": "https://link.amazon/B02bhqWGU"
+      }
+    ]
+  },
+  "rbi-grade-b": {
+    "label": "Books for RBI Grade B Officer",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha Guide to RBI Grade B Officers 2026 Phase I",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "7th edition Phase I guide with previous 9 years of questions and Phase II past descriptive questions from 2022 to 2025.",
+        "image": "",
+        "url": "https://link.amazon/B0cKOvEIH"
+      },
+      {
+        "title": "RBI Grade B Phase 1 Objective Practice Workbook",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "English-medium practice workbook for the RBI Grade B Phase 1 objective exam, including solved papers from 2025.",
+        "image": "",
+        "url": "https://link.amazon/B04XujYMJ"
+      },
+      {
+        "title": "RBI Grade B Phase 2 Previous Year Question Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Previous year question paper book covering RBI Grade B Phase 2 papers from 2011 to 2025 with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B00NuUtyI"
+      }
+    ]
+  },
+  "rbi-assistant": {
+    "label": "Books for RBI Assistant",
+    "note": "",
+    "items": [
+      {
+        "title": "PW RBI Assistant 15 Year-wise Previous Year Solved Papers",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "English edition covering 15 year-wise RBI Assistant Prelims and Mains solved papers from 2015 to 2026, with 2200+ PYQs and 15 online mock tests.",
+        "image": "",
+        "url": "https://link.amazon/B07YNowQI"
+      },
+      {
+        "title": "RBI Assistant Prelim Online Exam Practice Workbook 2026",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English-medium practice workbook designed for the RBI Assistant Preliminary online examination, 2026 edition.",
+        "image": "",
+        "url": "https://link.amazon/B04CmAx52"
+      },
+      {
+        "title": "Arihant RBI Assistant Prelims 2026",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "English-medium preparation book covering English, Quantitative Aptitude and Reasoning with 2500+ MCQs and a model solved paper.",
+        "image": "",
+        "url": "https://link.amazon/B03lzwqr2"
+      }
+    ]
+  },
+  "nabard-grade-a": {
+    "label": "Books for NABARD Grade A (Assistant Manager)",
+    "note": "",
+    "items": [
+      {
+        "title": "SURA'S NABARD Development Assistant Exam Guide 2026",
+        "publisher": "SURA'S",
+        "badge": "Complete Guide",
+        "note": "Latest updated edition guide designed for NABARD Development Assistant exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0iWTihSX"
+      },
+      {
+        "title": "NABARD Assistant Managers Grade A Officers 2025-26",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 9 books for NABARD Assistant Manager Grade A Officer exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05vE6xrh"
+      },
+      {
+        "title": "NABARD Grade A Phase 1 + Phase 2 Study Material",
+        "publisher": "ToppersNotes",
+        "badge": "Complete Guide",
+        "note": "English-medium set of 5 books containing study material and notes for NABARD Grade A Phase 1 and Phase 2 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0i7NVxv9"
+      }
+    ]
+  },
+  "nabard-grade-b": {
+    "label": "Books for NABARD Grade B (Manager)",
+    "note": "",
+    "items": [
+      {
+        "title": "NABARD Grade B Phase 1 & 2 Study Material",
+        "publisher": "ToppersNotes",
+        "badge": "Complete Guide",
+        "note": "English-medium set of 7 books containing study material and notes for NABARD Grade B Phase 1 and Phase 2 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05sF7CCu"
+      },
+      {
+        "title": "NABARD Assistant Manager Grade A & B Prelims Mock Tests",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Includes 10 full-length mock tests with 2000 solved objective questions and access to online tests for NABARD Assistant Manager Prelims.",
+        "image": "",
+        "url": "https://link.amazon/B0hwEnA3N"
+      },
+      {
+        "title": "NABARD Grade B Phase 1 Study Material",
+        "publisher": "ToppersNotes",
+        "badge": "Complete Guide",
+        "note": "English-medium set of 5 books containing study material and notes for NABARD Grade B Phase 1 exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B02cTnTYi"
+      }
+    ]
+  },
+  "nabard-development-assistant": {
+    "label": "Books for NABARD Development Assistant",
+    "note": "",
+    "items": [
+      {
+        "title": "SURA'S NABARD Development Assistant Exam Guide 2026",
+        "publisher": "SURA'S",
+        "badge": "Complete Guide",
+        "note": "Latest updated edition guide designed for NABARD Development Assistant exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B00V27aAZ"
+      },
+      {
+        "title": "NABARD Development Assistant 2026 Group B",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 6 books covering Preliminary and Mains examination preparation for the NABARD Development Assistant Group B post.",
+        "image": "",
+        "url": "https://link.amazon/B0ar0mdrJ"
+      },
+      {
+        "title": "NABARD Development Assistant Group B 2026",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 6 books designed for NABARD Development Assistant Group B Preliminary and Mains exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0j0CHGQK"
+      }
+    ]
+  },
+  "idbi-bank-executive": {
+    "label": "Books for IDBI Bank Executive",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha GoTo Guide for IDBI Bank Assistant Manager Executive",
+        "publisher": "Disha",
+        "badge": "Complete Guide",
+        "note": "Guide for IDBI Bank Assistant Manager and Executive recruitment exam preparation, including online test preparation for contractual positions.",
+        "image": "",
+        "url": "https://link.amazon/B03JE4ZJg"
+      },
+      {
+        "title": "IDBI Executive Book 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English edition containing 10 full-length mock tests with 2000 solved questions and free access to online tests for IDBI Executive exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B02UnDI00"
+      },
+      {
+        "title": "IDBI Executive",
+        "publisher": "",
+        "badge": "",
+        "note": "IDBI Executive exam preparation book.",
+        "image": "",
+        "url": "https://link.amazon/B0gFkDHKT"
+      }
+    ]
+  },
+  "idbi-bank-assistant-manager": {
+    "label": "Books for IDBI Bank Assistant Manager",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha GoTo Guide for IDBI Bank Assistant Manager Executive",
+        "publisher": "Disha",
+        "badge": "Complete Guide",
+        "note": "Guide for IDBI Bank Assistant Manager and Executive recruitment exam preparation, including online test preparation for contractual positions.",
+        "image": "",
+        "url": "https://link.amazon/B01q1W4BW"
+      },
+      {
+        "title": "IDBI Bank Assistant Manager Grade A 2026",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 5 books designed for IDBI Bank Assistant Manager Grade A exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0gtk0Fy4"
+      },
+      {
+        "title": "IDBI Bank Assistant Manager Grade A Exam Books",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Exam preparation book for the IDBI Bank Assistant Manager Grade A examination.",
+        "image": "",
+        "url": "https://link.amazon/B0hY2w17z"
+      }
+    ]
+  },
+  "sebi-grade-a": {
+    "label": "Books for SEBI Grade A (Assistant Manager)",
+    "note": "",
+    "items": [
+      {
+        "title": "SEBI Officer Grade A Assistant Manager Phase I Paper I",
+        "publisher": "Adda247",
+        "badge": "2026 Edition",
+        "note": "English printed guide for SEBI Officer Grade A Assistant Manager Phase I Paper I exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0dYI7C2J"
+      },
+      {
+        "title": "SEBI Grade A Phase 1 + Phase 2 Study Material",
+        "publisher": "ToppersNotes",
+        "badge": "Complete Guide",
+        "note": "English-medium set of 6 books containing study material and notes for SEBI Grade A Phase 1 and Phase 2 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0867PMtb"
+      },
+      {
+        "title": "SEBI Officer Grade A General Stream Phase I Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide for SEBI Officer Grade A Assistant Manager General Stream Phase I examination preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0et2VOwz"
+      }
+    ]
+  },
+  "lic-aao": {
+    "label": "Books for LIC AAO",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant LIC AAO Generalist Prelims Exam 2025",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "English-medium guide based on the latest syllabus, with 2500+ MCQs, 3 practice sets and solved papers for LIC AAO Generalist Prelims.",
+        "image": "",
+        "url": "https://link.amazon/B0aSnTXsD"
+      },
+      {
+        "title": "LIC AAO Phase-I Preliminary Exam Guide",
+        "publisher": "RPH Editorial Board",
+        "badge": "Complete Guide",
+        "note": "English paperback guide designed for LIC AAO Phase-I Preliminary examination preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0eAX9Abd"
+      },
+      {
+        "title": "Disha GoTo Guide to LIC AAO Preliminary Exam 2025",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "3rd edition guide for LIC Assistant Administrative Officer Preliminary exam preparation with previous year questions.",
+        "image": "",
+        "url": "https://link.amazon/B07v8T24u"
+      }
+    ]
+  },
+  "lic-ado": {
+    "label": "Books for LIC ADO",
+    "note": "",
+    "items": [
+      {
+        "title": "LIC ADO Phase-I Preliminary Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide designed for the LIC Apprentice Development Officer Phase-I Preliminary examination.",
+        "image": "",
+        "url": "https://link.amazon/B0cJSRhIY"
+      },
+      {
+        "title": "LIC ADO Preliminary & Main Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide covering both Preliminary and Main examinations for LIC Apprentice Development Officers.",
+        "image": "",
+        "url": "https://link.amazon/B00Buh8bh"
+      },
+      {
+        "title": "LIC ADO Pre Exam 2019",
+        "publisher": "",
+        "badge": "",
+        "note": "Older 2019 edition preparation book for the LIC Apprentice Development Officer Preliminary examination.",
+        "image": "",
+        "url": "https://link.amazon/B0awqPC8Z"
+      }
+    ]
+  },
+  "niacl-ao-assistant": {
+    "label": "Books for NIACL AO & Assistant",
+    "note": "",
+    "items": [
+      {
+        "title": "20 Practice Sets for NIACL AO Preliminary Exam 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "3rd edition containing 20 practice sets, 4 solved papers and 5 online tests for NIACL AO Preliminary exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B09OJSWAa"
+      },
+      {
+        "title": "NIACL AO Generalists & Specialists Scale-I Book 2025",
+        "publisher": "Adda247",
+        "badge": "Complete Guide",
+        "note": "English printed book for NIACL AO Generalists and Specialists Scale-I Prelims and Mains, with 3500+ MCQs and solutions.",
+        "image": "",
+        "url": "https://link.amazon/B007n7Y33"
+      },
+      {
+        "title": "NIACL AO 20 Practice Sets for Preliminary Exam",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Practice book containing 20 sets for the NIACL AO Preliminary examination along with the latest paper.",
+        "image": "",
+        "url": "https://link.amazon/B0f2CJZsz"
+      }
+    ]
+  },
+  "sbi-po": {
+    "label": "Books for SBI PO",
+    "note": "",
+    "items": [
+      {
+        "title": "PW 24 SBI PO Prelims & Mains Solved Papers 2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Contains 24 SBI PO Prelims and Mains previous year solved papers through September 2025, with 3075+ PYQs and 15 online CBT tests.",
+        "image": "",
+        "url": "https://link.amazon/B03oyNgJp"
+      },
+      {
+        "title": "Arihant SBI PO Prelims & Mains Exam 2026",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Contains previous year solved papers with detailed explanations and 3000+ practice sets based on the latest SBI PO exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B03Gwz3jZ"
+      },
+      {
+        "title": "Disha Comprehensive Guide to SBI Bank PO Prelims & Mains",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "14th edition guide with PYQs, 5200+ MCQs and fully solved questions for SBI PO and LBO preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0i2eiyM3"
+      }
+    ]
+  },
+  "ibps-rrb-po": {
+    "label": "Books for IBPS RRB Officer Scale I (PO)",
+    "note": "",
+    "items": [
+      {
+        "title": "IBPS RRB Officer PO CRP XV Solved Papers 2016-2025",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Hindi-medium solved papers book covering IBPS RRB Officer PO CRP papers from 2016 to 2025, with a 2026 edition.",
+        "image": "",
+        "url": "https://link.amazon/B0fbMbMVI"
+      },
+      {
+        "title": "IBPS RRB Guide for Officer Scale 1 Prelims & Mains",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "9th edition guide for Officer Scale 1 Preliminary and Main exams featuring past year questions and practice exercises.",
+        "image": "",
+        "url": "https://link.amazon/B0dWor9LE"
+      },
+      {
+        "title": "Disha Banking Awareness for SBI, IBPS, RRB, RBI & Insurance",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "5th edition covering banking awareness with explanatory notes, practice questions and previous year questions for banking and insurance exams.",
+        "image": "",
+        "url": "https://link.amazon/B06c43dP6"
+      }
+    ]
+  },
+  "sidbi-grade-a": {
+    "label": "Books for SIDBI Grade A (Assistant Manager)",
+    "note": "",
+    "items": [
+      {
+        "title": "SIDBI Officer Grade A & B Phase-I Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide for SIDBI Officer Grade A Assistant Manager and Grade B Manager Phase-I examination preparation.",
+        "image": "",
+        "url": "https://link.amazon/B013vfJz1"
+      },
+      {
+        "title": "SIDBI Assistant Manager Grade A General Stream 2022-23",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 7 books designed for SIDBI Assistant Manager Grade A General Stream recruitment exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0fpjfu7r"
+      },
+      {
+        "title": "SIDBI Grade A & B Officers 2024-25",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Set of 9 books for SIDBI Grade A and Grade B Officer exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0i6HfXH3"
+      }
+    ]
+  },
+  "lic-assistant": {
+    "label": "Books for LIC Assistant",
+    "note": "",
+    "items": [
+      {
+        "title": "LIC Assistant Phase-I Preliminary Exam Guide",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide designed for the LIC Assistant Phase-I Preliminary examination.",
+        "image": "",
+        "url": "https://link.amazon/B00RF1BSV"
+      },
+      {
+        "title": "Guide to LIC Assistant Prelim & Main Exam 2019",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "2019 guide covering LIC Assistant Preliminary and Main exams with 3 online tests.",
+        "image": "",
+        "url": "https://link.amazon/B0aoXozu1"
+      },
+      {
+        "title": "SURA'S LIC Assistant Engineer & AAO Phase 1",
+        "publisher": "SURA'S",
+        "badge": "Complete Guide",
+        "note": "English-language guide for LIC Assistant Engineer and Assistant Administrative Officer Phase 1 Preliminary exam preparation, latest edition 2023.",
+        "image": "",
+        "url": "https://link.amazon/B0gpuVNt1"
+      }
+    ]
   }
 }
