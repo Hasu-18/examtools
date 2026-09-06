@@ -4,6 +4,7 @@ description: "IBPS CRP PO/MT-XVI and CRP CSA-XVI (Clerk) 2026: vacancies, fee, a
 date: 2026-09-01
 category: "notification"
 relatedExams: ["ibps-po", "ibps-clerk"]
+products: ["ibps-po", "ibps-clerk"]
 quickFacts:
   - label: "Vacancies"
     value: "7,565 PO/MT plus 11,403 Clerk/CSA"

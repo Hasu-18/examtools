@@ -4,7 +4,7 @@ description: "Complete reference for IBPS PO and IBPS Clerk (Customer Service As
 date: 2026-09-01
 category: "exam-details"
 relatedExams: ["ibps-po", "ibps-clerk"]
-products: ["ibps-po"]
+products: ["ibps-po", "ibps-clerk"]
 ---
 
 ## What are IBPS PO and IBPS Clerk
