@@ -83,7 +83,7 @@ The clerical post is now officially Customer Service Associate (CSA), not Clerk,
 
 ## Photo and signature
 
-IBPS uses one specification sheet across its CRP cycles, confirmed here from the official CSA-XVI Annexure IV:
+These are the CSA-XVI Annexure IV specifications, read from the official notification. IBPS normally uses the same sheet across its CRP cycles, so PO candidates should still check their own notification.
 
 - **Photo**: 4.5 × 3.5 cm, 200×230 px preferred, 20 to 50 KB, JPG/JPEG, colour, white or light background, no cap or dark glasses. A live capture is also mandatory.
 - **Signature**: black ink on white paper, 140×60 px preferred, 10 to 20 KB, not in capital letters.
@@ -100,11 +100,3 @@ Full breakdowns for each exam sit on their own pages: [IBPS PO](/exams/ibps-po/)
 - Copy the declaration text exactly, word for word, including your own name in place of the blank
 - Have your SSC/10th certificate scanned as a PDF, A4 page size, under 500 KB, ready before you start
 
----
-
-**Facts to confirm before publishing:**
-1. Whether a category-wise (SC/ST/OBC/EWS/UR) breakdown has been published for PO's revised 7,565 total; the only verified breakdown found here is for the earlier 7,365 figure.
-2. Whether PO's document specs (photo/signature/thumb/declaration) are identical to the Clerk specs I read directly from the CSA PDF; I've extended them by inference since IBPS traditionally uses one shared Annexure IV, but I have not opened the PO PDF itself.
-3. Whether IBPS issues any further corrigendum to PO vacancies before Mains on 4 October 2026, given it has already moved twice.
-4. The exact PO/MT-XVI notification PDF direct link (I only have the landing page, not a stable PDF URL, unlike Clerk where I have the exact official PDF link).
-5. Confirm your CMS schema actually supports `relatedExams` as an array before publishing; if not, split this into two single-exam posts.
