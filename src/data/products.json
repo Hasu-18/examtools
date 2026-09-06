@@ -2758,5 +2758,35 @@
         "url": "https://link.amazon/B0gpuVNt1"
       }
     ]
+  },
+  "bihar-stet": {
+    "label": "Books for Bihar STET",
+    "note": "",
+    "items": [
+      {
+        "title": "Bihar STET Science Subject Study Material",
+        "publisher": "ToppersNotes",
+        "badge": "Complete Guide",
+        "note": "Hindi-medium set of 5 books containing study material and notes for Bihar STET Science subject exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05ttp1c7"
+      },
+      {
+        "title": "Bihar STET Art of Teaching & Other Skills",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Guide covering Art of Teaching and other skills common to Bihar STET Secondary and Higher Secondary Teacher examinations.",
+        "image": "",
+        "url": "https://link.amazon/B0hsF2YVt"
+      },
+      {
+        "title": "Bihar STET Teaching Art and Other Skills Book 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English edition covering Teaching Art and Other Skills for Secondary and Higher Secondary Teacher Eligibility Tests, with 21 practice tests and online tests.",
+        "image": "",
+        "url": "https://link.amazon/B08lx6Rag"
+      }
+    ]
   }
 }
