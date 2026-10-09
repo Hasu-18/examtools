@@ -3328,5 +3328,41 @@
         "url": "https://link.amazon/B0dsPYO0g"
       }
     ]
+  },
+  "bssc-stenographer": {
+    "label": "Books for BSSC Stenographer",
+    "note": "",
+    "items": [
+      {
+        "title": "BSSC Stenographer/Instructor Exam Book 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-edition preparation book for the BSSC Stenographer/Instructor exam, featuring 10 full practice tests and free access to online tests.",
+        "image": "",
+        "url": "https://link.amazon/B0bRtNiQp"
+      }
+    ]
+  },
+  "dcece": {
+    "label": "Books for DCECE",
+    "note": "",
+    "items": [
+      {
+        "title": "GNM Entrance Exam Book I: Science, English & Reasoning",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Covers Science, English, Reasoning and General Knowledge for GNM entrance exams across UP, Bihar, Rajasthan, Jharkhand and Madhya Pradesh.",
+        "image": "",
+        "url": "https://link.amazon/B09TBveVA"
+      },
+      {
+        "title": "Bihar Para Medical Entrance Solved Papers 2010–2026",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Features previous-year solved papers from 2010 to 2026 for the Bihar Para Medical intermediate-level diploma and certificate entrance examination, with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0fd6crug"
+      }
+    ]
   }
 }
