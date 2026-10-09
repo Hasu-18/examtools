@@ -1,0 +1,3 @@
+# Cloudflare parses _redirects line by line; a trailing CR would corrupt the
+# status code on every rule, so keep this file LF regardless of core.autocrlf.
+public/_redirects text eol=lf
