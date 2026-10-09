@@ -2788,5 +2788,545 @@
         "url": "https://link.amazon/B08lx6Rag"
       }
     ]
+  },
+  "keam": {
+    "label": "Books for KEAM",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant KEAM Engineering Entrance Exam 2027",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Contains 10 years of solved papers from 2017 to 2026, with detailed solutions and 3 mock tests for KEAM 2027.",
+        "image": "",
+        "url": "https://link.amazon/B0aCw38Xt"
+      },
+      {
+        "title": "Arihant KEAM Chapterwise Solved Papers 2009-2025",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Older-edition book containing chapter-wise solved KEAM papers from 2009 to 2025.",
+        "image": "",
+        "url": "https://link.amazon/B0gno8LlJ"
+      },
+      {
+        "title": "MTG KEAM PYQ Book for 2027 Exam",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Covers 10 years of chapter-wise solutions and model test papers with detailed explanations for Kerala Engineering, Architecture and Medical entrance exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0e1wjwiF"
+      }
+    ]
+  },
+  "gujcet": {
+    "label": "Books for GUJCET",
+    "note": "",
+    "items": [
+      {
+        "title": "BIOPEDIA GUJCET 2026 Biology 40/40 Achiever Mock Test Series",
+        "publisher": "BIOPEDIA",
+        "badge": "Practice Sets",
+        "note": "Biology mock test series featuring 15 papers across 3 difficulty levels, with topic coverage, concept building and performance practice for GUJCET 2026.",
+        "image": "",
+        "url": "https://link.amazon/B0gs1fwHd"
+      },
+      {
+        "title": "GUJCET 2025 Question Papers & NCERT-Based Study Material",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Gujarati-medium book featuring GUJCET question papers and NCERT-based study material for exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B01nyZlgw"
+      },
+      {
+        "title": "GUJCET Biology Twenty-20 Question Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "English-medium book of GUJCET Biology question papers for exam practice.",
+        "image": "",
+        "url": "https://link.amazon/B0ikYibVR"
+      }
+    ]
+  },
+  "wbjee": {
+    "label": "Books for WBJEE",
+    "note": "",
+    "items": [
+      {
+        "title": "MTG WB JEE Chapterwise Explorer Physics & Chemistry 2026–27",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Covers WBJEE Physics and Chemistry with chapterwise previous-year solved questions and model test papers with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B06kB5kmT"
+      },
+      {
+        "title": "MTG WB JEE Chapterwise Explorer Mathematics 2026–27",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Covers WBJEE Mathematics with chapterwise previous-year solved questions and model test papers with detailed solutions.",
+        "image": "",
+        "url": "https://link.amazon/B05VL8kxz"
+      },
+      {
+        "title": "Arihant WBJEE Engineering Entrance Exam 2027",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Includes 10 years of solved WBJEE papers from 2017 to 2026, with detailed solutions and three mock tests for 2027.",
+        "image": "",
+        "url": "https://link.amazon/B01TvNt0x"
+      }
+    ]
+  },
+  "kcet": {
+    "label": "Books for KCET",
+    "note": "",
+    "items": [
+      {
+        "title": "PW KCET 21 Years Chapterwise Solved Papers 2006–2026",
+        "publisher": "Physics Wallah",
+        "badge": "PYQ",
+        "note": "Covers Physics, Chemistry, Mathematics and Biology with chapterwise KCET solved papers from 2006 to 2026 for 2027 exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0998i1NI"
+      },
+      {
+        "title": "Arihant KCET Engineering Entrance Exam 2027",
+        "publisher": "Arihant",
+        "badge": "PYQ",
+        "note": "Includes 10 years of solved KCET papers from 2017 to 2026, detailed solutions and three mock tests for 2027.",
+        "image": "",
+        "url": "https://link.amazon/B00zO4zop"
+      },
+      {
+        "title": "MTG KCET 21 Years Chapterwise Solved Papers 2006–2026",
+        "publisher": "MTG",
+        "badge": "PYQ",
+        "note": "Provides chapterwise KCET solved papers from 2006 to 2026 for Physics, Chemistry and Mathematics engineering entrance preparation.",
+        "image": "",
+        "url": "https://link.amazon/B05MYwh4G"
+      }
+    ]
+  },
+  "mh-cet-law": {
+    "label": "Books for MH CET Law",
+    "note": "",
+    "items": [
+      {
+        "title": "Global's Master Guide to Maharashtra Law CET",
+        "publisher": "Global",
+        "badge": "Complete Guide",
+        "note": "Marathi-language guide for 3-year and 5-year LLB CET preparation, featuring previous-year question papers and sample papers.",
+        "image": "",
+        "url": "https://link.amazon/B055Va2mb"
+      },
+      {
+        "title": "Nitin Galave Law MH-CET / CLAT Guide 2026",
+        "publisher": "Nitin Galave",
+        "badge": "2026 Edition",
+        "note": "Marathi-medium, fifth-edition guide for 3-year and 5-year law entrance examinations, including MH-CET and CLAT.",
+        "image": "",
+        "url": "https://link.amazon/B0dnSl4W0"
+      },
+      {
+        "title": "Nitin Galave Law CET Practice Question Bank 2025",
+        "publisher": "Nitin Galave",
+        "badge": "Practice Sets",
+        "note": "Marathi practice question bank for 3-year and 5-year LLB law entrance examinations, in the 2025 edition.",
+        "image": "",
+        "url": "https://link.amazon/B01yHswKd"
+      }
+    ]
+  },
+  "uppsc-pcs": {
+    "label": "Books for UPPSC Combined State / Upper Subordinate Services (PCS)",
+    "note": "",
+    "items": [
+      {
+        "title": "UPPSC Samanya Adhyayan Antim Prahar: 28 Sets",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Hindi-language General Studies book featuring 28 sets of UPPSC previous-year questions from 2000 to 2025 with explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0j285snF"
+      },
+      {
+        "title": "Disha Errorless UPPSC GS Prelims Solved Papers 2010–2025",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Provides 16 years of UPPSC General Studies Prelims solved papers for Papers 1 and 2, covering 2010 to 2025.",
+        "image": "",
+        "url": "https://link.amazon/B00YMZ0o8v"
+      },
+      {
+        "title": "Drishti IAS UPPCS Prelims Solved Papers 2010–2025",
+        "publisher": "Drishti IAS",
+        "badge": "PYQ",
+        "note": "Hindi-medium General Studies Paper I book with 16 years of solved UPPCS prelims papers, detailed solutions and subject-wise analysis.",
+        "image": "",
+        "url": "https://link.amazon/B086LFaiE"
+      }
+    ]
+  },
+  "upsssc-lekhpal": {
+    "label": "Books for UPSSSC Lekhpal",
+    "note": "",
+    "items": [
+      {
+        "title": "UPSSSC Lekhpal Mains Solved Papers & Practice Book",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Hindi-language preparation book featuring solved UPSSSC Lekhpal Mains papers and practice questions.",
+        "image": "",
+        "url": "https://link.amazon/B00672eSd"
+      },
+      {
+        "title": "Examcart UP Lekhpal Computer Question Bank 2026",
+        "publisher": "Examcart",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium computer question bank with 14 chapters and over 2,300 previous-year questions based on the latest UP Lekhpal exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B0hDTqPiS"
+      },
+      {
+        "title": "Gyanmudra UPSSSC Lekhpal Previous Year Solved Papers",
+        "publisher": "Gyanmudra",
+        "badge": "PYQ",
+        "note": "Hindi-medium book of UPSSSC Lekhpal previous-year solved papers with explanations and analysis.",
+        "image": "",
+        "url": "https://link.amazon/B0gxwdfod"
+      }
+    ]
+  },
+  "upsssc-vdo": {
+    "label": "Books for UPSSSC VDO",
+    "note": "",
+    "items": [
+      {
+        "title": "UPSSSC PET Previous Year Question Papers with Solutions",
+        "publisher": "Vidit Publication",
+        "badge": "Hindi & English",
+        "note": "Bilingual Hindi-English PET PYQs with detailed explanations, chapterwise analysis and two free practice sets.",
+        "image": "",
+        "url": "https://link.amazon/B023v6ykT"
+      },
+      {
+        "title": "UPSSSC VDO Solved Papers & Practice Book",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Provides solved papers and practice questions for UPSSSC VDO exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0iak2UqY"
+      },
+      {
+        "title": "UPSSSC VDO Exam 2024: Panchayat Officer",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English-language preparation book featuring six mock tests, three sectional tests, one previous-year paper and 1,200 solved questions, with online test access.",
+        "image": "",
+        "url": "https://link.amazon/B06uAiDPj"
+      }
+    ]
+  },
+  "upsssc-anm": {
+    "label": "Books for UPSSSC ANM",
+    "note": "",
+    "items": [
+      {
+        "title": "UPSSSC ANM Solved & Practice Book 2025",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium preparation book featuring solved questions and practice material for the UPSSSC ANM examination.",
+        "image": "",
+        "url": "https://link.amazon/B0f6fxzTi"
+      },
+      {
+        "title": "UPSSSC ANM Study Material 2024–25",
+        "publisher": "",
+        "badge": "",
+        "note": "Study material intended for UPSSSC ANM exam preparation; the supplied listing does not specify its contents in detail.",
+        "image": "",
+        "url": "https://link.amazon/B09icrLfw"
+      },
+      {
+        "title": "UPSSSC ANM Solved & Practice Book + Exam Pointer",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Combines solved questions, practice material and an ANM exam pointer for UPSSSC ANM preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0dWQMZzE"
+      }
+    ]
+  },
+  "uptet": {
+    "label": "Books for UPTET",
+    "note": "",
+    "items": [
+      {
+        "title": "UPTET Previous Year Solved Papers: English & Teaching Methods",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Focuses on UPTET English Language and teaching methods with previous-year solved papers for targeted practice.",
+        "image": "",
+        "url": "https://link.amazon/B0hkbhc8j"
+      },
+      {
+        "title": "All in One UP Super TET Complete Guide 2026–2027",
+        "publisher": "",
+        "badge": "Complete Guide",
+        "note": "Hindi-language primary-level teacher recruitment guide combining previous-year question papers and practice sets for UP Super TET and related exams.",
+        "image": "",
+        "url": "https://link.amazon/B0fwxphAw"
+      },
+      {
+        "title": "PW UPTET Paper 1 Class 1–5 Exam 2026",
+        "publisher": "Physics Wallah",
+        "badge": "Practice Sets",
+        "note": "Includes 10 previous-year solved papers from 2011 to 2021, 10 practice sets and over 3,000 questions across CDP, EVS, Mathematics, English and Hindi.",
+        "image": "",
+        "url": "https://link.amazon/B02qlX2LO"
+      }
+    ]
+  },
+  "uppcl-technician-grade-2": {
+    "label": "Books for UPPCL TG2",
+    "note": "",
+    "items": [
+      {
+        "title": "UPPCL-UPRVNUL TG-2 Electrician Trade Chapterwise Exam Planner",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Chapterwise exam planner for Electrician trade preparation for UPPCL and UPRVNUL TG-2 examinations.",
+        "image": "",
+        "url": "https://link.amazon/B03EZkGBz"
+      },
+      {
+        "title": "UPPCL / UPRVUNL TG-2 Electrician Chapterwise Solved Papers",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Combines chapterwise Electrician trade preparation with solved papers for UPPCL and UPRVUNL TG-2 or Technician examinations.",
+        "image": "",
+        "url": "https://link.amazon/B00liAoiO"
+      },
+      {
+        "title": "Youth Competition Times UPPCL ITI Electrician TG-2",
+        "publisher": "Youth Competition Times",
+        "badge": "PYQ",
+        "note": "Covers technical and non-technical sections with solved papers for the UPPCL ITI Electrician TG-2 examination.",
+        "image": "",
+        "url": "https://link.amazon/B00QHkO37"
+      }
+    ]
+  },
+  "up-bed-jee": {
+    "label": "Books for UP B.Ed JEE",
+    "note": "",
+    "items": [
+      {
+        "title": "Arihant UP B.Ed Exam 2027 Arts Group",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Complete study guide for the Arts Group with sectionwise notes, over 3,000 exam-pattern questions, PYQs up to 2025 and the solved 2026 paper.",
+        "image": "",
+        "url": "https://link.amazon/B00Iu5txr"
+      },
+      {
+        "title": "B.Ed Entrance Exam: 93 Topic-wise Practice Tests",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English-language book with 93 topicwise practice tests for UP B.Ed JEE, Bihar B.Ed CET, DU B.Ed and BHU B.Ed, plus online test access.",
+        "image": "",
+        "url": "https://link.amazon/B0flJitTp"
+      },
+      {
+        "title": "Arihant UP B.Ed Exam 2027 Science Group",
+        "publisher": "Arihant",
+        "badge": "Complete Guide",
+        "note": "Complete study guide for the Science Group with sectionwise notes, over 3,000 exam-pattern questions, PYQs up to 2025 and the solved 2026 paper.",
+        "image": "",
+        "url": "https://link.amazon/B00h9ua1i"
+      }
+    ]
+  },
+  "bpsc-cce": {
+    "label": "Books for BPSC Combined Competitive Examination (CCE)",
+    "note": "",
+    "items": [
+      {
+        "title": "Disha Errorless Bihar BPSC Prelims GS Solved Papers",
+        "publisher": "Disha",
+        "badge": "PYQ",
+        "note": "Sixth edition featuring 22 year-wise General Studies solved papers from 1994 to 2025, covering 39th to 71st BPSC examinations.",
+        "image": "",
+        "url": "https://link.amazon/B04ZTi7Qi"
+      },
+      {
+        "title": "Drishti IAS BPSC Prelims Topicwise Solved Questions",
+        "publisher": "Drishti IAS",
+        "badge": "PYQ",
+        "note": "Organizes Bihar BPSC Prelims previous-year questions topicwise and includes updated explanations for exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B06Da8Rcr"
+      },
+      {
+        "title": "BPSC General Studies Preliminary Exam: 20 Practice Sets",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Provides 20 General Studies practice sets for the BPSC preliminary examination, including the solved 68th BPSC question paper.",
+        "image": "",
+        "url": "https://link.amazon/B00lRL1wf"
+      }
+    ]
+  },
+  "bssc-inter-level": {
+    "label": "Books for BSSC Inter Level",
+    "note": "",
+    "items": [
+      {
+        "title": "BSSC Graduate & Inter Level Solved Papers 2025–26",
+        "publisher": "",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium book featuring solved papers for BSSC Graduate Level and Inter Level preliminary and mains examinations.",
+        "image": "",
+        "url": "https://link.amazon/B01VTKU1r"
+      },
+      {
+        "title": "BSSC Inter Level Prelims Exam Book 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "English-edition preparation book with 10 practice tests, two previous-year papers, over 1,800 solved MCQs and online test access.",
+        "image": "",
+        "url": "https://link.amazon/B02gve8QZ"
+      },
+      {
+        "title": "BSSC Inter Level Prelims Exam Book 2024 Hindi",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-edition preparation book with 10 practice tests, two previous-year papers, over 1,800 solved MCQs and online test access.",
+        "image": "",
+        "url": "https://link.amazon/B0ct6v3OQ"
+      }
+    ]
+  },
+  "bsphcl": {
+    "label": "Books for BSPHCL Recruitment",
+    "note": "",
+    "items": [
+      {
+        "title": "BSPHCL Technician Grade 3 Practice Workbook",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium workbook containing 30 practice sets and two previous-year solved papers for BSPHCL Technician Grade 3 exam preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0cFqitbn"
+      },
+      {
+        "title": "BSPHCL Clerk/Store Assistant Solved Papers 2024–25",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Preparation book for BSPHCL Clerk and Store Assistant recruitment, described as containing solved papers and practice questions.",
+        "image": "",
+        "url": "https://link.amazon/B0cTxAhD8"
+      },
+      {
+        "title": "BSPHCL Various Post Recruitment Exam 2024",
+        "publisher": "",
+        "badge": "Practice Sets",
+        "note": "Hindi-edition book for Technician Grade III, Junior Accounts Clerk and other posts, featuring 40 practice tests and over 1,800 solved MCQs.",
+        "image": "",
+        "url": "https://link.amazon/B05Vc0Is9"
+      }
+    ]
+  },
+  "rajasthan-ras": {
+    "label": "Books for RAS",
+    "note": "",
+    "items": [
+      {
+        "title": "Mahecha Publication RAS Pre 2026 GK Notes Combo",
+        "publisher": "Mahecha Publication",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium combo of four India GK notes books from Springboard Academy for RPSC RAS Prelims preparation.",
+        "image": "",
+        "url": "https://link.amazon/B07REswhs"
+      },
+      {
+        "title": "Drishti IAS RAS Prelims Solved Papers",
+        "publisher": "Drishti IAS",
+        "badge": "PYQ",
+        "note": "Hindi-medium book featuring five years of RAS Prelims General Knowledge and General Science previous-year papers with detailed explanations.",
+        "image": "",
+        "url": "https://link.amazon/B0ce5NS04"
+      },
+      {
+        "title": "Examcart Rajasthan Samanya Gyan Score Booster PYQs 2026",
+        "publisher": "Examcart",
+        "badge": "2026 Edition",
+        "note": "Hindi-medium Rajasthan GK book with 44 chapters and over 3,300 chapterwise previous-year questions with detailed solutions for RAS, RSSB and police exams.",
+        "image": "",
+        "url": "https://link.amazon/B098Ls3YU"
+      }
+    ]
+  },
+  "reet": {
+    "label": "Books for REET",
+    "note": "",
+    "items": [
+      {
+        "title": "REET Level I (Classes 1–5): Solved Papers & Practice Tests",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Provides solved previous-year papers and practice test papers for REET Level I, designed for primary teacher eligibility preparation.",
+        "image": "",
+        "url": "https://link.amazon/B00VWcZZJ"
+      },
+      {
+        "title": "RBD REET Level II PYQ Chirag: Social Studies",
+        "publisher": "RBD",
+        "badge": "PYQ",
+        "note": "Hindi-language Social Studies PYQ book covering REET papers from 2011, 2012, 2015, 2017, 2021 and 2022, plus REET Mains 2023, with teaching methods.",
+        "image": "",
+        "url": "https://link.amazon/B0dErH25z"
+      },
+      {
+        "title": "REET Level II Science & Maths Previous Year Questions",
+        "publisher": "",
+        "badge": "PYQ",
+        "note": "Focuses on solved previous-year Science and Mathematics questions for REET Level II preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0gfFWN9A"
+      }
+    ]
+  },
+  "rajasthan-cet": {
+    "label": "Books for Rajasthan CET",
+    "note": "",
+    "items": [
+      {
+        "title": "Lavya Rajasthan CET 10+2 Solved & Model Papers 2026",
+        "publisher": "LVA Publication",
+        "badge": "2026 Edition",
+        "note": "English-medium book featuring Rajasthan CET 10+2 previous-year solved papers and model papers with solutions.",
+        "image": "",
+        "url": "https://link.amazon/B0gVvDoOq"
+      },
+      {
+        "title": "Examcart Rajasthan CET 10+2 Practice Sets 2026",
+        "publisher": "Examcart",
+        "badge": "Practice Sets",
+        "note": "Hindi-medium practice book containing 15 mock test papers with solutions based on the latest Rajasthan CET 10+2 exam pattern.",
+        "image": "",
+        "url": "https://link.amazon/B01sm5BQT"
+      },
+      {
+        "title": "Examcart Rajasthan CET 10+2 Level Combo 2026",
+        "publisher": "Examcart",
+        "badge": "Complete Guide",
+        "note": "Hindi-medium set of two books combining a complete study guide with 15 practice sets for Rajasthan CET 10+2 preparation.",
+        "image": "",
+        "url": "https://link.amazon/B0dsPYO0g"
+      }
+    ]
   }
 }
