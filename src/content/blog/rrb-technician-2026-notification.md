@@ -89,7 +89,7 @@ There is nothing to upload for the photo: it's captured live, so dress in non-wh
 - JPG/JPEG only, 30 to 49 KB, minimum 140 x 60 pixels, scanned at 100 DPI or higher
 - Black ink on white paper, running (cursive) handwriting, sized to sit inside a 35 mm x 20 mm box on the form
 
-Full specs and history for this exam are on the [RRB Technician 2026 exam page](/exams/rrb-technician-2026/). If your scan is over or under the size limit, resize it free with the [signature resizer](/tools/photo-resizer/).
+Full specs and history for this exam are on the [RRB Technician 2026 exam page](/exams/rrb-technician/). If your scan is over or under the size limit, resize it free with the [signature resizer](/tools/photo-resizer/).
 
 ## Before you upload
 
